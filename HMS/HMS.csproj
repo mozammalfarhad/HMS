@@ -1,0 +1,723 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{3F424AE2-760F-496D-8A51-637A8AEB9A08}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>HMS</RootNamespace>
+    <AssemblyName>HMS</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ComponentFactory.Krypton.Design, Version=4.3.2.0, Culture=neutral, PublicKeyToken=a87e673e9ecb6e8e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Component Factory\Krypton Toolkit 4.3.2\Bin\ComponentFactory.Krypton.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="ComponentFactory.Krypton.Navigator, Version=4.3.2.0, Culture=neutral, PublicKeyToken=a87e673e9ecb6e8e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Component Factory\Krypton Toolkit 4.3.2\Bin\ComponentFactory.Krypton.Navigator.dll</HintPath>
+    </Reference>
+    <Reference Include="ComponentFactory.Krypton.Ribbon, Version=4.3.2.0, Culture=neutral, PublicKeyToken=a87e673e9ecb6e8e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Component Factory\Krypton Toolkit 4.3.2\Bin\ComponentFactory.Krypton.Ribbon.dll</HintPath>
+    </Reference>
+    <Reference Include="ComponentFactory.Krypton.Toolkit, Version=4.3.2.0, Culture=neutral, PublicKeyToken=a87e673e9ecb6e8e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Component Factory\Krypton Toolkit 4.3.2\Bin\ComponentFactory.Krypton.Toolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="DotNetZip">
+      <HintPath>..\packages\DotNetZip.1.10.1\lib\net20\DotNetZip.dll</HintPath>
+    </Reference>
+    <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="itextsharp">
+      <HintPath>C:\Users\USER\Downloads\Export_DataGridView_PDF\Export_DataGridView_PDF_CS\iTextSharp\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\BGFHAndicap\BGFHAndicap\SourceCode\BGFHandicapApp\bin\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.ConnectionInfo, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Unofficial.Microsoft.SQLServer.SMO.11.0.3000.0\lib\Microsoft.SqlServer.ConnectionInfo.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Management.Sdk.Sfc, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Unofficial.Microsoft.SQLServer.SMO.11.0.3000.0\lib\Microsoft.SqlServer.Management.Sdk.Sfc.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Smo, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Unofficial.Microsoft.SQLServer.SMO.11.0.3000.0\lib\Microsoft.SqlServer.Smo.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.SmoExtended, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Unofficial.Microsoft.SQLServer.SMO.11.0.3000.0\lib\Microsoft.SqlServer.SmoExtended.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.SqlEnum, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Unofficial.Microsoft.SQLServer.SMO.11.0.3000.0\lib\Microsoft.SqlServer.SqlEnum.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Configuration.Abstractions">
+      <HintPath>..\packages\System.Configuration.Abstractions.2.0.2.26\lib\net45\System.Configuration.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="VIT.DataLogicLayer">
+      <HintPath>..\..\..\BGFHAndicap\BGFHAndicap\SourceCode\BGFHandicapApp\bin\VIT.DataLogicLayer.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Code\BLL\bllAudit.cs" />
+    <Compile Include="App_Code\BLL\bllCollection.cs" />
+    <Compile Include="App_Code\BLL\bllCommon.cs" />
+    <Compile Include="App_Code\BLL\bllCompanyInfo.cs" />
+    <Compile Include="App_Code\BLL\bllConsultantType.cs" />
+    <Compile Include="App_Code\BLL\bllDepartment.cs" />
+    <Compile Include="App_Code\BLL\bllDoctor.cs" />
+    <Compile Include="App_Code\BLL\bllLabtorist.cs" />
+    <Compile Include="App_Code\BLL\bllPatient.cs" />
+    <Compile Include="App_Code\BLL\bllPatientServicDetails.cs" />
+    <Compile Include="App_Code\BLL\bllReferFee.cs" />
+    <Compile Include="App_Code\BLL\bllReferrerFeeDetails.cs" />
+    <Compile Include="App_Code\BLL\bllReportData.cs" />
+    <Compile Include="App_Code\BLL\bllService.cs" />
+    <Compile Include="App_Code\BLL\bllServiceAttribute.cs" />
+    <Compile Include="App_Code\BLL\bllServiceType.cs" />
+    <Compile Include="App_Code\BLL\bllStatement.cs" />
+    <Compile Include="App_Code\BLL\bllTestResult.cs" />
+    <Compile Include="App_Code\BLL\bllTestResultAttribute.cs" />
+    <Compile Include="App_Code\BLL\bllTestWithSchedule.cs" />
+    <Compile Include="App_Code\BLL\bllUnit.cs" />
+    <Compile Include="App_Code\BLL\bllUser.cs" />
+    <Compile Include="App_Code\BLL\bllVacuum.cs" />
+    <Compile Include="App_Code\BLL\bllVat.cs" />
+    <Compile Include="App_Code\Common.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="App_Code\BLL\bllConsultant.cs" />
+    <Compile Include="App_Code\DAL\dalAudit.cs" />
+    <Compile Include="App_Code\DAL\dalCollection.cs" />
+    <Compile Include="App_Code\DAL\dalCommon.cs" />
+    <Compile Include="App_Code\DAL\dalConsultant.cs" />
+    <Compile Include="App_Code\DAL\dalConsultantType.cs" />
+    <Compile Include="App_Code\DAL\dalDepartment.cs" />
+    <Compile Include="App_Code\DAL\dalPatientServicDetails.cs" />
+    <Compile Include="App_Code\DAL\dalReferrerFeeDetails.cs" />
+    <Compile Include="App_Code\DAL\dalReportData.cs" />
+    <Compile Include="App_Code\DAL\dalService.cs" />
+    <Compile Include="App_Code\DAL\dalServiceAttribute.cs" />
+    <Compile Include="App_Code\DAL\dalStatement.cs" />
+    <Compile Include="App_Code\DAL\dalTestResult.cs" />
+    <Compile Include="App_Code\DAL\dalTestResultAttribute.cs" />
+    <Compile Include="App_Code\DAL\dalTestWithSchedule.cs" />
+    <Compile Include="App_Code\DAL\dalUnit.cs" />
+    <Compile Include="App_Code\DAL\dalUser.cs" />
+    <Compile Include="App_Code\DAL\dalDoctor.cs" />
+    <Compile Include="App_Code\DAL\dalLabtorist.cs" />
+    <Compile Include="App_Code\DAL\dalPatient.cs" />
+    <Compile Include="App_Code\DAL\dalServiceType.cs" />
+    <Compile Include="App_Code\DAL\dalVacuum.cs" />
+    <Compile Include="App_Code\DAL\dalCompanyInfo.cs" />
+    <Compile Include="App_Code\DAL\dalReferFee.cs" />
+    <Compile Include="App_Code\DAL\dalVat.cs" />
+    <Compile Include="App_Code\Enums.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="App_Code\ExcelReader.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="App_Code\Exporter.cs" />
+    <Compile Include="App_Code\FTPManager.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="App_Code\Manager\DatabaseManager\ClientConnection.cs" />
+    <Compile Include="App_Code\Manager\DatabaseManager\DatabaseManager.cs" />
+    <Compile Include="App_Code\Manager\EncryptDecrypt\EncryptDecrypt.cs" />
+    <Compile Include="App_Code\Manager\MailSendManager\SendMail.cs" />
+    <Compile Include="Forms\BaseForms\BaseDataGrid.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\BaseForms\BaseDataGrid.designer.cs">
+      <DependentUpon>BaseDataGrid.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\BaseForms\BaseGeneralSetup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\BaseForms\BaseGeneralSetup.Designer.cs">
+      <DependentUpon>BaseGeneralSetup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\BaseForms\BaseNavigator.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\BaseForms\BaseNavigator.designer.cs">
+      <DependentUpon>BaseNavigator.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\BaseForms\BaseNavigatorSetup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\BaseForms\BaseNavigatorSetup.Designer.cs">
+      <DependentUpon>BaseNavigatorSetup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\BaseForms\OpenDataGridView.cs" />
+    <Compile Include="Forms\BaseForms\OpenDataGridView.Designer.cs">
+      <DependentUpon>OpenDataGridView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\DatabaseOperations\BackUpForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DatabaseOperations\BackUpForm.Designer.cs">
+      <DependentUpon>BackUpForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\DatabaseOperations\RestoreDataForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DatabaseOperations\RestoreDataForm.Designer.cs">
+      <DependentUpon>RestoreDataForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ListForms\CollectionList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ListForms\CollectionList.Designer.cs">
+      <DependentUpon>CollectionList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ListForms\ConsultantList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ListForms\ConsultantList.Designer.cs">
+      <DependentUpon>ConsultantList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ListForms\DepartmentList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ListForms\DepartmentList.Designer.cs">
+      <DependentUpon>DepartmentList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ListForms\PatientList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ListForms\PatientList.designer.cs">
+      <DependentUpon>PatientList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ListForms\ServiceAttributeList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ListForms\ServiceAttributeList.Designer.cs">
+      <DependentUpon>ServiceAttributeList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ListForms\ServiceList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ListForms\ServiceList.Designer.cs">
+      <DependentUpon>ServiceList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ListForms\ServiceTypeList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ListForms\ServiceTypeList.Designer.cs">
+      <DependentUpon>ServiceTypeList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ListForms\TestList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ListForms\TestList.Designer.cs">
+      <DependentUpon>TestList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ListForms\VacuumList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ListForms\VacuumList.Designer.cs">
+      <DependentUpon>VacuumList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Security\ChangePassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Security\ChangePassword.designer.cs">
+      <DependentUpon>ChangePassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Security\Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Security\Login.designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Security\ResetPassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Security\ResetPassword.designer.cs">
+      <DependentUpon>ResetPassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Security\UserEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Security\UserEditForm.designer.cs">
+      <DependentUpon>UserEditForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Security\UserForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Security\UserForm.designer.cs">
+      <DependentUpon>UserForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Security\UserManagement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Security\UserManagement.designer.cs">
+      <DependentUpon>UserManagement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\SetupForms\CollectionEntry.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SetupForms\CollectionEntry.Designer.cs">
+      <DependentUpon>CollectionEntry.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\SetupForms\CompanyInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SetupForms\CompanyInfo.Designer.cs">
+      <DependentUpon>CompanyInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\SetupForms\DepartmentEntry.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SetupForms\DepartmentEntry.Designer.cs">
+      <DependentUpon>DepartmentEntry.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\SetupForms\ConsultantEntry.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SetupForms\ConsultantEntry.Designer.cs">
+      <DependentUpon>ConsultantEntry.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\SetupForms\Laboratorist.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SetupForms\Laboratorist.Designer.cs">
+      <DependentUpon>Laboratorist.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\SetupForms\PatientEntry.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SetupForms\PatientEntry.designer.cs">
+      <DependentUpon>PatientEntry.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\SetupForms\PatientServiceScheduleEntry.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SetupForms\PatientServiceScheduleEntry.Designer.cs">
+      <DependentUpon>PatientServiceScheduleEntry.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\SetupForms\ReferFeeEntry.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SetupForms\ReferFeeEntry.Designer.cs">
+      <DependentUpon>ReferFeeEntry.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\SetupForms\ServiceAttributeEntry.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SetupForms\ServiceAttributeEntry.Designer.cs">
+      <DependentUpon>ServiceAttributeEntry.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\SetupForms\ServiceEntry.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SetupForms\ServiceEntry.Designer.cs">
+      <DependentUpon>ServiceEntry.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\SetupForms\ServiceTypeEntry.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SetupForms\ServiceTypeEntry.Designer.cs">
+      <DependentUpon>ServiceTypeEntry.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\SetupForms\TestEntry.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SetupForms\TestEntry.Designer.cs">
+      <DependentUpon>TestEntry.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\SetupForms\UnitEntry.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SetupForms\UnitEntry.Designer.cs">
+      <DependentUpon>UnitEntry.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\SetupForms\VacuumEntry.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SetupForms\VacuumEntry.Designer.cs">
+      <DependentUpon>VacuumEntry.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMain.designer.cs">
+      <DependentUpon>FrmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Collection.cs" />
+    <Compile Include="Model\CompanyInformation.cs" />
+    <Compile Include="Model\Default.cs" />
+    <Compile Include="Model\ReferFee.cs" />
+    <Compile Include="Model\Vacuum.cs" />
+    <Compile Include="Model\Vat.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Report\Dataset\DailySummeryStatement.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DailySummeryStatement.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Report\Dataset\PatientService.cs">
+      <DependentUpon>PatientService.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\Dataset\PatientService.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PatientService.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Report\PatientTestDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report\PatientTestDetails.designer.cs">
+      <DependentUpon>PatientTestDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\RefererDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report\RefererDetails.Designer.cs" />
+    <Compile Include="Report\ReportForms\DailySummeryStatement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report\ReportForms\DailySummeryStatement.Designer.cs">
+      <DependentUpon>DailySummeryStatement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\ReportMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report\ReportMain.designer.cs">
+      <DependentUpon>ReportMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\ReportViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report\ReportViewer.designer.cs">
+      <DependentUpon>ReportViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\rptDailySummeryStatement.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptDailySummeryStatement.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\rptPatientServiceDetails.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptPatientServiceDetails.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\Rpt_BloodChemistry1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Rpt_BloodChemistry.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\Rpt_RefererFeeDetails.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Rpt_RefererFeeDetails.rpt</DependentUpon>
+      <SubType>Component</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="Report\TestResultDetailEntry.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report\TestResultDetailEntry.Designer.cs">
+      <DependentUpon>TestResultDetailEntry.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\TestResultEntry.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report\TestResultEntry.Designer.cs">
+      <DependentUpon>TestResultEntry.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Settings.cs" />
+    <EmbeddedResource Include="Forms\BaseForms\BaseDataGrid.resx">
+      <DependentUpon>BaseDataGrid.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\BaseForms\BaseGeneralSetup.resx">
+      <DependentUpon>BaseGeneralSetup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\BaseForms\BaseNavigator.resx">
+      <DependentUpon>BaseNavigator.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\BaseForms\BaseNavigatorSetup.resx">
+      <DependentUpon>BaseNavigatorSetup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DatabaseOperations\BackUpForm.resx">
+      <DependentUpon>BackUpForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DatabaseOperations\RestoreDataForm.resx">
+      <DependentUpon>RestoreDataForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ListForms\CollectionList.resx">
+      <DependentUpon>CollectionList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ListForms\ConsultantList.resx">
+      <DependentUpon>ConsultantList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ListForms\DepartmentList.resx">
+      <DependentUpon>DepartmentList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ListForms\PatientList.resx">
+      <DependentUpon>PatientList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ListForms\ServiceAttributeList.resx">
+      <DependentUpon>ServiceAttributeList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ListForms\ServiceList.resx">
+      <DependentUpon>ServiceList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ListForms\ServiceTypeList.resx">
+      <DependentUpon>ServiceTypeList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ListForms\TestList.resx">
+      <DependentUpon>TestList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ListForms\VacuumList.resx">
+      <DependentUpon>VacuumList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Security\ChangePassword.resx">
+      <DependentUpon>ChangePassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Security\Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Security\ResetPassword.resx">
+      <DependentUpon>ResetPassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Security\UserEditForm.resx">
+      <DependentUpon>UserEditForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Security\UserForm.resx">
+      <DependentUpon>UserForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Security\UserManagement.resx">
+      <DependentUpon>UserManagement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SetupForms\CollectionEntry.resx">
+      <DependentUpon>CollectionEntry.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SetupForms\CompanyInfo.resx">
+      <DependentUpon>CompanyInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SetupForms\DepartmentEntry.resx">
+      <DependentUpon>DepartmentEntry.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SetupForms\ConsultantEntry.resx">
+      <DependentUpon>ConsultantEntry.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SetupForms\Laboratorist.resx">
+      <DependentUpon>Laboratorist.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SetupForms\PatientEntry.resx">
+      <DependentUpon>PatientEntry.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SetupForms\PatientServiceScheduleEntry.resx">
+      <DependentUpon>PatientServiceScheduleEntry.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SetupForms\ReferFeeEntry.resx">
+      <DependentUpon>ReferFeeEntry.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SetupForms\ServiceAttributeEntry.resx">
+      <DependentUpon>ServiceAttributeEntry.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SetupForms\ServiceEntry.resx">
+      <DependentUpon>ServiceEntry.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SetupForms\ServiceTypeEntry.resx">
+      <DependentUpon>ServiceTypeEntry.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SetupForms\TestEntry.resx">
+      <DependentUpon>TestEntry.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SetupForms\UnitEntry.resx">
+      <DependentUpon>UnitEntry.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SetupForms\VacuumEntry.resx">
+      <DependentUpon>VacuumEntry.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMain.resx">
+      <DependentUpon>FrmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Report\PatientTestDetails.resx">
+      <DependentUpon>PatientTestDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\RefererDetails.resx" />
+    <EmbeddedResource Include="Report\ReportForms\DailySummeryStatement.resx">
+      <DependentUpon>DailySummeryStatement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\ReportMain.resx">
+      <DependentUpon>ReportMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\ReportViewer.resx">
+      <DependentUpon>ReportViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\rptDailySummeryStatement.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptDailySummeryStatement.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\rptPatientServiceDetails.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptPatientServiceDetails.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\Rpt_BloodChemistry.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Rpt_BloodChemistry1.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\Rpt_RefererFeeDetails.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Rpt_RefererFeeDetails.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\TestResultDetailEntry.resx">
+      <DependentUpon>TestResultDetailEntry.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\TestResultEntry.resx">
+      <DependentUpon>TestResultEntry.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="Report\Dataset\DailySummeryStatement.xsc">
+      <DependentUpon>DailySummeryStatement.xsd</DependentUpon>
+    </None>
+    <None Include="Report\Dataset\DailySummeryStatement.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DailySummeryStatement.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Report\Dataset\DailySummeryStatement.xss">
+      <DependentUpon>DailySummeryStatement.xsd</DependentUpon>
+    </None>
+    <None Include="Report\Dataset\PatientService.xsc">
+      <DependentUpon>PatientService.xsd</DependentUpon>
+    </None>
+    <None Include="Report\Dataset\PatientService.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PatientService.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Report\Dataset\PatientService.xss">
+      <DependentUpon>PatientService.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\bgf.png" />
+    <Content Include="Resources\filetype-pdf-icon.png" />
+    <Content Include="Resources\Green.png" />
+    <Content Include="Resources\Images\book_library-icon.gif" />
+    <Content Include="Resources\Images\CircularProgressAnimation.gif" />
+    <Content Include="Resources\Images\Create.gif" />
+    <Content Include="Resources\Images\Delete.gif" />
+    <Content Include="Resources\Images\Download96.png" />
+    <Content Include="Resources\Images\Error.gif" />
+    <Content Include="Resources\Images\HideArrow.gif" />
+    <Content Include="Resources\Images\Information.gif" />
+    <Content Include="Resources\Images\lms.ico" />
+    <Content Include="Resources\Images\Logo.gif" />
+    <Content Include="Resources\Images\logo.ico" />
+    <Content Include="Resources\Images\Question.gif" />
+    <Content Include="Resources\Images\report.jpg" />
+    <Content Include="Resources\Images\Save.gif" />
+    <Content Include="Resources\Images\ShowArrow.gif" />
+    <Content Include="Resources\Images\special_report.JPG" />
+    <Content Include="Resources\Images\SquareHRMS.ico" />
+    <Content Include="Resources\Images\Upload96.png" />
+    <Content Include="Resources\Images\W95MBX01.ICO" />
+    <Content Include="Resources\Images\Warning.gif" />
+    <Content Include="Resources\Images\XcelImage.jpg" />
+    <Content Include="Resources\Logo.jpg" />
+    <Content Include="Resources\PDF-icon.png" />
+    <Content Include="Resources\Red.png" />
+    <Content Include="Resources\Search-icon %281%29.png" />
+    <Content Include="Resources\search-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

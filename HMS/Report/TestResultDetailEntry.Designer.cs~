@@ -1,0 +1,246 @@
+﻿namespace HMS.Report
+{
+    partial class TestResultDetailEntry
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.dgvMain = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
+            this.SheduleId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TestId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PatientId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ServiceId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ServiceName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Rate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Entry = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Delete = new System.Windows.Forms.DataGridViewImageColumn();
+            this.hdrBaseCaption = new ComponentFactory.Krypton.Toolkit.KryptonHeader();
+            this.lblTestName = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
+            this.tbxTestResult = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
+            this.lblNormalRangeM = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
+            this.lblNormalRangeFemale = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
+            this.lblUnitM = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
+            this.lblUnitF = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMain)).BeginInit();
+            this.SuspendLayout();
+            // 
+            // dgvMain
+            // 
+            this.dgvMain.AllowUserToAddRows = false;
+            this.dgvMain.AllowUserToDeleteRows = false;
+            this.dgvMain.AllowUserToResizeRows = false;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Honeydew;
+            this.dgvMain.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvMain.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvMain.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.SheduleId,
+            this.TestId,
+            this.PatientId,
+            this.ServiceId,
+            this.ServiceName,
+            this.Rate,
+            this.Status,
+            this.Entry,
+            this.Delete});
+            this.dgvMain.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.dgvMain.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.dgvMain.GridStyles.Style = ComponentFactory.Krypton.Toolkit.DataGridViewStyle.Mixed;
+            this.dgvMain.GridStyles.StyleBackground = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.ContextMenuSeparator;
+            this.dgvMain.Location = new System.Drawing.Point(0, 97);
+            this.dgvMain.Name = "dgvMain";
+            this.dgvMain.ReadOnly = true;
+            this.dgvMain.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvMain.Size = new System.Drawing.Size(794, 400);
+            this.dgvMain.TabIndex = 34;
+            // 
+            // SheduleId
+            // 
+            this.SheduleId.HeaderText = "SheduleId";
+            this.SheduleId.Name = "SheduleId";
+            this.SheduleId.ReadOnly = true;
+            this.SheduleId.Visible = false;
+            // 
+            // TestId
+            // 
+            this.TestId.HeaderText = "TestId";
+            this.TestId.Name = "TestId";
+            this.TestId.ReadOnly = true;
+            this.TestId.Visible = false;
+            // 
+            // PatientId
+            // 
+            this.PatientId.HeaderText = "PatientId";
+            this.PatientId.Name = "PatientId";
+            this.PatientId.ReadOnly = true;
+            this.PatientId.Visible = false;
+            // 
+            // ServiceId
+            // 
+            this.ServiceId.HeaderText = "ServiceId";
+            this.ServiceId.Name = "ServiceId";
+            this.ServiceId.ReadOnly = true;
+            this.ServiceId.Visible = false;
+            // 
+            // ServiceName
+            // 
+            this.ServiceName.FillWeight = 321.3593F;
+            this.ServiceName.HeaderText = "ServiceName";
+            this.ServiceName.Name = "ServiceName";
+            this.ServiceName.ReadOnly = true;
+            // 
+            // Rate
+            // 
+            this.Rate.FillWeight = 51.55139F;
+            this.Rate.HeaderText = "Rate";
+            this.Rate.Name = "Rate";
+            this.Rate.ReadOnly = true;
+            // 
+            // Status
+            // 
+            this.Status.FillWeight = 51.55139F;
+            this.Status.HeaderText = "Status";
+            this.Status.Name = "Status";
+            this.Status.ReadOnly = true;
+            // 
+            // Entry
+            // 
+            this.Entry.FillWeight = 38.07105F;
+            this.Entry.HeaderText = "Entry";
+            this.Entry.Name = "Entry";
+            this.Entry.ReadOnly = true;
+            this.Entry.ToolTipText = "Entry";
+            // 
+            // Delete
+            // 
+            this.Delete.FillWeight = 37.4667F;
+            this.Delete.HeaderText = "Delete";
+            this.Delete.Name = "Delete";
+            this.Delete.ReadOnly = true;
+            this.Delete.ToolTipText = "Delete";
+            // 
+            // hdrBaseCaption
+            // 
+            this.hdrBaseCaption.Dock = System.Windows.Forms.DockStyle.Top;
+            this.hdrBaseCaption.HeaderStyle = ComponentFactory.Krypton.Toolkit.HeaderStyle.Form;
+            this.hdrBaseCaption.Location = new System.Drawing.Point(0, 0);
+            this.hdrBaseCaption.Name = "hdrBaseCaption";
+            this.hdrBaseCaption.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Office2007Blue;
+            this.hdrBaseCaption.Size = new System.Drawing.Size(794, 26);
+            this.hdrBaseCaption.TabIndex = 35;
+            this.hdrBaseCaption.Values.Heading = "Test Result Entry";
+            this.hdrBaseCaption.Values.Image = null;
+            // 
+            // lblTestName
+            // 
+            this.lblTestName.Location = new System.Drawing.Point(28, 35);
+            this.lblTestName.Name = "lblTestName";
+            this.lblTestName.Size = new System.Drawing.Size(69, 20);
+            this.lblTestName.TabIndex = 78;
+            this.lblTestName.Values.Text = "Test Name ";
+            // 
+            // tbxTestResult
+            // 
+            this.tbxTestResult.Location = new System.Drawing.Point(173, 36);
+            this.tbxTestResult.Name = "tbxTestResult";
+            this.tbxTestResult.Size = new System.Drawing.Size(227, 20);
+            this.tbxTestResult.TabIndex = 79;
+            // 
+            // lblNormalRangeM
+            // 
+            this.lblNormalRangeM.Location = new System.Drawing.Point(416, 35);
+            this.lblNormalRangeM.Name = "lblNormalRangeM";
+            this.lblNormalRangeM.Size = new System.Drawing.Size(89, 20);
+            this.lblNormalRangeM.TabIndex = 80;
+            this.lblNormalRangeM.Values.Text = "Normal Range";
+            // 
+            // lblNormalRangeFemale
+            // 
+            this.lblNormalRangeFemale.Location = new System.Drawing.Point(416, 61);
+            this.lblNormalRangeFemale.Name = "lblNormalRangeFemale";
+            this.lblNormalRangeFemale.Size = new System.Drawing.Size(89, 20);
+            this.lblNormalRangeFemale.TabIndex = 81;
+            this.lblNormalRangeFemale.Values.Text = "Normal Range";
+            // 
+            // lblUnitM
+            // 
+            this.lblUnitM.Location = new System.Drawing.Point(533, 46);
+            this.lblUnitM.Name = "lblUnitM";
+            this.lblUnitM.Size = new System.Drawing.Size(6, 2);
+            this.lblUnitM.TabIndex = 82;
+            this.lblUnitM.Values.Text = "";
+            // 
+            // lblUnitF
+            // 
+            this.lblUnitF.Location = new System.Drawing.Point(549, 71);
+            this.lblUnitF.Name = "lblUnitF";
+            this.lblUnitF.Size = new System.Drawing.Size(6, 2);
+            this.lblUnitF.TabIndex = 83;
+            this.lblUnitF.Values.Text = "";
+            // 
+            // TestResultDetailEntry
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(794, 572);
+            this.Controls.Add(this.lblUnitF);
+            this.Controls.Add(this.lblUnitM);
+            this.Controls.Add(this.lblNormalRangeFemale);
+            this.Controls.Add(this.lblNormalRangeM);
+            this.Controls.Add(this.tbxTestResult);
+            this.Controls.Add(this.lblTestName);
+            this.Controls.Add(this.hdrBaseCaption);
+            this.Controls.Add(this.dgvMain);
+            this.Name = "TestResultDetailEntry";
+            this.Text = "TestResultDetailEntry";
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMain)).EndInit();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
+        }
+
+        #endregion
+
+        private ComponentFactory.Krypton.Toolkit.KryptonDataGridView dgvMain;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SheduleId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TestId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PatientId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ServiceId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ServiceName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Rate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Status;
+        private System.Windows.Forms.DataGridViewImageColumn Entry;
+        private System.Windows.Forms.DataGridViewImageColumn Delete;
+        public ComponentFactory.Krypton.Toolkit.KryptonHeader hdrBaseCaption;
+        private ComponentFactory.Krypton.Toolkit.KryptonLabel lblTestName;
+        private ComponentFactory.Krypton.Toolkit.KryptonTextBox tbxTestResult;
+        private ComponentFactory.Krypton.Toolkit.KryptonLabel lblNormalRangeM;
+        private ComponentFactory.Krypton.Toolkit.KryptonLabel lblNormalRangeFemale;
+        private ComponentFactory.Krypton.Toolkit.KryptonLabel lblUnitM;
+        private ComponentFactory.Krypton.Toolkit.KryptonLabel lblUnitF;
+    }
+}

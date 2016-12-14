@@ -1,0 +1,498 @@
+E:\newbackup\HMS\HMS\obj\Debug\HMS.Forms.BaseForms.BaseDataGrid.resources
+E:\newbackup\HMS\HMS\obj\Debug\HMS.Forms.BaseForms.BaseGeneralSetup.resources
+E:\newbackup\HMS\HMS\obj\Debug\HMS.Forms.BaseForms.BaseNavigator.resources
+E:\newbackup\HMS\HMS\obj\Debug\HMS.Forms.BaseForms.BaseNavigatorSetup.resources
+E:\newbackup\HMS\HMS\obj\Debug\HMS.Forms.DatabaseOperations.BackUpForm.resources
+E:\newbackup\HMS\HMS\obj\Debug\HMS.Forms.ListForms.DepartmentList.resources
+E:\newbackup\HMS\HMS\obj\Debug\HMS.Forms.ListForms.DoctorList.resources
+E:\newbackup\HMS\HMS\obj\Debug\HMS.Forms.ListForms.PatientList.resources
+E:\newbackup\HMS\HMS\obj\Debug\HMS.Forms.ListForms.ServiceAttributeList.resources
+E:\newbackup\HMS\HMS\obj\Debug\HMS.Forms.ListForms.ServiceList.resources
+E:\newbackup\HMS\HMS\obj\Debug\HMS.Forms.ListForms.ServiceTypeList.resources
+E:\newbackup\HMS\HMS\obj\Debug\HMS.Forms.ListForms.TestList.resources
+E:\newbackup\HMS\HMS\obj\Debug\HMS.Forms.Security.ChangePassword.resources
+E:\newbackup\HMS\HMS\obj\Debug\HMS.Forms.Security.Login.resources
+E:\newbackup\HMS\HMS\obj\Debug\HMS.Forms.Security.ResetPassword.resources
+E:\newbackup\HMS\HMS\obj\Debug\HMS.Forms.Security.UserEditForm.resources
+E:\newbackup\HMS\HMS\obj\Debug\HMS.Forms.Security.UserManagement.resources
+E:\newbackup\HMS\HMS\obj\Debug\HMS.Forms.SetupForms.DepartmentEntry.resources
+E:\newbackup\HMS\HMS\obj\Debug\HMS.Forms.SetupForms.DoctorEntry.resources
+E:\newbackup\HMS\HMS\obj\Debug\HMS.Forms.SetupForms.PatientEntry.resources
+E:\newbackup\HMS\HMS\obj\Debug\HMS.Forms.SetupForms.PatientServiceScheduleEntry.resources
+E:\newbackup\HMS\HMS\obj\Debug\HMS.Forms.SetupForms.ServiceAttributeEntry.resources
+E:\newbackup\HMS\HMS\obj\Debug\HMS.Forms.SetupForms.ServiceEntry.resources
+E:\newbackup\HMS\HMS\obj\Debug\HMS.Forms.SetupForms.ServiceTypeEntry.resources
+E:\newbackup\HMS\HMS\obj\Debug\HMS.Forms.SetupForms.TestEntry.resources
+E:\newbackup\HMS\HMS\obj\Debug\HMS.Views.FrmMain.resources
+E:\newbackup\HMS\HMS\obj\Debug\HMS.Properties.Resources.resources
+E:\newbackup\HMS\HMS\obj\Debug\HMS.csproj.GenerateResource.Cache
+E:\newbackup\HMS\HMS\obj\Debug\HMS.exe.licenses
+E:\newbackup\HMS\HMS\bin\Debug\HMS.exe.config
+E:\newbackup\HMS\HMS\bin\Debug\HMS.exe
+E:\newbackup\HMS\HMS\bin\Debug\HMS.pdb
+E:\newbackup\HMS\HMS\bin\Debug\DotNetZip.dll
+E:\newbackup\HMS\HMS\bin\Debug\Microsoft.SqlServer.ConnectionInfo.dll
+E:\newbackup\HMS\HMS\bin\Debug\Microsoft.SqlServer.Management.Sdk.Sfc.dll
+E:\newbackup\HMS\HMS\bin\Debug\System.Configuration.Abstractions.dll
+E:\newbackup\HMS\HMS\bin\Debug\DotNetZip.xml
+E:\newbackup\HMS\HMS\bin\Debug\System.Configuration.Abstractions.pdb
+E:\newbackup\HMS\HMS\obj\Debug\HMS.exe
+E:\newbackup\HMS\HMS\obj\Debug\HMS.pdb
+E:\newbackup\HMS\HMS\obj\Debug\HMS.csprojResolveAssemblyReference.cache
+D:\Mozammal\DesktopBased\HMS\HMS\bin\Debug\HMS.exe.config
+D:\Mozammal\DesktopBased\HMS\HMS\bin\Debug\HMS.exe
+D:\Mozammal\DesktopBased\HMS\HMS\bin\Debug\HMS.pdb
+D:\Mozammal\DesktopBased\HMS\HMS\bin\Debug\DotNetZip.dll
+D:\Mozammal\DesktopBased\HMS\HMS\bin\Debug\itextsharp.dll
+D:\Mozammal\DesktopBased\HMS\HMS\bin\Debug\Microsoft.SqlServer.ConnectionInfo.dll
+D:\Mozammal\DesktopBased\HMS\HMS\bin\Debug\Microsoft.SqlServer.Management.Sdk.Sfc.dll
+D:\Mozammal\DesktopBased\HMS\HMS\bin\Debug\Microsoft.SqlServer.Smo.dll
+D:\Mozammal\DesktopBased\HMS\HMS\bin\Debug\Microsoft.SqlServer.SmoExtended.dll
+D:\Mozammal\DesktopBased\HMS\HMS\bin\Debug\Microsoft.SqlServer.SqlEnum.dll
+D:\Mozammal\DesktopBased\HMS\HMS\bin\Debug\System.Configuration.Abstractions.dll
+D:\Mozammal\DesktopBased\HMS\HMS\bin\Debug\DotNetZip.xml
+D:\Mozammal\DesktopBased\HMS\HMS\bin\Debug\System.Configuration.Abstractions.pdb
+D:\Mozammal\DesktopBased\HMS\HMS\obj\Debug\HMS.Forms.BaseForms.BaseDataGrid.resources
+D:\Mozammal\DesktopBased\HMS\HMS\obj\Debug\HMS.Forms.BaseForms.BaseGeneralSetup.resources
+D:\Mozammal\DesktopBased\HMS\HMS\obj\Debug\HMS.Forms.BaseForms.BaseNavigator.resources
+D:\Mozammal\DesktopBased\HMS\HMS\obj\Debug\HMS.Forms.BaseForms.BaseNavigatorSetup.resources
+D:\Mozammal\DesktopBased\HMS\HMS\obj\Debug\HMS.Forms.DatabaseOperations.BackUpForm.resources
+D:\Mozammal\DesktopBased\HMS\HMS\obj\Debug\HMS.Forms.DatabaseOperations.RestoreDataForm.resources
+D:\Mozammal\DesktopBased\HMS\HMS\obj\Debug\HMS.Forms.ListForms.ConsultantList.resources
+D:\Mozammal\DesktopBased\HMS\HMS\obj\Debug\HMS.Forms.ListForms.DepartmentList.resources
+D:\Mozammal\DesktopBased\HMS\HMS\obj\Debug\HMS.Forms.ListForms.PatientList.resources
+D:\Mozammal\DesktopBased\HMS\HMS\obj\Debug\HMS.Forms.ListForms.ServiceAttributeList.resources
+D:\Mozammal\DesktopBased\HMS\HMS\obj\Debug\HMS.Forms.ListForms.ServiceList.resources
+D:\Mozammal\DesktopBased\HMS\HMS\obj\Debug\HMS.Forms.ListForms.ServiceTypeList.resources
+D:\Mozammal\DesktopBased\HMS\HMS\obj\Debug\HMS.Forms.ListForms.TestList.resources
+D:\Mozammal\DesktopBased\HMS\HMS\obj\Debug\HMS.Forms.ListForms.VacuumList.resources
+D:\Mozammal\DesktopBased\HMS\HMS\obj\Debug\HMS.Forms.Security.ChangePassword.resources
+D:\Mozammal\DesktopBased\HMS\HMS\obj\Debug\HMS.Forms.Security.Login.resources
+D:\Mozammal\DesktopBased\HMS\HMS\obj\Debug\HMS.Forms.Security.ResetPassword.resources
+D:\Mozammal\DesktopBased\HMS\HMS\obj\Debug\HMS.Forms.Security.UserEditForm.resources
+D:\Mozammal\DesktopBased\HMS\HMS\obj\Debug\HMS.Forms.Security.UserForm.resources
+D:\Mozammal\DesktopBased\HMS\HMS\obj\Debug\HMS.Forms.Security.UserManagement.resources
+D:\Mozammal\DesktopBased\HMS\HMS\obj\Debug\HMS.Forms.SetupForms.DepartmentEntry.resources
+D:\Mozammal\DesktopBased\HMS\HMS\obj\Debug\HMS.Forms.SetupForms.ConsultantEntry.resources
+D:\Mozammal\DesktopBased\HMS\HMS\obj\Debug\HMS.Forms.SetupForms.Laboratorist.resources
+D:\Mozammal\DesktopBased\HMS\HMS\obj\Debug\HMS.Forms.SetupForms.PatientEntry.resources
+D:\Mozammal\DesktopBased\HMS\HMS\obj\Debug\HMS.Forms.SetupForms.PatientServiceScheduleEntry.resources
+D:\Mozammal\DesktopBased\HMS\HMS\obj\Debug\HMS.Forms.SetupForms.ServiceAttributeEntry.resources
+D:\Mozammal\DesktopBased\HMS\HMS\obj\Debug\HMS.Forms.SetupForms.ServiceEntry.resources
+D:\Mozammal\DesktopBased\HMS\HMS\obj\Debug\HMS.Forms.SetupForms.ServiceTypeEntry.resources
+D:\Mozammal\DesktopBased\HMS\HMS\obj\Debug\HMS.Forms.SetupForms.TestEntry.resources
+D:\Mozammal\DesktopBased\HMS\HMS\obj\Debug\HMS.Forms.SetupForms.UnitEntry.resources
+D:\Mozammal\DesktopBased\HMS\HMS\obj\Debug\HMS.Forms.SetupForms.VacuumEntry.resources
+D:\Mozammal\DesktopBased\HMS\HMS\obj\Debug\HMS.Views.FrmMain.resources
+D:\Mozammal\DesktopBased\HMS\HMS\obj\Debug\HMS.Properties.Resources.resources
+D:\Mozammal\DesktopBased\HMS\HMS\obj\Debug\HMS.csproj.GenerateResource.Cache
+D:\Mozammal\DesktopBased\HMS\HMS\obj\Debug\HMS.exe.licenses
+D:\Mozammal\DesktopBased\HMS\HMS\obj\Debug\HMS.exe
+D:\Mozammal\DesktopBased\HMS\HMS\obj\Debug\HMS.pdb
+D:\Mozammal\DesktopBased\HMS\HMS\obj\Debug\HMS.csprojResolveAssemblyReference.cache
+F:\Last Bakup\HMS\HMS\bin\Debug\HMS.exe
+F:\Last Bakup\HMS\HMS\bin\Debug\HMS.exe.config
+F:\Last Bakup\HMS\HMS\bin\Debug\CrystalDecisions.CrystalReports.Engine.dll
+F:\Last Bakup\HMS\HMS\bin\Debug\CrystalDecisions.ReportSource.dll
+F:\Last Bakup\HMS\HMS\bin\Debug\CrystalDecisions.Shared.dll
+F:\Last Bakup\HMS\HMS\bin\Debug\DotNetZip.dll
+F:\Last Bakup\HMS\HMS\bin\Debug\Microsoft.SqlServer.ConnectionInfo.dll
+F:\Last Bakup\HMS\HMS\bin\Debug\Microsoft.SqlServer.Management.Sdk.Sfc.dll
+F:\Last Bakup\HMS\HMS\bin\Debug\Microsoft.SqlServer.Smo.dll
+F:\Last Bakup\HMS\HMS\bin\Debug\Microsoft.SqlServer.SmoExtended.dll
+F:\Last Bakup\HMS\HMS\bin\Debug\Microsoft.SqlServer.SqlEnum.dll
+F:\Last Bakup\HMS\HMS\bin\Debug\System.Configuration.Abstractions.dll
+F:\Last Bakup\HMS\HMS\bin\Debug\CrystalDecisions.ReportAppServer.DataSetConversion.dll
+F:\Last Bakup\HMS\HMS\bin\Debug\DotNetZip.xml
+F:\Last Bakup\HMS\HMS\bin\Debug\System.Configuration.Abstractions.pdb
+F:\Last Bakup\HMS\HMS\obj\Debug\HMS.Forms.BaseForms.BaseDataGrid.resources
+F:\Last Bakup\HMS\HMS\obj\Debug\HMS.Forms.BaseForms.BaseGeneralSetup.resources
+F:\Last Bakup\HMS\HMS\obj\Debug\HMS.Forms.BaseForms.BaseNavigator.resources
+F:\Last Bakup\HMS\HMS\obj\Debug\HMS.Forms.BaseForms.BaseNavigatorSetup.resources
+F:\Last Bakup\HMS\HMS\obj\Debug\HMS.Forms.DatabaseOperations.BackUpForm.resources
+F:\Last Bakup\HMS\HMS\obj\Debug\HMS.Forms.DatabaseOperations.RestoreDataForm.resources
+F:\Last Bakup\HMS\HMS\obj\Debug\HMS.Forms.ListForms.ConsultantList.resources
+F:\Last Bakup\HMS\HMS\obj\Debug\HMS.Forms.ListForms.DepartmentList.resources
+F:\Last Bakup\HMS\HMS\obj\Debug\HMS.Forms.ListForms.PatientList.resources
+F:\Last Bakup\HMS\HMS\obj\Debug\HMS.Forms.ListForms.ServiceAttributeList.resources
+F:\Last Bakup\HMS\HMS\obj\Debug\HMS.Forms.ListForms.ServiceList.resources
+F:\Last Bakup\HMS\HMS\obj\Debug\HMS.Forms.ListForms.ServiceTypeList.resources
+F:\Last Bakup\HMS\HMS\obj\Debug\HMS.Forms.ListForms.TestList.resources
+F:\Last Bakup\HMS\HMS\obj\Debug\HMS.Forms.ListForms.VacuumList.resources
+F:\Last Bakup\HMS\HMS\obj\Debug\HMS.Forms.Security.ChangePassword.resources
+F:\Last Bakup\HMS\HMS\obj\Debug\HMS.Forms.Security.Login.resources
+F:\Last Bakup\HMS\HMS\obj\Debug\HMS.Forms.Security.ResetPassword.resources
+F:\Last Bakup\HMS\HMS\obj\Debug\HMS.Forms.Security.UserEditForm.resources
+F:\Last Bakup\HMS\HMS\obj\Debug\HMS.Forms.Security.UserForm.resources
+F:\Last Bakup\HMS\HMS\obj\Debug\HMS.Forms.Security.UserManagement.resources
+F:\Last Bakup\HMS\HMS\obj\Debug\HMS.Forms.SetupForms.DepartmentEntry.resources
+F:\Last Bakup\HMS\HMS\obj\Debug\HMS.Forms.SetupForms.ConsultantEntry.resources
+F:\Last Bakup\HMS\HMS\obj\Debug\HMS.Forms.SetupForms.Laboratorist.resources
+F:\Last Bakup\HMS\HMS\obj\Debug\HMS.Forms.SetupForms.PatientEntry.resources
+F:\Last Bakup\HMS\HMS\obj\Debug\HMS.Forms.SetupForms.PatientServiceScheduleEntry.resources
+F:\Last Bakup\HMS\HMS\obj\Debug\HMS.Forms.SetupForms.ReferFeeEntry.resources
+F:\Last Bakup\HMS\HMS\obj\Debug\HMS.Forms.SetupForms.ServiceAttributeEntry.resources
+F:\Last Bakup\HMS\HMS\obj\Debug\HMS.Forms.SetupForms.ServiceEntry.resources
+F:\Last Bakup\HMS\HMS\obj\Debug\HMS.Forms.SetupForms.ServiceTypeEntry.resources
+F:\Last Bakup\HMS\HMS\obj\Debug\HMS.Forms.SetupForms.TestEntry.resources
+F:\Last Bakup\HMS\HMS\obj\Debug\HMS.Forms.SetupForms.UnitEntry.resources
+F:\Last Bakup\HMS\HMS\obj\Debug\HMS.Forms.SetupForms.VacuumEntry.resources
+F:\Last Bakup\HMS\HMS\obj\Debug\HMS.Views.FrmMain.resources
+F:\Last Bakup\HMS\HMS\obj\Debug\HMS.Properties.Resources.resources
+F:\Last Bakup\HMS\HMS\obj\Debug\HMS.csproj.GenerateResource.Cache
+F:\Last Bakup\HMS\HMS\obj\Debug\HMS.exe.licenses
+F:\Last Bakup\HMS\HMS\obj\Debug\HMS.exe
+F:\Last Bakup\HMS\HMS\obj\Debug\HMS.pdb
+F:\Last Bakup\HMS\HMS\bin\Debug\HMS.pdb
+F:\Last Bakup\HMS\HMS\obj\Debug\HMS.csprojResolveAssemblyReference.cache
+D:\HMS\HMS\bin\Debug\HMS.exe.config
+D:\HMS\HMS\obj\Debug\HMS.exe
+D:\HMS\HMS\obj\Debug\HMS.pdb
+D:\HMS\HMS\bin\Debug\HMS.exe
+D:\HMS\HMS\bin\Debug\HMS.pdb
+D:\HMS\HMS\bin\Debug\DotNetZip.dll
+D:\HMS\HMS\bin\Debug\itextsharp.dll
+D:\HMS\HMS\bin\Debug\Microsoft.SqlServer.ConnectionInfo.dll
+D:\HMS\HMS\bin\Debug\Microsoft.SqlServer.Management.Sdk.Sfc.dll
+D:\HMS\HMS\bin\Debug\Microsoft.SqlServer.Smo.dll
+D:\HMS\HMS\bin\Debug\Microsoft.SqlServer.SmoExtended.dll
+D:\HMS\HMS\bin\Debug\Microsoft.SqlServer.SqlEnum.dll
+D:\HMS\HMS\bin\Debug\System.Configuration.Abstractions.dll
+D:\HMS\HMS\bin\Debug\DotNetZip.xml
+D:\HMS\HMS\bin\Debug\System.Configuration.Abstractions.pdb
+D:\HMS\HMS\obj\Debug\HMS.csprojResolveAssemblyReference.cache
+D:\HMS\HMS\obj\Debug\HMS.Forms.BaseForms.BaseDataGrid.resources
+D:\HMS\HMS\obj\Debug\HMS.Forms.BaseForms.BaseGeneralSetup.resources
+D:\HMS\HMS\obj\Debug\HMS.Forms.BaseForms.BaseNavigator.resources
+D:\HMS\HMS\obj\Debug\HMS.Forms.BaseForms.BaseNavigatorSetup.resources
+D:\HMS\HMS\obj\Debug\HMS.Forms.DatabaseOperations.BackUpForm.resources
+D:\HMS\HMS\obj\Debug\HMS.Forms.DatabaseOperations.RestoreDataForm.resources
+D:\HMS\HMS\obj\Debug\HMS.Forms.ListForms.ConsultantList.resources
+D:\HMS\HMS\obj\Debug\HMS.Forms.ListForms.DepartmentList.resources
+D:\HMS\HMS\obj\Debug\HMS.Forms.ListForms.PatientList.resources
+D:\HMS\HMS\obj\Debug\HMS.Forms.ListForms.ServiceAttributeList.resources
+D:\HMS\HMS\obj\Debug\HMS.Forms.ListForms.ServiceList.resources
+D:\HMS\HMS\obj\Debug\HMS.Forms.ListForms.ServiceTypeList.resources
+D:\HMS\HMS\obj\Debug\HMS.Forms.ListForms.TestList.resources
+D:\HMS\HMS\obj\Debug\HMS.Forms.ListForms.VacuumList.resources
+D:\HMS\HMS\obj\Debug\HMS.Forms.Security.ChangePassword.resources
+D:\HMS\HMS\obj\Debug\HMS.Forms.Security.Login.resources
+D:\HMS\HMS\obj\Debug\HMS.Forms.Security.ResetPassword.resources
+D:\HMS\HMS\obj\Debug\HMS.Forms.Security.UserEditForm.resources
+D:\HMS\HMS\obj\Debug\HMS.Forms.Security.UserForm.resources
+D:\HMS\HMS\obj\Debug\HMS.Forms.Security.UserManagement.resources
+D:\HMS\HMS\obj\Debug\HMS.Forms.SetupForms.DepartmentEntry.resources
+D:\HMS\HMS\obj\Debug\HMS.Forms.SetupForms.ConsultantEntry.resources
+D:\HMS\HMS\obj\Debug\HMS.Forms.SetupForms.Laboratorist.resources
+D:\HMS\HMS\obj\Debug\HMS.Forms.SetupForms.PatientEntry.resources
+D:\HMS\HMS\obj\Debug\HMS.Forms.SetupForms.PatientServiceScheduleEntry.resources
+D:\HMS\HMS\obj\Debug\HMS.Forms.SetupForms.ReferFeeEntry.resources
+D:\HMS\HMS\obj\Debug\HMS.Forms.SetupForms.ServiceAttributeEntry.resources
+D:\HMS\HMS\obj\Debug\HMS.Forms.SetupForms.ServiceEntry.resources
+D:\HMS\HMS\obj\Debug\HMS.Forms.SetupForms.ServiceTypeEntry.resources
+D:\HMS\HMS\obj\Debug\HMS.Forms.SetupForms.TestEntry.resources
+D:\HMS\HMS\obj\Debug\HMS.Forms.SetupForms.UnitEntry.resources
+D:\HMS\HMS\obj\Debug\HMS.Forms.SetupForms.VacuumEntry.resources
+D:\HMS\HMS\obj\Debug\HMS.Views.FrmMain.resources
+D:\HMS\HMS\obj\Debug\HMS.Properties.Resources.resources
+D:\HMS\HMS\obj\Debug\HMS.csproj.GenerateResource.Cache
+D:\HMS\HMS\obj\Debug\HMS.exe.licenses
+D:\HMS\HMS\obj\Debug\HMS.Report.PatientTestDetails.resources
+D:\HMS\HMS\obj\Debug\HMS.Report.ReportMain.resources
+D:\HMS\HMS\obj\Debug\HMS.Report.ReportViewer.resources
+F:\Last Bakup\HMSLatest\HMSLatest\HMS\bin\Debug\HMS.exe.config
+F:\Last Bakup\HMSLatest\HMSLatest\HMS\obj\Debug\HMS.csprojResolveAssemblyReference.cache
+F:\Last Bakup\HMSLatest\HMSLatest\HMS\obj\Debug\HMS.Forms.BaseForms.BaseDataGrid.resources
+F:\Last Bakup\HMSLatest\HMSLatest\HMS\obj\Debug\HMS.Forms.BaseForms.BaseGeneralSetup.resources
+F:\Last Bakup\HMSLatest\HMSLatest\HMS\obj\Debug\HMS.Forms.BaseForms.BaseNavigator.resources
+F:\Last Bakup\HMSLatest\HMSLatest\HMS\obj\Debug\HMS.Forms.BaseForms.BaseNavigatorSetup.resources
+F:\Last Bakup\HMSLatest\HMSLatest\HMS\obj\Debug\HMS.Forms.DatabaseOperations.BackUpForm.resources
+F:\Last Bakup\HMSLatest\HMSLatest\HMS\obj\Debug\HMS.Forms.DatabaseOperations.RestoreDataForm.resources
+F:\Last Bakup\HMSLatest\HMSLatest\HMS\obj\Debug\HMS.Forms.ListForms.ConsultantList.resources
+F:\Last Bakup\HMSLatest\HMSLatest\HMS\obj\Debug\HMS.Forms.ListForms.DepartmentList.resources
+F:\Last Bakup\HMSLatest\HMSLatest\HMS\obj\Debug\HMS.Forms.ListForms.PatientList.resources
+F:\Last Bakup\HMSLatest\HMSLatest\HMS\obj\Debug\HMS.Forms.ListForms.ServiceAttributeList.resources
+F:\Last Bakup\HMSLatest\HMSLatest\HMS\obj\Debug\HMS.Forms.ListForms.ServiceList.resources
+F:\Last Bakup\HMSLatest\HMSLatest\HMS\obj\Debug\HMS.Forms.ListForms.ServiceTypeList.resources
+F:\Last Bakup\HMSLatest\HMSLatest\HMS\obj\Debug\HMS.Forms.ListForms.TestList.resources
+F:\Last Bakup\HMSLatest\HMSLatest\HMS\obj\Debug\HMS.Forms.ListForms.VacuumList.resources
+F:\Last Bakup\HMSLatest\HMSLatest\HMS\obj\Debug\HMS.Forms.Security.ChangePassword.resources
+F:\Last Bakup\HMSLatest\HMSLatest\HMS\obj\Debug\HMS.Forms.Security.Login.resources
+F:\Last Bakup\HMSLatest\HMSLatest\HMS\obj\Debug\HMS.Forms.Security.ResetPassword.resources
+F:\Last Bakup\HMSLatest\HMSLatest\HMS\obj\Debug\HMS.Forms.Security.UserEditForm.resources
+F:\Last Bakup\HMSLatest\HMSLatest\HMS\obj\Debug\HMS.Forms.Security.UserForm.resources
+F:\Last Bakup\HMSLatest\HMSLatest\HMS\obj\Debug\HMS.Forms.Security.UserManagement.resources
+F:\Last Bakup\HMSLatest\HMSLatest\HMS\obj\Debug\HMS.Forms.SetupForms.CompanyInfo.resources
+F:\Last Bakup\HMSLatest\HMSLatest\HMS\obj\Debug\HMS.Forms.SetupForms.DepartmentEntry.resources
+F:\Last Bakup\HMSLatest\HMSLatest\HMS\obj\Debug\HMS.Forms.SetupForms.ConsultantEntry.resources
+F:\Last Bakup\HMSLatest\HMSLatest\HMS\obj\Debug\HMS.Forms.SetupForms.Laboratorist.resources
+F:\Last Bakup\HMSLatest\HMSLatest\HMS\obj\Debug\HMS.Forms.SetupForms.PatientEntry.resources
+F:\Last Bakup\HMSLatest\HMSLatest\HMS\obj\Debug\HMS.Forms.SetupForms.PatientServiceScheduleEntry.resources
+F:\Last Bakup\HMSLatest\HMSLatest\HMS\obj\Debug\HMS.Forms.SetupForms.ReferFeeEntry.resources
+F:\Last Bakup\HMSLatest\HMSLatest\HMS\obj\Debug\HMS.Forms.SetupForms.ServiceAttributeEntry.resources
+F:\Last Bakup\HMSLatest\HMSLatest\HMS\obj\Debug\HMS.Forms.SetupForms.ServiceEntry.resources
+F:\Last Bakup\HMSLatest\HMSLatest\HMS\obj\Debug\HMS.Forms.SetupForms.ServiceTypeEntry.resources
+F:\Last Bakup\HMSLatest\HMSLatest\HMS\obj\Debug\HMS.Forms.SetupForms.TestEntry.resources
+F:\Last Bakup\HMSLatest\HMSLatest\HMS\obj\Debug\HMS.Forms.SetupForms.UnitEntry.resources
+F:\Last Bakup\HMSLatest\HMSLatest\HMS\obj\Debug\HMS.Forms.SetupForms.VacuumEntry.resources
+F:\Last Bakup\HMSLatest\HMSLatest\HMS\obj\Debug\HMS.Views.FrmMain.resources
+F:\Last Bakup\HMSLatest\HMSLatest\HMS\obj\Debug\HMS.Properties.Resources.resources
+F:\Last Bakup\HMSLatest\HMSLatest\HMS\obj\Debug\HMS.Report.PatientTestDetails.resources
+F:\Last Bakup\HMSLatest\HMSLatest\HMS\obj\Debug\HMS.Report.ReportMain.resources
+F:\Last Bakup\HMSLatest\HMSLatest\HMS\obj\Debug\HMS.Report.ReportViewer.resources
+F:\Last Bakup\HMSLatest\HMSLatest\HMS\obj\Debug\HMS.csproj.GenerateResource.Cache
+F:\Last Bakup\HMSLatest\HMSLatest\HMS\obj\Debug\HMS.exe.licenses
+F:\Last Bakup\HMSLatest\HMSLatest\HMS\bin\Debug\HMS.exe
+F:\Last Bakup\HMSLatest\HMSLatest\HMS\bin\Debug\HMS.pdb
+F:\Last Bakup\HMSLatest\HMSLatest\HMS\bin\Debug\DotNetZip.dll
+F:\Last Bakup\HMSLatest\HMSLatest\HMS\bin\Debug\Microsoft.SqlServer.ConnectionInfo.dll
+F:\Last Bakup\HMSLatest\HMSLatest\HMS\bin\Debug\Microsoft.SqlServer.Management.Sdk.Sfc.dll
+F:\Last Bakup\HMSLatest\HMSLatest\HMS\bin\Debug\Microsoft.SqlServer.Smo.dll
+F:\Last Bakup\HMSLatest\HMSLatest\HMS\bin\Debug\Microsoft.SqlServer.SmoExtended.dll
+F:\Last Bakup\HMSLatest\HMSLatest\HMS\bin\Debug\Microsoft.SqlServer.SqlEnum.dll
+F:\Last Bakup\HMSLatest\HMSLatest\HMS\bin\Debug\System.Configuration.Abstractions.dll
+F:\Last Bakup\HMSLatest\HMSLatest\HMS\bin\Debug\DotNetZip.xml
+F:\Last Bakup\HMSLatest\HMSLatest\HMS\bin\Debug\System.Configuration.Abstractions.pdb
+F:\Last Bakup\HMSLatest\HMSLatest\HMS\obj\Debug\HMS.exe
+F:\Last Bakup\HMSLatest\HMSLatest\HMS\obj\Debug\HMS.pdb
+D:\HMSLatest\HMSLatest\HMS\bin\Debug\HMS.exe.config
+D:\HMSLatest\HMSLatest\HMS\obj\Debug\HMS.exe
+D:\HMSLatest\HMSLatest\HMS\bin\Debug\HMS.exe
+D:\HMSLatest\HMSLatest\HMS\bin\Debug\HMS.pdb
+D:\HMSLatest\HMSLatest\HMS\bin\Debug\DotNetZip.dll
+D:\HMSLatest\HMSLatest\HMS\bin\Debug\itextsharp.dll
+D:\HMSLatest\HMSLatest\HMS\bin\Debug\Microsoft.SqlServer.ConnectionInfo.dll
+D:\HMSLatest\HMSLatest\HMS\bin\Debug\Microsoft.SqlServer.Management.Sdk.Sfc.dll
+D:\HMSLatest\HMSLatest\HMS\bin\Debug\Microsoft.SqlServer.Smo.dll
+D:\HMSLatest\HMSLatest\HMS\bin\Debug\Microsoft.SqlServer.SmoExtended.dll
+D:\HMSLatest\HMSLatest\HMS\bin\Debug\Microsoft.SqlServer.SqlEnum.dll
+D:\HMSLatest\HMSLatest\HMS\bin\Debug\System.Configuration.Abstractions.dll
+D:\HMSLatest\HMSLatest\HMS\bin\Debug\DotNetZip.xml
+D:\HMSLatest\HMSLatest\HMS\bin\Debug\System.Configuration.Abstractions.pdb
+D:\HMSLatest\HMSLatest\HMS\obj\Debug\HMS.csprojResolveAssemblyReference.cache
+D:\HMSLatest\HMSLatest\HMS\obj\Debug\HMS.Forms.BaseForms.BaseDataGrid.resources
+D:\HMSLatest\HMSLatest\HMS\obj\Debug\HMS.Forms.BaseForms.BaseGeneralSetup.resources
+D:\HMSLatest\HMSLatest\HMS\obj\Debug\HMS.Forms.BaseForms.BaseNavigator.resources
+D:\HMSLatest\HMSLatest\HMS\obj\Debug\HMS.Forms.BaseForms.BaseNavigatorSetup.resources
+D:\HMSLatest\HMSLatest\HMS\obj\Debug\HMS.Forms.DatabaseOperations.BackUpForm.resources
+D:\HMSLatest\HMSLatest\HMS\obj\Debug\HMS.Forms.DatabaseOperations.RestoreDataForm.resources
+D:\HMSLatest\HMSLatest\HMS\obj\Debug\HMS.Forms.ListForms.ConsultantList.resources
+D:\HMSLatest\HMSLatest\HMS\obj\Debug\HMS.Forms.ListForms.DepartmentList.resources
+D:\HMSLatest\HMSLatest\HMS\obj\Debug\HMS.Forms.ListForms.PatientList.resources
+D:\HMSLatest\HMSLatest\HMS\obj\Debug\HMS.Forms.ListForms.ServiceAttributeList.resources
+D:\HMSLatest\HMSLatest\HMS\obj\Debug\HMS.Forms.ListForms.ServiceList.resources
+D:\HMSLatest\HMSLatest\HMS\obj\Debug\HMS.Forms.ListForms.ServiceTypeList.resources
+D:\HMSLatest\HMSLatest\HMS\obj\Debug\HMS.Forms.ListForms.TestList.resources
+D:\HMSLatest\HMSLatest\HMS\obj\Debug\HMS.Forms.ListForms.VacuumList.resources
+D:\HMSLatest\HMSLatest\HMS\obj\Debug\HMS.Forms.Security.ChangePassword.resources
+D:\HMSLatest\HMSLatest\HMS\obj\Debug\HMS.Forms.Security.Login.resources
+D:\HMSLatest\HMSLatest\HMS\obj\Debug\HMS.Forms.Security.ResetPassword.resources
+D:\HMSLatest\HMSLatest\HMS\obj\Debug\HMS.Forms.Security.UserEditForm.resources
+D:\HMSLatest\HMSLatest\HMS\obj\Debug\HMS.Forms.Security.UserForm.resources
+D:\HMSLatest\HMSLatest\HMS\obj\Debug\HMS.Forms.Security.UserManagement.resources
+D:\HMSLatest\HMSLatest\HMS\obj\Debug\HMS.Forms.SetupForms.CompanyInfo.resources
+D:\HMSLatest\HMSLatest\HMS\obj\Debug\HMS.Forms.SetupForms.DepartmentEntry.resources
+D:\HMSLatest\HMSLatest\HMS\obj\Debug\HMS.Forms.SetupForms.ConsultantEntry.resources
+D:\HMSLatest\HMSLatest\HMS\obj\Debug\HMS.Forms.SetupForms.Laboratorist.resources
+D:\HMSLatest\HMSLatest\HMS\obj\Debug\HMS.Forms.SetupForms.PatientEntry.resources
+D:\HMSLatest\HMSLatest\HMS\obj\Debug\HMS.Forms.SetupForms.PatientServiceScheduleEntry.resources
+D:\HMSLatest\HMSLatest\HMS\obj\Debug\HMS.Forms.SetupForms.ReferFeeEntry.resources
+D:\HMSLatest\HMSLatest\HMS\obj\Debug\HMS.Forms.SetupForms.ServiceAttributeEntry.resources
+D:\HMSLatest\HMSLatest\HMS\obj\Debug\HMS.Forms.SetupForms.ServiceEntry.resources
+D:\HMSLatest\HMSLatest\HMS\obj\Debug\HMS.Forms.SetupForms.ServiceTypeEntry.resources
+D:\HMSLatest\HMSLatest\HMS\obj\Debug\HMS.Forms.SetupForms.TestEntry.resources
+D:\HMSLatest\HMSLatest\HMS\obj\Debug\HMS.Forms.SetupForms.UnitEntry.resources
+D:\HMSLatest\HMSLatest\HMS\obj\Debug\HMS.Forms.SetupForms.VacuumEntry.resources
+D:\HMSLatest\HMSLatest\HMS\obj\Debug\HMS.Views.FrmMain.resources
+D:\HMSLatest\HMSLatest\HMS\obj\Debug\HMS.Properties.Resources.resources
+D:\HMSLatest\HMSLatest\HMS\obj\Debug\HMS.Report.PatientTestDetails.resources
+D:\HMSLatest\HMSLatest\HMS\obj\Debug\HMS.Report.ReportMain.resources
+D:\HMSLatest\HMSLatest\HMS\obj\Debug\HMS.Report.ReportViewer.resources
+D:\HMSLatest\HMSLatest\HMS\obj\Debug\HMS.csproj.GenerateResource.Cache
+D:\HMSLatest\HMSLatest\HMS\obj\Debug\HMS.exe.licenses
+D:\HMSLatest\HMSLatest\HMS\obj\Debug\HMS.pdb
+F:\Last Bakup\HMSLatest\HMSLatest\HMS\obj\Debug\HMS.Report.TestResultDetailEntry.resources
+F:\Last Bakup\HMSLatest\HMSLatest\HMS\obj\Debug\HMS.Report.TestResultEntry.resources
+D:\Mozammal\HMSLatest\HMS\bin\Debug\HMS.exe.config
+D:\Mozammal\HMSLatest\HMS\bin\Debug\HMS.exe
+D:\Mozammal\HMSLatest\HMS\bin\Debug\HMS.pdb
+D:\Mozammal\HMSLatest\HMS\bin\Debug\DotNetZip.dll
+D:\Mozammal\HMSLatest\HMS\bin\Debug\itextsharp.dll
+D:\Mozammal\HMSLatest\HMS\bin\Debug\Microsoft.SqlServer.ConnectionInfo.dll
+D:\Mozammal\HMSLatest\HMS\bin\Debug\Microsoft.SqlServer.Management.Sdk.Sfc.dll
+D:\Mozammal\HMSLatest\HMS\bin\Debug\Microsoft.SqlServer.Smo.dll
+D:\Mozammal\HMSLatest\HMS\bin\Debug\Microsoft.SqlServer.SmoExtended.dll
+D:\Mozammal\HMSLatest\HMS\bin\Debug\Microsoft.SqlServer.SqlEnum.dll
+D:\Mozammal\HMSLatest\HMS\bin\Debug\System.Configuration.Abstractions.dll
+D:\Mozammal\HMSLatest\HMS\bin\Debug\DotNetZip.xml
+D:\Mozammal\HMSLatest\HMS\bin\Debug\System.Configuration.Abstractions.pdb
+D:\Mozammal\HMSLatest\HMS\obj\Debug\HMS.Forms.BaseForms.BaseDataGrid.resources
+D:\Mozammal\HMSLatest\HMS\obj\Debug\HMS.Forms.BaseForms.BaseGeneralSetup.resources
+D:\Mozammal\HMSLatest\HMS\obj\Debug\HMS.Forms.BaseForms.BaseNavigator.resources
+D:\Mozammal\HMSLatest\HMS\obj\Debug\HMS.Forms.BaseForms.BaseNavigatorSetup.resources
+D:\Mozammal\HMSLatest\HMS\obj\Debug\HMS.Forms.DatabaseOperations.BackUpForm.resources
+D:\Mozammal\HMSLatest\HMS\obj\Debug\HMS.Forms.DatabaseOperations.RestoreDataForm.resources
+D:\Mozammal\HMSLatest\HMS\obj\Debug\HMS.Forms.ListForms.ConsultantList.resources
+D:\Mozammal\HMSLatest\HMS\obj\Debug\HMS.Forms.ListForms.DepartmentList.resources
+D:\Mozammal\HMSLatest\HMS\obj\Debug\HMS.Forms.ListForms.PatientList.resources
+D:\Mozammal\HMSLatest\HMS\obj\Debug\HMS.Forms.ListForms.ServiceAttributeList.resources
+D:\Mozammal\HMSLatest\HMS\obj\Debug\HMS.Forms.ListForms.ServiceList.resources
+D:\Mozammal\HMSLatest\HMS\obj\Debug\HMS.Forms.ListForms.ServiceTypeList.resources
+D:\Mozammal\HMSLatest\HMS\obj\Debug\HMS.Forms.ListForms.TestList.resources
+D:\Mozammal\HMSLatest\HMS\obj\Debug\HMS.Forms.ListForms.VacuumList.resources
+D:\Mozammal\HMSLatest\HMS\obj\Debug\HMS.Forms.Security.ChangePassword.resources
+D:\Mozammal\HMSLatest\HMS\obj\Debug\HMS.Forms.Security.Login.resources
+D:\Mozammal\HMSLatest\HMS\obj\Debug\HMS.Forms.Security.ResetPassword.resources
+D:\Mozammal\HMSLatest\HMS\obj\Debug\HMS.Forms.Security.UserEditForm.resources
+D:\Mozammal\HMSLatest\HMS\obj\Debug\HMS.Forms.Security.UserForm.resources
+D:\Mozammal\HMSLatest\HMS\obj\Debug\HMS.Forms.Security.UserManagement.resources
+D:\Mozammal\HMSLatest\HMS\obj\Debug\HMS.Forms.SetupForms.CompanyInfo.resources
+D:\Mozammal\HMSLatest\HMS\obj\Debug\HMS.Forms.SetupForms.DepartmentEntry.resources
+D:\Mozammal\HMSLatest\HMS\obj\Debug\HMS.Forms.SetupForms.ConsultantEntry.resources
+D:\Mozammal\HMSLatest\HMS\obj\Debug\HMS.Forms.SetupForms.Laboratorist.resources
+D:\Mozammal\HMSLatest\HMS\obj\Debug\HMS.Forms.SetupForms.PatientEntry.resources
+D:\Mozammal\HMSLatest\HMS\obj\Debug\HMS.Forms.SetupForms.PatientServiceScheduleEntry.resources
+D:\Mozammal\HMSLatest\HMS\obj\Debug\HMS.Forms.SetupForms.ReferFeeEntry.resources
+D:\Mozammal\HMSLatest\HMS\obj\Debug\HMS.Forms.SetupForms.ServiceAttributeEntry.resources
+D:\Mozammal\HMSLatest\HMS\obj\Debug\HMS.Forms.SetupForms.ServiceEntry.resources
+D:\Mozammal\HMSLatest\HMS\obj\Debug\HMS.Forms.SetupForms.ServiceTypeEntry.resources
+D:\Mozammal\HMSLatest\HMS\obj\Debug\HMS.Forms.SetupForms.TestEntry.resources
+D:\Mozammal\HMSLatest\HMS\obj\Debug\HMS.Forms.SetupForms.UnitEntry.resources
+D:\Mozammal\HMSLatest\HMS\obj\Debug\HMS.Forms.SetupForms.VacuumEntry.resources
+D:\Mozammal\HMSLatest\HMS\obj\Debug\HMS.Views.FrmMain.resources
+D:\Mozammal\HMSLatest\HMS\obj\Debug\HMS.Properties.Resources.resources
+D:\Mozammal\HMSLatest\HMS\obj\Debug\HMS.Report.PatientTestDetails.resources
+D:\Mozammal\HMSLatest\HMS\obj\Debug\HMS.Report.ReportMain.resources
+D:\Mozammal\HMSLatest\HMS\obj\Debug\HMS.Report.ReportViewer.resources
+D:\Mozammal\HMSLatest\HMS\obj\Debug\HMS.Report.TestResultDetailEntry.resources
+D:\Mozammal\HMSLatest\HMS\obj\Debug\HMS.Report.TestResultEntry.resources
+D:\Mozammal\HMSLatest\HMS\obj\Debug\HMS.csproj.GenerateResource.Cache
+D:\Mozammal\HMSLatest\HMS\obj\Debug\HMS.exe.licenses
+D:\Mozammal\HMSLatest\HMS\obj\Debug\HMS.exe
+D:\Mozammal\HMSLatest\HMS\obj\Debug\HMS.pdb
+F:\Last Bakup\HMSLatest\HMSLatest\HMS\obj\Debug\HMS.Forms.ListForms.CollectionList.resources
+F:\Last Bakup\HMSLatest\HMSLatest\HMS\obj\Debug\HMS.Forms.SetupForms.CollectionEntry.resources
+D:\HMSLatest\HMS\bin\Debug\HMS.exe.config
+D:\HMSLatest\HMS\obj\Debug\HMS.exe
+D:\HMSLatest\HMS\obj\Debug\HMS.pdb
+D:\HMSLatest\HMS\obj\Debug\HMS.csprojResolveAssemblyReference.cache
+D:\HMSLatest\HMS\obj\Debug\HMS.Forms.BaseForms.BaseDataGrid.resources
+D:\HMSLatest\HMS\obj\Debug\HMS.Forms.BaseForms.BaseGeneralSetup.resources
+D:\HMSLatest\HMS\obj\Debug\HMS.Forms.BaseForms.BaseNavigator.resources
+D:\HMSLatest\HMS\obj\Debug\HMS.Forms.BaseForms.BaseNavigatorSetup.resources
+D:\HMSLatest\HMS\obj\Debug\HMS.Forms.DatabaseOperations.BackUpForm.resources
+D:\HMSLatest\HMS\obj\Debug\HMS.Forms.DatabaseOperations.RestoreDataForm.resources
+D:\HMSLatest\HMS\obj\Debug\HMS.Forms.ListForms.CollectionList.resources
+D:\HMSLatest\HMS\obj\Debug\HMS.Forms.ListForms.ConsultantList.resources
+D:\HMSLatest\HMS\obj\Debug\HMS.Forms.ListForms.DepartmentList.resources
+D:\HMSLatest\HMS\obj\Debug\HMS.Forms.ListForms.PatientList.resources
+D:\HMSLatest\HMS\obj\Debug\HMS.Forms.ListForms.ServiceAttributeList.resources
+D:\HMSLatest\HMS\obj\Debug\HMS.Forms.ListForms.ServiceList.resources
+D:\HMSLatest\HMS\obj\Debug\HMS.Forms.ListForms.ServiceTypeList.resources
+D:\HMSLatest\HMS\obj\Debug\HMS.Forms.ListForms.TestList.resources
+D:\HMSLatest\HMS\obj\Debug\HMS.Forms.ListForms.VacuumList.resources
+D:\HMSLatest\HMS\obj\Debug\HMS.Forms.Security.ChangePassword.resources
+D:\HMSLatest\HMS\obj\Debug\HMS.Forms.Security.Login.resources
+D:\HMSLatest\HMS\obj\Debug\HMS.Forms.Security.ResetPassword.resources
+D:\HMSLatest\HMS\obj\Debug\HMS.Forms.Security.UserEditForm.resources
+D:\HMSLatest\HMS\obj\Debug\HMS.Forms.Security.UserForm.resources
+D:\HMSLatest\HMS\obj\Debug\HMS.Forms.Security.UserManagement.resources
+D:\HMSLatest\HMS\obj\Debug\HMS.Forms.SetupForms.CollectionEntry.resources
+D:\HMSLatest\HMS\obj\Debug\HMS.Forms.SetupForms.CompanyInfo.resources
+D:\HMSLatest\HMS\obj\Debug\HMS.Forms.SetupForms.DepartmentEntry.resources
+D:\HMSLatest\HMS\obj\Debug\HMS.Forms.SetupForms.ConsultantEntry.resources
+D:\HMSLatest\HMS\obj\Debug\HMS.Forms.SetupForms.Laboratorist.resources
+D:\HMSLatest\HMS\obj\Debug\HMS.Forms.SetupForms.PatientEntry.resources
+D:\HMSLatest\HMS\obj\Debug\HMS.Forms.SetupForms.PatientServiceScheduleEntry.resources
+D:\HMSLatest\HMS\obj\Debug\HMS.Forms.SetupForms.ReferFeeEntry.resources
+D:\HMSLatest\HMS\obj\Debug\HMS.Forms.SetupForms.ServiceAttributeEntry.resources
+D:\HMSLatest\HMS\obj\Debug\HMS.Forms.SetupForms.ServiceEntry.resources
+D:\HMSLatest\HMS\obj\Debug\HMS.Forms.SetupForms.ServiceTypeEntry.resources
+D:\HMSLatest\HMS\obj\Debug\HMS.Forms.SetupForms.TestEntry.resources
+D:\HMSLatest\HMS\obj\Debug\HMS.Forms.SetupForms.UnitEntry.resources
+D:\HMSLatest\HMS\obj\Debug\HMS.Forms.SetupForms.VacuumEntry.resources
+D:\HMSLatest\HMS\obj\Debug\HMS.Views.FrmMain.resources
+D:\HMSLatest\HMS\obj\Debug\HMS.Properties.Resources.resources
+D:\HMSLatest\HMS\obj\Debug\HMS.Report.PatientTestDetails.resources
+D:\HMSLatest\HMS\obj\Debug\HMS.Report.ReportMain.resources
+D:\HMSLatest\HMS\obj\Debug\HMS.Report.ReportViewer.resources
+D:\HMSLatest\HMS\obj\Debug\HMS.Report.TestResultDetailEntry.resources
+D:\HMSLatest\HMS\obj\Debug\HMS.Report.TestResultEntry.resources
+D:\HMSLatest\HMS\obj\Debug\HMS.csproj.GenerateResource.Cache
+D:\HMSLatest\HMS\obj\Debug\HMS.exe.licenses
+D:\HMSLatest\HMS\bin\Debug\HMS.exe
+D:\HMSLatest\HMS\bin\Debug\HMS.pdb
+D:\HMSLatest\HMS\bin\Debug\DotNetZip.dll
+D:\HMSLatest\HMS\bin\Debug\itextsharp.dll
+D:\HMSLatest\HMS\bin\Debug\Microsoft.SqlServer.ConnectionInfo.dll
+D:\HMSLatest\HMS\bin\Debug\Microsoft.SqlServer.Management.Sdk.Sfc.dll
+D:\HMSLatest\HMS\bin\Debug\Microsoft.SqlServer.Smo.dll
+D:\HMSLatest\HMS\bin\Debug\Microsoft.SqlServer.SmoExtended.dll
+D:\HMSLatest\HMS\bin\Debug\Microsoft.SqlServer.SqlEnum.dll
+D:\HMSLatest\HMS\bin\Debug\System.Configuration.Abstractions.dll
+D:\HMSLatest\HMS\bin\Debug\DotNetZip.xml
+D:\HMSLatest\HMS\bin\Debug\System.Configuration.Abstractions.pdb
+D:\Mozammal\DesktopBased\HMSLatest\HMS\bin\Debug\Report\Rpt_RefererFeeDetails.rpt
+D:\Mozammal\DesktopBased\HMSLatest\HMS\bin\Debug\Report\Rpt_RefererFeeDetails.cs
+D:\Mozammal\DesktopBased\HMSLatest\HMS\bin\Debug\HMS.exe.config
+D:\Mozammal\DesktopBased\HMSLatest\HMS\bin\Debug\HMS.exe
+D:\Mozammal\DesktopBased\HMSLatest\HMS\bin\Debug\HMS.pdb
+D:\Mozammal\DesktopBased\HMSLatest\HMS\bin\Debug\DotNetZip.dll
+D:\Mozammal\DesktopBased\HMSLatest\HMS\bin\Debug\itextsharp.dll
+D:\Mozammal\DesktopBased\HMSLatest\HMS\bin\Debug\Microsoft.SqlServer.ConnectionInfo.dll
+D:\Mozammal\DesktopBased\HMSLatest\HMS\bin\Debug\Microsoft.SqlServer.Management.Sdk.Sfc.dll
+D:\Mozammal\DesktopBased\HMSLatest\HMS\bin\Debug\Microsoft.SqlServer.Smo.dll
+D:\Mozammal\DesktopBased\HMSLatest\HMS\bin\Debug\Microsoft.SqlServer.SmoExtended.dll
+D:\Mozammal\DesktopBased\HMSLatest\HMS\bin\Debug\Microsoft.SqlServer.SqlEnum.dll
+D:\Mozammal\DesktopBased\HMSLatest\HMS\bin\Debug\System.Configuration.Abstractions.dll
+D:\Mozammal\DesktopBased\HMSLatest\HMS\bin\Debug\DotNetZip.xml
+D:\Mozammal\DesktopBased\HMSLatest\HMS\bin\Debug\System.Configuration.Abstractions.pdb
+D:\Mozammal\DesktopBased\HMSLatest\HMS\obj\Debug\HMS.Forms.BaseForms.BaseDataGrid.resources
+D:\Mozammal\DesktopBased\HMSLatest\HMS\obj\Debug\HMS.Forms.BaseForms.BaseGeneralSetup.resources
+D:\Mozammal\DesktopBased\HMSLatest\HMS\obj\Debug\HMS.Forms.BaseForms.BaseNavigator.resources
+D:\Mozammal\DesktopBased\HMSLatest\HMS\obj\Debug\HMS.Forms.BaseForms.BaseNavigatorSetup.resources
+D:\Mozammal\DesktopBased\HMSLatest\HMS\obj\Debug\HMS.Forms.DatabaseOperations.BackUpForm.resources
+D:\Mozammal\DesktopBased\HMSLatest\HMS\obj\Debug\HMS.Forms.DatabaseOperations.RestoreDataForm.resources
+D:\Mozammal\DesktopBased\HMSLatest\HMS\obj\Debug\HMS.Forms.ListForms.CollectionList.resources
+D:\Mozammal\DesktopBased\HMSLatest\HMS\obj\Debug\HMS.Forms.ListForms.ConsultantList.resources
+D:\Mozammal\DesktopBased\HMSLatest\HMS\obj\Debug\HMS.Forms.ListForms.DepartmentList.resources
+D:\Mozammal\DesktopBased\HMSLatest\HMS\obj\Debug\HMS.Forms.ListForms.PatientList.resources
+D:\Mozammal\DesktopBased\HMSLatest\HMS\obj\Debug\HMS.Forms.ListForms.ServiceAttributeList.resources
+D:\Mozammal\DesktopBased\HMSLatest\HMS\obj\Debug\HMS.Forms.ListForms.ServiceList.resources
+D:\Mozammal\DesktopBased\HMSLatest\HMS\obj\Debug\HMS.Forms.ListForms.ServiceTypeList.resources
+D:\Mozammal\DesktopBased\HMSLatest\HMS\obj\Debug\HMS.Forms.ListForms.TestList.resources
+D:\Mozammal\DesktopBased\HMSLatest\HMS\obj\Debug\HMS.Forms.ListForms.VacuumList.resources
+D:\Mozammal\DesktopBased\HMSLatest\HMS\obj\Debug\HMS.Forms.Security.ChangePassword.resources
+D:\Mozammal\DesktopBased\HMSLatest\HMS\obj\Debug\HMS.Forms.Security.Login.resources
+D:\Mozammal\DesktopBased\HMSLatest\HMS\obj\Debug\HMS.Forms.Security.ResetPassword.resources
+D:\Mozammal\DesktopBased\HMSLatest\HMS\obj\Debug\HMS.Forms.Security.UserEditForm.resources
+D:\Mozammal\DesktopBased\HMSLatest\HMS\obj\Debug\HMS.Forms.Security.UserForm.resources
+D:\Mozammal\DesktopBased\HMSLatest\HMS\obj\Debug\HMS.Forms.Security.UserManagement.resources
+D:\Mozammal\DesktopBased\HMSLatest\HMS\obj\Debug\HMS.Forms.SetupForms.CollectionEntry.resources
+D:\Mozammal\DesktopBased\HMSLatest\HMS\obj\Debug\HMS.Forms.SetupForms.CompanyInfo.resources
+D:\Mozammal\DesktopBased\HMSLatest\HMS\obj\Debug\HMS.Forms.SetupForms.DepartmentEntry.resources
+D:\Mozammal\DesktopBased\HMSLatest\HMS\obj\Debug\HMS.Forms.SetupForms.ConsultantEntry.resources
+D:\Mozammal\DesktopBased\HMSLatest\HMS\obj\Debug\HMS.Forms.SetupForms.Laboratorist.resources
+D:\Mozammal\DesktopBased\HMSLatest\HMS\obj\Debug\HMS.Forms.SetupForms.PatientEntry.resources
+D:\Mozammal\DesktopBased\HMSLatest\HMS\obj\Debug\HMS.Forms.SetupForms.PatientServiceScheduleEntry.resources
+D:\Mozammal\DesktopBased\HMSLatest\HMS\obj\Debug\HMS.Forms.SetupForms.ReferFeeEntry.resources
+D:\Mozammal\DesktopBased\HMSLatest\HMS\obj\Debug\HMS.Forms.SetupForms.ServiceAttributeEntry.resources
+D:\Mozammal\DesktopBased\HMSLatest\HMS\obj\Debug\HMS.Forms.SetupForms.ServiceEntry.resources
+D:\Mozammal\DesktopBased\HMSLatest\HMS\obj\Debug\HMS.Forms.SetupForms.ServiceTypeEntry.resources
+D:\Mozammal\DesktopBased\HMSLatest\HMS\obj\Debug\HMS.Forms.SetupForms.TestEntry.resources
+D:\Mozammal\DesktopBased\HMSLatest\HMS\obj\Debug\HMS.Forms.SetupForms.UnitEntry.resources
+D:\Mozammal\DesktopBased\HMSLatest\HMS\obj\Debug\HMS.Forms.SetupForms.VacuumEntry.resources
+D:\Mozammal\DesktopBased\HMSLatest\HMS\obj\Debug\HMS.Views.FrmMain.resources
+D:\Mozammal\DesktopBased\HMSLatest\HMS\obj\Debug\HMS.Properties.Resources.resources
+D:\Mozammal\DesktopBased\HMSLatest\HMS\obj\Debug\HMS.Report.PatientTestDetails.resources
+D:\Mozammal\DesktopBased\HMSLatest\HMS\obj\Debug\HMS.Report.RefererDetails.resources
+D:\Mozammal\DesktopBased\HMSLatest\HMS\obj\Debug\HMS.Report.ReportForms.DailySummeryStatement.resources
+D:\Mozammal\DesktopBased\HMSLatest\HMS\obj\Debug\HMS.Report.ReportMain.resources
+D:\Mozammal\DesktopBased\HMSLatest\HMS\obj\Debug\HMS.Report.ReportViewer.resources
+D:\Mozammal\DesktopBased\HMSLatest\HMS\obj\Debug\HMS.Report.TestResultDetailEntry.resources
+D:\Mozammal\DesktopBased\HMSLatest\HMS\obj\Debug\HMS.Report.TestResultEntry.resources
+D:\Mozammal\DesktopBased\HMSLatest\HMS\obj\Debug\HMS.csproj.GenerateResource.Cache
+D:\Mozammal\DesktopBased\HMSLatest\HMS\obj\Debug\HMS.exe.licenses
+D:\Mozammal\DesktopBased\HMSLatest\HMS\obj\Debug\HMS.exe
+D:\Mozammal\DesktopBased\HMSLatest\HMS\obj\Debug\HMS.pdb
+D:\Mozammal\DesktopBased\HMSLatest\HMS\obj\Debug\HMS.csprojResolveAssemblyReference.cache
