@@ -30,5 +30,10 @@ namespace HMS.App_Code.BLL
         {
             return col.Update(collection);
         }
+
+        public DataTable GetDueCollection(DateTime DateFrom,DateTime DateTo)
+        {
+            return col.GetDueCollection(DateFrom, DateTo);
+        }
     }
 }
