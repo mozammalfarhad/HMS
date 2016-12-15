@@ -16,14 +16,14 @@ namespace HMS.Report {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class rptPatientServiceDetails : ReportClass {
+    public class Rpt_DueCollectionList : ReportClass {
         
-        public rptPatientServiceDetails() {
+        public Rpt_DueCollectionList() {
         }
         
         public override string ResourceName {
             get {
-                return "rptPatientServiceDetails.rpt";
+                return "Rpt_DueCollectionList.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace HMS.Report {
         
         public override string FullResourceName {
             get {
-                return "HMS.Report.rptPatientServiceDetails.rpt";
+                return "HMS.Report.Rpt_DueCollectionList.rpt";
             }
             set {
                 // Do nothing
@@ -66,7 +66,7 @@ namespace HMS.Report {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section GroupHeaderSection1 {
+        public CrystalDecisions.CrystalReports.Engine.Section Section3 {
             get {
                 return this.ReportDefinition.Sections[2];
             }
@@ -74,7 +74,7 @@ namespace HMS.Report {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section Section3 {
+        public CrystalDecisions.CrystalReports.Engine.Section Section4 {
             get {
                 return this.ReportDefinition.Sections[3];
             }
@@ -82,25 +82,9 @@ namespace HMS.Report {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section GroupFooterSection1 {
-            get {
-                return this.ReportDefinition.Sections[4];
-            }
-        }
-        
-        [Browsable(false)]
-        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section Section4 {
-            get {
-                return this.ReportDefinition.Sections[5];
-            }
-        }
-        
-        [Browsable(false)]
-        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
         public CrystalDecisions.CrystalReports.Engine.Section Section5 {
             get {
-                return this.ReportDefinition.Sections[6];
+                return this.ReportDefinition.Sections[4];
             }
         }
         
@@ -111,12 +95,28 @@ namespace HMS.Report {
                 return this.DataDefinition.ParameterFields[0];
             }
         }
+        
+        [Browsable(false)]
+        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
+        public CrystalDecisions.Shared.IParameterField Parameter_CompanyName {
+            get {
+                return this.DataDefinition.ParameterFields[1];
+            }
+        }
+        
+        [Browsable(false)]
+        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
+        public CrystalDecisions.Shared.IParameterField Parameter_Address {
+            get {
+                return this.DataDefinition.ParameterFields[2];
+            }
+        }
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedrptPatientServiceDetails : Component, ICachedReport {
+    public class CachedRpt_DueCollectionList : Component, ICachedReport {
         
-        public CachedrptPatientServiceDetails() {
+        public CachedRpt_DueCollectionList() {
         }
         
         [Browsable(false)]
@@ -153,7 +153,7 @@ namespace HMS.Report {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            rptPatientServiceDetails rpt = new rptPatientServiceDetails();
+            Rpt_DueCollectionList rpt = new Rpt_DueCollectionList();
             rpt.Site = this.Site;
             return rpt;
         }
