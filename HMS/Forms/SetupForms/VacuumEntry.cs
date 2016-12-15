@@ -23,6 +23,7 @@ namespace HMS.Forms.SetupForms
         DataTable pdfDt = new DataTable();
         string pdfFileName = string.Empty;
         private int _ID;
+        DataTable dtg;
         public VacuumEntry()
         {
             InitializeComponent();
@@ -40,6 +41,7 @@ namespace HMS.Forms.SetupForms
                 dr["TypeId"] = "0";
                 dr["TypeName"] = "Select";
                 dtTypeList.Rows.Add(dr);
+                dtTypeList.DefaultView.Sort = "TypeId asc";
                 ddlTestType.DataSource = dtTypeList;
                 ddlTestType.DisplayMember = "TypeName";
                 ddlTestType.ValueMember = "TypeId";
@@ -114,10 +116,7 @@ namespace HMS.Forms.SetupForms
 
             }
         }
-        private void ddlTestType_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            LoadService();
-        }
+       
         private void btnClose_Click(object sender, EventArgs e)
         {
             Close();
@@ -247,11 +246,11 @@ namespace HMS.Forms.SetupForms
             try
             {
 
-                DataTable dt = new bllVacuum().GetList(CurrentPage * PageSize, PageSize, "", false);
+                dtg = new bllVacuum().GetList(CurrentPage * PageSize, PageSize, "", false);
                 dtData = new DataTable();
-                dtData = dt;
-                if (dt.Rows.Count > 0)
-                    TotalRec = Convert.ToInt32(dt.Rows[0]["TotalRecords"].ToString());
+                dtData = dtg;
+                if (dtg.Rows.Count > 0)
+                    TotalRec = Convert.ToInt32(dtg.Rows[0]["TotalRecords"].ToString());
                 else
                 {
                     TotalRec = 0;
@@ -260,7 +259,7 @@ namespace HMS.Forms.SetupForms
 
 
                 dgvMain.Rows.Clear();
-                foreach (DataRow dr in dt.Rows)
+                foreach (DataRow dr in dtg.Rows)
                 {
                     int RowNum = dgvMain.Rows.Add(
                         new object[] {
@@ -269,7 +268,8 @@ namespace HMS.Forms.SetupForms
                         dr["ServiceName"],
                         dr["VacuumName"],    
                         dr["VacuumDescription"],
-                        dr["VacuumPrice"]
+                        dr["VacuumPrice"],
+                        dr["TypeId"]
                     });
 
                     dgvMain.Rows[RowNum].Tag = dr["VacuumId"];
@@ -381,6 +381,69 @@ namespace HMS.Forms.SetupForms
             {
                 KryptonMessageBox.Show("The Vacuum deleted Fail!", "Deleted Vacuum.", MessageBoxButtons.OK,
                 MessageBoxIcon.Error);
+            }
+        }
+
+        private void ddlService_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (dtg != null && _ID <= 0)
+            {
+                DataView dv;
+                if (ddlTestType.SelectedIndex != 0)
+                    dv = new DataView(dtg, "TypeId = " + ddlTestType.SelectedValue + " and ServiceId = " + ddlService.SelectedValue, "", DataViewRowState.CurrentRows);
+                else
+                    dv = new DataView(dtg, "TypeId = " + ddlTestType.SelectedValue, "", DataViewRowState.CurrentRows);
+                dgvMain.Rows.Clear();
+                foreach (DataRow dr in dv.ToTable().Rows)
+                {
+                    int RowNum = dgvMain.Rows.Add(
+                          new object[] {
+                       dr["VacuumId"],
+                        dr["ServiceId"],   
+                        dr["ServiceName"],
+                        dr["VacuumName"],    
+                        dr["VacuumDescription"],
+                        dr["VacuumPrice"],
+                        dr["TypeId"]
+                    });
+
+                    dgvMain.Rows[RowNum].Tag = dr["VacuumId"];
+                }
+                ChangeDataGridHeader();
+                managePaging();
+
+            }
+        }
+
+        private void ddlTestType_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            LoadService();
+            if (dtg != null && _ID <= 0)
+            {
+                DataView dv;
+                if (ddlTestType.SelectedIndex != 0)
+                    dv = new DataView(dtg, "TypeId = " + ddlTestType.SelectedValue, "", DataViewRowState.CurrentRows);
+                else
+                    dv = new DataView(dtg, "", "", DataViewRowState.CurrentRows);
+                dgvMain.Rows.Clear();
+                foreach (DataRow dr in dv.ToTable().Rows)
+                {
+                    int RowNum = dgvMain.Rows.Add(
+                          new object[] {
+                       dr["VacuumId"],
+                        dr["ServiceId"],   
+                        dr["ServiceName"],
+                        dr["VacuumName"],    
+                        dr["VacuumDescription"],
+                        dr["VacuumPrice"],
+                        dr["TypeId"]
+                    });
+
+                    dgvMain.Rows[RowNum].Tag = dr["VacuumId"];
+                }
+                ChangeDataGridHeader();
+                managePaging();
+
             }
         }
     }

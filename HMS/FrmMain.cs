@@ -51,7 +51,7 @@ namespace HMS.Views
         public FrmMain()
         {
             InitializeComponent();
-           
+
             timer2.Enabled = false;
         }
 
@@ -61,7 +61,7 @@ namespace HMS.Views
             UserName = _UserName;
             RoleName = _RoleName;
             ClubID = _ClubID;
-         
+
             Default.UserName = _UserName;
             DataTable dt = new bllCompanyInfo().GetCompanyInfo();
             if (dt.Rows.Count > 0)
@@ -592,8 +592,8 @@ namespace HMS.Views
 
         private void referFeeEntryToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ReferFeeEntry frm = new ReferFeeEntry();
-            frm.ShowDialog();
+            ReferFeeEntry frms = new ReferFeeEntry();
+            frms.ShowDialog();
         }
 
         private void patientTestDetailReportToolStripMenuItem_Click(object sender, EventArgs e)

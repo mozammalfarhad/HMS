@@ -20,6 +20,7 @@ namespace HMS.Forms.SetupForms
         int PageSize = 30;
         DataTable dtData = new DataTable();
         DataTable pdfDt = new DataTable();
+        DataTable dtg;
         string pdfFileName = string.Empty;
         private int _ID;
         public ServiceEntry()
@@ -132,16 +133,16 @@ namespace HMS.Forms.SetupForms
         {
             try
             {
-                DataTable dt = new bllService().GetList(CurrentPage * PageSize, PageSize, "", false);
-                if (dt.Rows.Count > 0)
-                    TotalRec = Convert.ToInt32(dt.Rows[0]["TotalRecords"].ToString());
+                dtg = new bllService().GetList(CurrentPage * PageSize, PageSize, "", false);
+                if (dtg.Rows.Count > 0)
+                    TotalRec = Convert.ToInt32(dtg.Rows[0]["TotalRecords"].ToString());
                 else
                 {
                     TotalRec = 0;
                     lblPagingSummery.Text = "";
                 }
                 dgvMain.Rows.Clear();
-                foreach (DataRow dr in dt.Rows)
+                foreach (DataRow dr in dtg.Rows)
                 {
                     int RowNum = dgvMain.Rows.Add(
                         new object[] {
@@ -381,6 +382,45 @@ namespace HMS.Forms.SetupForms
                 BtnServiceSave.Text = "Update";
                 btnCancel.Visible = true;
             }
+        }
+
+        private void ddlServiceType_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (dtg != null && _ID <= 0)
+            {
+                DataView dv;
+                if (ddlServiceType.SelectedIndex != 0)
+                {
+                    dv = new DataView(dtg, "TypeId = " + ddlServiceType.SelectedValue, "", DataViewRowState.CurrentRows);
+
+                }
+                else
+                {
+                    dv = new DataView(dtg, "", "", DataViewRowState.CurrentRows);
+                }
+                dgvMain.Rows.Clear();
+                foreach (DataRow dr in dv.ToTable().Rows)
+                {
+                    int RowNum = dgvMain.Rows.Add(
+                        new object[] {
+                        dr["ServiceId"],
+                        dr["ServiceName"],     
+                        dr["ServiceShortName"],
+                        dr["MaleNormalRange"],
+                        dr["FemaleNormalRange"],     
+                        dr["Rate"],
+                        dr["Discount"],
+                        dr["UnitName"],     
+                        dr["TypeName"]
+                    });
+                    dgvMain.Rows[RowNum].Tag = dr["ServiceId"];
+                }
+                ChangeDataGridHeader();
+                managePaging();
+
+            }
+            
+            
         }
     }
 }

@@ -20,6 +20,7 @@ namespace HMS.Forms.SetupForms
         int PageSize = 30;
         DataTable dtData = new DataTable();
         DataTable pdfDt = new DataTable();
+        DataTable dtg;
         string pdfFileName = string.Empty;
         public DepartmentEntry()
         {
@@ -45,17 +46,16 @@ namespace HMS.Forms.SetupForms
         {
             try
             {
-                DataTable dt;
-                dt = new bllDepartment().GetList(CurrentPage * PageSize, PageSize, "", false);
-                if (dt.Rows.Count > 0)
-                    TotalRec = Convert.ToInt32(dt.Rows[0]["TotalRecords"].ToString());
+                dtg = new bllDepartment().GetList(CurrentPage * PageSize, PageSize, "", false);
+                if (dtg.Rows.Count > 0)
+                    TotalRec = Convert.ToInt32(dtg.Rows[0]["TotalRecords"].ToString());
                 else
                 {
                     TotalRec = 0;
                     lblPagingSummery.Text = "";
                 }
                 dgvMain.Rows.Clear();
-                foreach (DataRow dr in dt.Rows)
+                foreach (DataRow dr in dtg.Rows)
                 {
                     int RowNum = dgvMain.Rows.Add(
                         new object[] {
@@ -244,6 +244,28 @@ namespace HMS.Forms.SetupForms
         {
             _ID = Convert.ToInt32(dgvMain.SelectedRows[0].Cells[0].Value);
             LoadDepartment();
+        }
+
+        private void tbxDepartment_TextChanged(object sender, EventArgs e)
+        {
+            if (dtg != null && _ID <= 0)
+            {
+                DataView dv = new DataView(dtg, "DepName like '%" + tbxDepartment.Text + "%'", "", DataViewRowState.CurrentRows);
+                dgvMain.Rows.Clear();
+                foreach (DataRow dr in dv.ToTable().Rows)
+                {
+                    int RowNum = dgvMain.Rows.Add(
+                        new object[] {
+                        dr["DepId"],
+                        dr["DepName"],     
+                        dr["Description"]
+                    });
+                    dgvMain.Rows[RowNum].Tag = dr["DepId"];
+                }
+                ChangeDataGridHeader();
+                managePaging();
+
+            }
         }
 
 

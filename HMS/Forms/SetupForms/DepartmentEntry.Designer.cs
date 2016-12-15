@@ -120,6 +120,7 @@
             this.tbxDepartment.Name = "tbxDepartment";
             this.tbxDepartment.Size = new System.Drawing.Size(219, 20);
             this.tbxDepartment.TabIndex = 4;
+            this.tbxDepartment.TextChanged += new System.EventHandler(this.tbxDepartment_TextChanged);
             // 
             // tbxDescription
             // 

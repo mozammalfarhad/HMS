@@ -541,22 +541,19 @@ namespace HMS.Forms.SetupForms
                 VacuumAmtSum += VacuumAmt;
             }
             VacuumAmtSum = Math.Round((decimal)VacuumAmtSum, 2);
-            decimal grandSum = netAmt + VacuumAmtSum;
             lblTestNet.Text = netAmt.ToString();
             lblVacuumNet.Text = VacuumAmtSum.ToString();
+            //GetVatAmt();
+            decimal grandSum = netAmt + VacuumAmtSum + GetVatAmt();
             grandSum = Math.Round((decimal)grandSum, 2);
             tbxNetAmt.Text = grandSum.ToString();
-           GetVatAmt();
         }
 
         private void tbxPaidAmt_TextChanged(object sender, EventArgs e)
         {
-            if(tbxPaidAmt.Text !="")
-            {
-                decimal dueAmt = Convert.ToDecimal(tbxNetAmt.Text.Trim() == "" ? "0.00" : tbxAmt.Text.Trim()) - Convert.ToDecimal(tbxPaidAmt.Text.Trim() == "" ? "0.00" : tbxPaidAmt.Text.Trim());
+            decimal dueAmt = Convert.ToDecimal(tbxNetAmt.Text.Trim() == "" ? "0.00" : tbxNetAmt.Text.Trim()) - Convert.ToDecimal(tbxPaidAmt.Text.Trim() == "" ? "0.00" : tbxPaidAmt.Text.Trim());
                 dueAmt = Math.Round((decimal)dueAmt, 2);
                 tbxDueAmt.Text = dueAmt.ToString();
-            }
         }
 
         private void btnVacuumFrd_Click(object sender, EventArgs e)
@@ -564,7 +561,6 @@ namespace HMS.Forms.SetupForms
             foreach (System.Web.UI.WebControls.ListItem litem in lstVacuum1.SelectedItems)
             {
                 lstVacuum2.Items.Add(new System.Web.UI.WebControls.ListItem(litem.Text, litem.Value));
-
 
             }
             foreach (object item in lstVacuum2.Items)
@@ -812,7 +808,8 @@ namespace HMS.Forms.SetupForms
             }
             decimal amt = Convert.ToDecimal(tbxAmt.Text);
             decimal vacuumAmt = Convert.ToDecimal(lblVacuumNet.Text);
-            decimal AmtRaw = amt + vacuumAmt;
+            decimal DicountAmt = Convert.ToDecimal(tbxDiscountNet.Text);
+            decimal AmtRaw = (amt + vacuumAmt) - DicountAmt;
            decimal vatAmt = (AmtRaw*(vatPercent/100));
            vatAmt = Math.Round((decimal)vatAmt, 2);
             tbxVatAmt.Text = vatAmt.ToString();

@@ -34,11 +34,11 @@
             this.ddlService = new ComponentFactory.Krypton.Toolkit.KryptonComboBox();
             this.tbxVacuumName = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             this.tbxDescription = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
-            this.ddlTestType = new ComponentFactory.Krypton.Toolkit.KryptonComboBox();
             this.kryptonLabel5 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.tbxPrice = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             this.kryptonLabel4 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.kryptonGroupBox1 = new ComponentFactory.Krypton.Toolkit.KryptonGroupBox();
+            this.ddlTestType = new ComponentFactory.Krypton.Toolkit.KryptonComboBox();
             this.btnCancel = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.btnDelete = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.BtnServiceSave = new ComponentFactory.Krypton.Toolkit.KryptonButton();
@@ -64,11 +64,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.pnlBaseControlContainer)).BeginInit();
             this.pnlBaseControlContainer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ddlService)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ddlTestType)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonGroupBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonGroupBox1.Panel)).BeginInit();
             this.kryptonGroupBox1.Panel.SuspendLayout();
             this.kryptonGroupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ddlTestType)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMain)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ddlPage)).BeginInit();
             this.SuspendLayout();
@@ -165,6 +165,7 @@
             this.ddlService.Name = "ddlService";
             this.ddlService.Size = new System.Drawing.Size(309, 21);
             this.ddlService.TabIndex = 7;
+            this.ddlService.SelectedIndexChanged += new System.EventHandler(this.ddlService_SelectedIndexChanged);
             // 
             // tbxVacuumName
             // 
@@ -179,15 +180,6 @@
             this.tbxDescription.Name = "tbxDescription";
             this.tbxDescription.Size = new System.Drawing.Size(309, 20);
             this.tbxDescription.TabIndex = 9;
-            // 
-            // ddlTestType
-            // 
-            this.ddlTestType.DropDownWidth = 471;
-            this.ddlTestType.Location = new System.Drawing.Point(196, 9);
-            this.ddlTestType.Name = "ddlTestType";
-            this.ddlTestType.Size = new System.Drawing.Size(309, 21);
-            this.ddlTestType.TabIndex = 67;
-            this.ddlTestType.SelectedIndexChanged += new System.EventHandler(this.ddlTestType_SelectedIndexChanged);
             // 
             // kryptonLabel5
             // 
@@ -219,6 +211,7 @@
             // 
             // kryptonGroupBox1.Panel
             // 
+            this.kryptonGroupBox1.Panel.Controls.Add(this.ddlTestType);
             this.kryptonGroupBox1.Panel.Controls.Add(this.btnCancel);
             this.kryptonGroupBox1.Panel.Controls.Add(this.btnDelete);
             this.kryptonGroupBox1.Panel.Controls.Add(this.BtnServiceSave);
@@ -232,7 +225,6 @@
             this.kryptonGroupBox1.Panel.Controls.Add(this.kryptonLabel2);
             this.kryptonGroupBox1.Panel.Controls.Add(this.kryptonLabel4);
             this.kryptonGroupBox1.Panel.Controls.Add(this.kryptonLabel3);
-            this.kryptonGroupBox1.Panel.Controls.Add(this.ddlTestType);
             this.kryptonGroupBox1.Panel.Controls.Add(this.ddlService);
             this.kryptonGroupBox1.Panel.Controls.Add(this.kryptonLabel5);
             this.kryptonGroupBox1.Panel.Controls.Add(this.tbxVacuumName);
@@ -240,6 +232,15 @@
             this.kryptonGroupBox1.Size = new System.Drawing.Size(613, 181);
             this.kryptonGroupBox1.TabIndex = 70;
             this.kryptonGroupBox1.Values.Heading = "";
+            // 
+            // ddlTestType
+            // 
+            this.ddlTestType.DropDownWidth = 307;
+            this.ddlTestType.Location = new System.Drawing.Point(198, 8);
+            this.ddlTestType.Name = "ddlTestType";
+            this.ddlTestType.Size = new System.Drawing.Size(307, 21);
+            this.ddlTestType.TabIndex = 78;
+            this.ddlTestType.SelectedIndexChanged += new System.EventHandler(this.ddlTestType_SelectedIndexChanged);
             // 
             // btnCancel
             // 
@@ -418,12 +419,12 @@
             this.pnlBaseControlContainer.ResumeLayout(false);
             this.pnlBaseControlContainer.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ddlService)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ddlTestType)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonGroupBox1.Panel)).EndInit();
             this.kryptonGroupBox1.Panel.ResumeLayout(false);
             this.kryptonGroupBox1.Panel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonGroupBox1)).EndInit();
             this.kryptonGroupBox1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.ddlTestType)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMain)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ddlPage)).EndInit();
             this.ResumeLayout(false);
@@ -439,7 +440,6 @@
         private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel1;
         private ComponentFactory.Krypton.Toolkit.KryptonTextBox tbxDescription;
         private ComponentFactory.Krypton.Toolkit.KryptonTextBox tbxVacuumName;
-        private ComponentFactory.Krypton.Toolkit.KryptonComboBox ddlTestType;
         private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel5;
         private ComponentFactory.Krypton.Toolkit.KryptonTextBox tbxPrice;
         private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel4;
@@ -462,5 +462,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn VacuumName;
         private System.Windows.Forms.DataGridViewTextBoxColumn VacuumDescription;
         private System.Windows.Forms.DataGridViewTextBoxColumn VacuumPrice;
+        private ComponentFactory.Krypton.Toolkit.KryptonComboBox ddlTestType;
     }
 }

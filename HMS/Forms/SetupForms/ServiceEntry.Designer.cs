@@ -95,13 +95,13 @@
             // 
             // btnClose
             // 
-            this.btnClose.Location = new System.Drawing.Point(723, 12);
+            this.btnClose.Location = new System.Drawing.Point(711, 12);
             this.btnClose.Values.Text = "Close";
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(574, 12);
+            this.btnSave.Location = new System.Drawing.Point(562, 12);
             this.btnSave.Values.Text = "Save";
             this.btnSave.Visible = false;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
@@ -113,7 +113,7 @@
             this.pnlBaseControlContainer.Controls.Add(this.kryptonGroupBox1);
             this.pnlBaseControlContainer.Controls.Add(this.lblPagingSummery);
             this.pnlBaseControlContainer.Controls.Add(this.lblPageNumber);
-            this.pnlBaseControlContainer.Location = new System.Drawing.Point(75, 19);
+            this.pnlBaseControlContainer.Location = new System.Drawing.Point(58, 19);
             this.pnlBaseControlContainer.Size = new System.Drawing.Size(715, 528);
             this.pnlBaseControlContainer.Controls.SetChildIndex(this.brdContainerTop, 0);
             this.pnlBaseControlContainer.Controls.SetChildIndex(this.bdrContainerBottom, 0);
@@ -167,6 +167,7 @@
             this.ddlServiceType.Name = "ddlServiceType";
             this.ddlServiceType.Size = new System.Drawing.Size(357, 21);
             this.ddlServiceType.TabIndex = 6;
+            this.ddlServiceType.SelectedIndexChanged += new System.EventHandler(this.ddlServiceType_SelectedIndexChanged);
             // 
             // kryptonLabel3
             // 

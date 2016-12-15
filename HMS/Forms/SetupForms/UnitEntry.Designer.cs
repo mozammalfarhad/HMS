@@ -131,6 +131,7 @@
             this.tbxUnit.Size = new System.Drawing.Size(208, 22);
             this.tbxUnit.TabIndex = 6;
             this.tbxUnit.Text = "";
+            this.tbxUnit.TextChanged += new System.EventHandler(this.tbxUnit_TextChanged);
             // 
             // kryptonLabel2
             // 

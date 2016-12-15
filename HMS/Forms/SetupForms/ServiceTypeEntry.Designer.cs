@@ -71,13 +71,13 @@
             // 
             // btnClose
             // 
-            this.btnClose.Location = new System.Drawing.Point(528, 12);
+            this.btnClose.Location = new System.Drawing.Point(318, 12);
             this.btnClose.Values.Text = "Close";
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(408, 12);
+            this.btnSave.Location = new System.Drawing.Point(198, 12);
             this.btnSave.Values.Text = "Save";
             this.btnSave.Visible = false;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
@@ -89,7 +89,7 @@
             this.pnlBaseControlContainer.Controls.Add(this.lblPageNumber);
             this.pnlBaseControlContainer.Controls.Add(this.dgvMain);
             this.pnlBaseControlContainer.Controls.Add(this.kryptonGroupBox1);
-            this.pnlBaseControlContainer.Location = new System.Drawing.Point(64, 41);
+            this.pnlBaseControlContainer.Location = new System.Drawing.Point(58, 24);
             this.pnlBaseControlContainer.Size = new System.Drawing.Size(528, 396);
             this.pnlBaseControlContainer.Controls.SetChildIndex(this.brdContainerTop, 0);
             this.pnlBaseControlContainer.Controls.SetChildIndex(this.bdrContainerBottom, 0);
@@ -134,6 +134,7 @@
             this.tbxTypeName.Name = "tbxTypeName";
             this.tbxTypeName.Size = new System.Drawing.Size(233, 20);
             this.tbxTypeName.TabIndex = 4;
+            this.tbxTypeName.TextChanged += new System.EventHandler(this.tbxTypeName_TextChanged);
             // 
             // lblTypeName
             // 

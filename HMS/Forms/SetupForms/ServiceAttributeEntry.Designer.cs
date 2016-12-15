@@ -46,9 +46,6 @@
             this.btnDelete = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.BtnServiceSave = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.dgvMain = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
-            this.ddlPage = new ComponentFactory.Krypton.Toolkit.KryptonComboBox();
-            this.lblPagingSummery = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
-            this.lblPageNumber = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.SerAtId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.AttributeName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ServiceShortName = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -56,6 +53,9 @@
             this.FemaleNormalRange = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.UnitName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Comment = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ddlPage = new ComponentFactory.Krypton.Toolkit.KryptonComboBox();
+            this.lblPagingSummery = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
+            this.lblPageNumber = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             ((System.ComponentModel.ISupportInitialize)(this.pnlBaseContainer)).BeginInit();
             this.pnlBaseContainer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pnlBaseButtonContainer)).BeginInit();
@@ -90,13 +90,13 @@
             // 
             // btnClose
             // 
-            this.btnClose.Location = new System.Drawing.Point(659, 12);
+            this.btnClose.Location = new System.Drawing.Point(653, 12);
             this.btnClose.Values.Text = "Close";
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(539, 12);
+            this.btnSave.Location = new System.Drawing.Point(533, 12);
             this.btnSave.Values.Text = "Save";
             this.btnSave.Visible = false;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
@@ -108,7 +108,7 @@
             this.pnlBaseControlContainer.Controls.Add(this.lblPagingSummery);
             this.pnlBaseControlContainer.Controls.Add(this.lblPageNumber);
             this.pnlBaseControlContainer.Controls.Add(this.kryptonGroupBox1);
-            this.pnlBaseControlContainer.Location = new System.Drawing.Point(46, 16);
+            this.pnlBaseControlContainer.Location = new System.Drawing.Point(38, 18);
             this.pnlBaseControlContainer.Size = new System.Drawing.Size(696, 539);
             this.pnlBaseControlContainer.Controls.SetChildIndex(this.kryptonGroupBox1, 0);
             this.pnlBaseControlContainer.Controls.SetChildIndex(this.lblPageNumber, 0);
@@ -186,6 +186,7 @@
             this.ddlService.Name = "ddlService";
             this.ddlService.Size = new System.Drawing.Size(361, 21);
             this.ddlService.TabIndex = 10;
+            this.ddlService.SelectedIndexChanged += new System.EventHandler(this.ddlService_SelectedIndexChanged);
             // 
             // tbxAttribute
             // 
@@ -328,30 +329,6 @@
             this.dgvMain.TabIndex = 36;
             this.dgvMain.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMain_CellDoubleClick);
             // 
-            // ddlPage
-            // 
-            this.ddlPage.DropDownWidth = 82;
-            this.ddlPage.Location = new System.Drawing.Point(334, 503);
-            this.ddlPage.Name = "ddlPage";
-            this.ddlPage.Size = new System.Drawing.Size(82, 21);
-            this.ddlPage.TabIndex = 35;
-            // 
-            // lblPagingSummery
-            // 
-            this.lblPagingSummery.Location = new System.Drawing.Point(422, 503);
-            this.lblPagingSummery.Name = "lblPagingSummery";
-            this.lblPagingSummery.Size = new System.Drawing.Size(92, 20);
-            this.lblPagingSummery.TabIndex = 34;
-            this.lblPagingSummery.Values.Text = "Page Summary";
-            // 
-            // lblPageNumber
-            // 
-            this.lblPageNumber.Location = new System.Drawing.Point(238, 503);
-            this.lblPageNumber.Name = "lblPageNumber";
-            this.lblPageNumber.Size = new System.Drawing.Size(86, 20);
-            this.lblPageNumber.TabIndex = 33;
-            this.lblPageNumber.Values.Text = "Page Number";
-            // 
             // SerAtId
             // 
             this.SerAtId.DataPropertyName = "SerAtId";
@@ -401,6 +378,30 @@
             this.Comment.HeaderText = "Comment";
             this.Comment.Name = "Comment";
             this.Comment.ReadOnly = true;
+            // 
+            // ddlPage
+            // 
+            this.ddlPage.DropDownWidth = 82;
+            this.ddlPage.Location = new System.Drawing.Point(334, 503);
+            this.ddlPage.Name = "ddlPage";
+            this.ddlPage.Size = new System.Drawing.Size(82, 21);
+            this.ddlPage.TabIndex = 35;
+            // 
+            // lblPagingSummery
+            // 
+            this.lblPagingSummery.Location = new System.Drawing.Point(422, 503);
+            this.lblPagingSummery.Name = "lblPagingSummery";
+            this.lblPagingSummery.Size = new System.Drawing.Size(92, 20);
+            this.lblPagingSummery.TabIndex = 34;
+            this.lblPagingSummery.Values.Text = "Page Summary";
+            // 
+            // lblPageNumber
+            // 
+            this.lblPageNumber.Location = new System.Drawing.Point(238, 503);
+            this.lblPageNumber.Name = "lblPageNumber";
+            this.lblPageNumber.Size = new System.Drawing.Size(86, 20);
+            this.lblPageNumber.TabIndex = 33;
+            this.lblPageNumber.Values.Text = "Page Number";
             // 
             // ServiceAttributeEntry
             // 

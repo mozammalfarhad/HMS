@@ -1,4 +1,4 @@
-﻿using HMS.App_Code.DAL;
+using HMS.App_Code.DAL;
 using HMS.Model;
 using System;
 using System.Collections.Generic;
@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace HMS.App_Code.BLL
 {
-    public class bllCompanyInfo
+   public class bllCompanyInfo
     {
 
         dalCompanyInfo objCom = new dalCompanyInfo();
@@ -28,3 +28,4 @@ namespace HMS.App_Code.BLL
 
     }
 }
+

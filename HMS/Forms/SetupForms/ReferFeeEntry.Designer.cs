@@ -194,6 +194,7 @@
             this.comService.Name = "comService";
             this.comService.Size = new System.Drawing.Size(229, 21);
             this.comService.TabIndex = 4;
+            this.comService.SelectedIndexChanged += new System.EventHandler(this.comService_SelectedIndexChanged);
             // 
             // kryptonLabel4
             // 

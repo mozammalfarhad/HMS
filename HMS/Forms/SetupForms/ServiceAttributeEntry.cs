@@ -18,6 +18,7 @@ namespace HMS.Forms.SetupForms
         int CurrentPage = 0;
         int TotalRec = 0;
         int PageSize = 30;
+        DataTable dtg;
         DataTable dtData = new DataTable();
         DataTable pdfDt = new DataTable();
         string pdfFileName = string.Empty;
@@ -95,6 +96,34 @@ namespace HMS.Forms.SetupForms
         private void ddlTestType_SelectedIndexChanged(object sender, EventArgs e)
         {
             LoadTest();
+            if (dtg != null && _ID <= 0)
+            {
+                DataView dv;
+                if (ddlTestType.SelectedIndex != 0)
+                 dv = new DataView(dtg, "TypeId  =" + ddlTestType.SelectedValue, "", DataViewRowState.CurrentRows);
+                else
+                    dv = new DataView(dtg, "", "", DataViewRowState.CurrentRows);
+                dgvMain.Rows.Clear();
+                foreach (DataRow dr in dv.ToTable().Rows)
+                {
+                    int RowNum = dgvMain.Rows.Add(
+                        new object[] {
+                        dr["SerAtId"],
+                        dr["AttributeName"],     
+                        dr["ServiceShortName"],
+                        dr["MaleNormalRange"],
+                        dr["FemaleNormalRange"],     
+                        dr["UnitName"],     
+                        dr["Comment"],
+                        dr["TypeId"],
+                        dr["ServiceId"]
+                    });
+                    dgvMain.Rows[RowNum].Tag = dr["SerAtId"];
+                }
+                ChangeDataGridHeader();
+                managePaging();
+
+            }
         }
 
         private void BtnServiceSave_Click(object sender, EventArgs e)
@@ -115,16 +144,16 @@ namespace HMS.Forms.SetupForms
         {
             try
             {
-                DataTable dt = new bllServiceAttribute().GetList(CurrentPage * PageSize, PageSize, "", false);
-                if (dt.Rows.Count > 0)
-                    TotalRec = Convert.ToInt32(dt.Rows[0]["TotalRecords"].ToString());
+                dtg = new bllServiceAttribute().GetList(CurrentPage * PageSize, PageSize, "", false);
+                if (dtg.Rows.Count > 0)
+                    TotalRec = Convert.ToInt32(dtg.Rows[0]["TotalRecords"].ToString());
                 else
                 {
                     TotalRec = 0;
                     lblPagingSummery.Text = "";
                 }
                 dgvMain.Rows.Clear();
-                foreach (DataRow dr in dt.Rows)
+                foreach (DataRow dr in dtg.Rows)
                 {
                     int RowNum = dgvMain.Rows.Add(
                         new object[] {
@@ -134,7 +163,9 @@ namespace HMS.Forms.SetupForms
                         dr["MaleNormalRange"],
                         dr["FemaleNormalRange"],     
                         dr["UnitName"],     
-                        dr["Comment"]
+                        dr["Comment"],
+                        dr["TypeId"],
+                        dr["ServiceId"]
                     });
                     dgvMain.Rows[RowNum].Tag = dr["SerAtId"];
                 }
@@ -352,6 +383,38 @@ namespace HMS.Forms.SetupForms
             {
                 KryptonMessageBox.Show("The Service Attribute deleted Fail!", "Deleted Attribute Service.", MessageBoxButtons.OK,
                 MessageBoxIcon.Error);
+            }
+        }
+
+        private void ddlService_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (dtg != null && _ID <= 0)
+            {
+                DataView dv;
+                if (ddlTestType.SelectedIndex != 0)
+                    dv = new DataView(dtg, "TypeId  =" + ddlTestType.SelectedValue + " and ServiceId = " + ddlService.SelectedValue, "", DataViewRowState.CurrentRows);
+                else
+                    dv = new DataView(dtg, "TypeId  =" + ddlTestType.SelectedValue, "", DataViewRowState.CurrentRows);
+                dgvMain.Rows.Clear();
+                foreach (DataRow dr in dv.ToTable().Rows)
+                {
+                    int RowNum = dgvMain.Rows.Add(
+                        new object[] {
+                        dr["SerAtId"],
+                        dr["AttributeName"],     
+                        dr["ServiceShortName"],
+                        dr["MaleNormalRange"],
+                        dr["FemaleNormalRange"],     
+                        dr["UnitName"],     
+                        dr["Comment"],
+                        dr["TypeId"],
+                        dr["ServiceId"]
+                    });
+                    dgvMain.Rows[RowNum].Tag = dr["SerAtId"];
+                }
+                ChangeDataGridHeader();
+                managePaging();
+
             }
         }
     }

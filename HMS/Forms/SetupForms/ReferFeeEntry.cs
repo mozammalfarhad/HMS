@@ -23,6 +23,7 @@ namespace HMS.Forms.SetupForms
         int PageSize = 30;
         DataTable dtData = new DataTable();
         DataTable pdfDt = new DataTable();
+        DataTable dtg;
         string pdfFileName = string.Empty;
         private int _ID;
         public ReferFeeEntry()
@@ -149,17 +150,17 @@ namespace HMS.Forms.SetupForms
         {
             try
             {
-                DataTable dt;
-                dt = new dalReferFee().GetList(CurrentPage * PageSize, PageSize, "", false);
-                if (dt.Rows.Count > 0)
-                    TotalRec = Convert.ToInt32(dt.Rows[0]["TotalRecords"].ToString());
+               
+                dtg = new dalReferFee().GetList(CurrentPage * PageSize, PageSize, "", false);
+                if (dtg.Rows.Count > 0)
+                    TotalRec = Convert.ToInt32(dtg.Rows[0]["TotalRecords"].ToString());
                 else
                 {
                     TotalRec = 0;
                     lblPagingSummery.Text = "";
                 }
                 dgvMain.Rows.Clear();
-                foreach (DataRow dr in dt.Rows)
+                foreach (DataRow dr in dtg.Rows)
                 {
                     int RowNum = dgvMain.Rows.Add(
                         new object[] {
@@ -278,6 +279,31 @@ namespace HMS.Forms.SetupForms
             BtnServiceSave.Text = "Save";
             comService.SelectedIndex = 0;
             NumReferParcent.Text = "";
+        }
+
+        private void comService_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (dtg != null && _ID <= 0)
+            {
+                string search="";
+                if (comService.SelectedIndex != 0)
+                    search = comService.Text;
+                DataView dv = new DataView(dtg, "ServiceName like '%" + search + "%'", "", DataViewRowState.CurrentRows);
+                dgvMain.Rows.Clear();
+                foreach (DataRow dr in dv.ToTable().Rows)
+                {
+                    int RowNum = dgvMain.Rows.Add(
+                         new object[] {
+                        dr["ReferFeeId"],
+                        dr["ServiceName"],     
+                        dr["FeePercent"]
+                    });
+                    dgvMain.Rows[RowNum].Tag = dr["ReferFeeId"];
+                }
+                ChangeDataGridHeader();
+                managePaging();
+
+            }
         }
     }
 }

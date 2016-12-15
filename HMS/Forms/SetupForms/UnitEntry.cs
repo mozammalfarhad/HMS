@@ -17,7 +17,8 @@ namespace HMS.Forms.SetupForms
     {
         int CurrentPage = 0;
         int TotalRec = 0;
-        int PageSize = 30;
+        int PageSize = 30; 
+        DataTable dtg;
         DataTable dtData = new DataTable();
         DataTable pdfDt = new DataTable();
         string pdfFileName = string.Empty;
@@ -120,17 +121,17 @@ namespace HMS.Forms.SetupForms
         {
             try
             {
-                DataTable dt;
-                dt = new bllUnit().GetAll(CurrentPage * PageSize, PageSize, "", false);
-                if (dt.Rows.Count > 0)
-                    TotalRec = Convert.ToInt32(dt.Rows[0]["TotalRecords"].ToString());
+                
+                dtg = new bllUnit().GetAll(CurrentPage * PageSize, PageSize, "", false);
+                if (dtg.Rows.Count > 0)
+                    TotalRec = Convert.ToInt32(dtg.Rows[0]["TotalRecords"].ToString());
                 else
                 {
                     TotalRec = 0;
                     lblPagingSummery.Text = "";
                 }
                 dgvMain.Rows.Clear();
-                foreach (DataRow dr in dt.Rows)
+                foreach (DataRow dr in dtg.Rows)
                 {
                     int RowNum = dgvMain.Rows.Add(
                         new object[] {
@@ -265,6 +266,27 @@ namespace HMS.Forms.SetupForms
             btnDelete.Enabled = false;
             BtnServiceSave.Text = "Save";
             Common.ClearFormWithoutGrid(pnlBaseControlContainer);
+        }
+
+        private void tbxUnit_TextChanged(object sender, EventArgs e)
+        {
+            if (dtg != null && _ID <= 0)
+            {
+                DataView dv = new DataView(dtg, "UnitName like '%" + tbxUnit.Text + "%'", "", DataViewRowState.CurrentRows);
+                dgvMain.Rows.Clear();
+                foreach (DataRow dr in dv.ToTable().Rows)
+                {
+                    int RowNum = dgvMain.Rows.Add(
+                        new object[] {
+                        dr["UnitId"],
+                        dr["UnitName"]
+                    });
+                    dgvMain.Rows[RowNum].Tag = dr["UnitId"];
+                }
+                ChangeDataGridHeader();
+                managePaging();
+
+            }
         }
 
     }
