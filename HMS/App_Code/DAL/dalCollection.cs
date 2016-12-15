@@ -47,9 +47,9 @@ namespace HMS.App_Code.DAL
         public DataTable GetDueCollection(DateTime DateFrom,DateTime DateTo)
         {
             ArrayList altParams = new ArrayList();
-            altParams.Add(new SqlParameter("@DateFrom", DateFrom));
-            altParams.Add(new SqlParameter("@DateTo", DateTo));
-            return DatabaseManager.GetInstance().ExecuteStoredProcedureDataTable("Sp_CollectionGetBySheduleId", altParams);
+            altParams.Add(new SqlParameter("@FromDate", DateFrom));
+            altParams.Add(new SqlParameter("@ToDate", DateTo));
+            return DatabaseManager.GetInstance().ExecuteStoredProcedureDataTable("rpt_DueListGetByDateRange", altParams);
         }
     }
 }
