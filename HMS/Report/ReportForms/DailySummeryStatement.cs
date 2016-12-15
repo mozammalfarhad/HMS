@@ -81,7 +81,7 @@ namespace HMS.Report.ReportForms
             users = Roles.GetUsersInRole(rolename); //Membership.GetAllUsers();
             foreach (var item in users)
             {
-                ddlUsers.Items.Add(item);
+                ddlUsers.Items.Add(item);//
             }
         }
 
