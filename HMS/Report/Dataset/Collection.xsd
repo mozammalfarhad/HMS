@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="Collection" targetNamespace="http://tempuri.org/Collection.xsd" xmlns:mstns="http://tempuri.org/Collection.xsd" xmlns="http://tempuri.org/Collection.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" GeneratorFunctionsComponentClassName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" UserFunctionsComponentName="QueriesTableAdapter" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="HMSDBConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="HMSDBConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.HMS.Properties.Settings.GlobalReference.Default.HMSDBConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="Collection" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="Collection" msprop:Generator_UserDSName="Collection">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="rpt_DueListGetByDateRange" msprop:Generator_TableClassName="rpt_DueListGetByDateRangeDataTable" msprop:Generator_TableVarName="tablerpt_DueListGetByDateRange" msprop:Generator_TablePropName="rpt_DueListGetByDateRange" msprop:Generator_RowDeletingName="rpt_DueListGetByDateRangeRowDeleting" msprop:Generator_RowChangingName="rpt_DueListGetByDateRangeRowChanging" msprop:Generator_RowEvHandlerName="rpt_DueListGetByDateRangeRowChangeEventHandler" msprop:Generator_RowDeletedName="rpt_DueListGetByDateRangeRowDeleted" msprop:Generator_UserTableName="rpt_DueListGetByDateRange" msprop:Generator_RowChangedName="rpt_DueListGetByDateRangeRowChanged" msprop:Generator_RowEvArgName="rpt_DueListGetByDateRangeRowChangeEvent" msprop:Generator_RowClassName="rpt_DueListGetByDateRangeRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ReceiveDate" msprop:Generator_ColumnVarNameInTable="columnReceiveDate" msprop:Generator_ColumnPropNameInRow="ReceiveDate" msprop:Generator_ColumnPropNameInTable="ReceiveDateColumn" msprop:Generator_UserColumnName="ReceiveDate" type="xs:string" minOccurs="0" />
+              <xs:element name="UserName" msprop:Generator_ColumnVarNameInTable="columnUserName" msprop:Generator_ColumnPropNameInRow="UserName" msprop:Generator_ColumnPropNameInTable="UserNameColumn" msprop:Generator_UserColumnName="UserName" type="xs:string" minOccurs="0" />
+              <xs:element name="PatientCode" msprop:Generator_ColumnVarNameInTable="columnPatientCode" msprop:Generator_ColumnPropNameInRow="PatientCode" msprop:Generator_ColumnPropNameInTable="PatientCodeColumn" msprop:Generator_UserColumnName="PatientCode" type="xs:string" minOccurs="0" />
+              <xs:element name="PatientName" msprop:Generator_ColumnVarNameInTable="columnPatientName" msprop:Generator_ColumnPropNameInRow="PatientName" msprop:Generator_ColumnPropNameInTable="PatientNameColumn" msprop:Generator_UserColumnName="PatientName" type="xs:string" minOccurs="0" />
+              <xs:element name="ReferBy" msprop:Generator_ColumnVarNameInTable="columnReferBy" msprop:Generator_ColumnPropNameInRow="ReferBy" msprop:Generator_ColumnPropNameInTable="ReferByColumn" msprop:Generator_UserColumnName="ReferBy" type="xs:string" minOccurs="0" />
+              <xs:element name="SubTotal" msprop:Generator_ColumnVarNameInTable="columnSubTotal" msprop:Generator_ColumnPropNameInRow="SubTotal" msprop:Generator_ColumnPropNameInTable="SubTotalColumn" msprop:Generator_UserColumnName="SubTotal" type="xs:decimal" minOccurs="0" />
+              <xs:element name="VatAmt" msprop:Generator_ColumnVarNameInTable="columnVatAmt" msprop:Generator_ColumnPropNameInRow="VatAmt" msprop:Generator_ColumnPropNameInTable="VatAmtColumn" msprop:Generator_UserColumnName="VatAmt" type="xs:decimal" minOccurs="0" />
+              <xs:element name="TotalDiscount" msprop:Generator_ColumnVarNameInTable="columnTotalDiscount" msprop:Generator_ColumnPropNameInRow="TotalDiscount" msprop:Generator_ColumnPropNameInTable="TotalDiscountColumn" msprop:Generator_UserColumnName="TotalDiscount" type="xs:decimal" minOccurs="0" />
+              <xs:element name="PayableAmt" msprop:Generator_ColumnVarNameInTable="columnPayableAmt" msprop:Generator_ColumnPropNameInRow="PayableAmt" msprop:Generator_ColumnPropNameInTable="PayableAmtColumn" msprop:Generator_UserColumnName="PayableAmt" type="xs:decimal" minOccurs="0" />
+              <xs:element name="PaidAmt" msprop:Generator_ColumnVarNameInTable="columnPaidAmt" msprop:Generator_ColumnPropNameInRow="PaidAmt" msprop:Generator_ColumnPropNameInTable="PaidAmtColumn" msprop:Generator_UserColumnName="PaidAmt" type="xs:decimal" minOccurs="0" />
+              <xs:element name="FullName" msprop:Generator_ColumnVarNameInTable="columnFullName" msprop:Generator_ColumnPropNameInRow="FullName" msprop:Generator_ColumnPropNameInTable="FullNameColumn" msprop:Generator_UserColumnName="FullName" type="xs:string" minOccurs="0" />
+              <xs:element name="DueCollectedAmt" msprop:Generator_ColumnVarNameInTable="columnDueCollectedAmt" msprop:Generator_ColumnPropNameInRow="DueCollectedAmt" msprop:Generator_ColumnPropNameInTable="DueCollectedAmtColumn" msprop:Generator_UserColumnName="DueCollectedAmt" type="xs:decimal" minOccurs="0" />
+              <xs:element name="DueAmt" msprop:Generator_ColumnVarNameInTable="columnDueAmt" msprop:Generator_ColumnPropNameInRow="DueAmt" msprop:Generator_ColumnPropNameInTable="DueAmtColumn" msprop:Generator_UserColumnName="DueAmt" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
