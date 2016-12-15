@@ -16,6 +16,7 @@ using HMS.Forms.SetupForms;
 using HMS.Model;
 using HMS.Report;
 using HMS.Report.Dataset;
+using HMS.Report.ReportForms;
 
 //using BGFHandicapApp.Forms.Security;
 //using BGFHandicapApp.Forms.ListForms;
@@ -618,6 +619,12 @@ namespace HMS.Views
         {
             RefererDetails frm = new RefererDetails();
             frm.ShowDialog();
+        }
+
+        private void dueListToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DueForm dfr = new DueForm();
+            dfr.ShowDialog();
         }
     }
 }

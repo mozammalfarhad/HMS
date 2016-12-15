@@ -70,6 +70,7 @@ namespace HMS.Views
             this.reportToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.patientTestDetailReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.DailySummeryStatementToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.referrerFeeDetailsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabForms = new System.Windows.Forms.TabControl();
             this.stbStatusBar = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
@@ -89,7 +90,7 @@ namespace HMS.Views
             this.BtnTournamentList = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator13 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
-            this.referrerFeeDetailsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.dueListToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.stbStatusBar.SuspendLayout();
             this.tbrMain.SuspendLayout();
@@ -463,7 +464,8 @@ namespace HMS.Views
             this.reportToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.patientTestDetailReportToolStripMenuItem,
             this.DailySummeryStatementToolStripMenuItem,
-            this.referrerFeeDetailsToolStripMenuItem});
+            this.referrerFeeDetailsToolStripMenuItem,
+            this.dueListToolStripMenuItem});
             this.reportToolStripMenuItem1.Name = "reportToolStripMenuItem1";
             this.reportToolStripMenuItem1.Size = new System.Drawing.Size(54, 20);
             this.reportToolStripMenuItem1.Text = "Report";
@@ -481,6 +483,13 @@ namespace HMS.Views
             this.DailySummeryStatementToolStripMenuItem.Size = new System.Drawing.Size(211, 22);
             this.DailySummeryStatementToolStripMenuItem.Text = "Daily Summery Statement";
             this.DailySummeryStatementToolStripMenuItem.Click += new System.EventHandler(this.DailySummeryStatementToolStripMenuItem_Click);
+            // 
+            // referrerFeeDetailsToolStripMenuItem
+            // 
+            this.referrerFeeDetailsToolStripMenuItem.Name = "referrerFeeDetailsToolStripMenuItem";
+            this.referrerFeeDetailsToolStripMenuItem.Size = new System.Drawing.Size(211, 22);
+            this.referrerFeeDetailsToolStripMenuItem.Text = "Referrer Fee Details";
+            this.referrerFeeDetailsToolStripMenuItem.Click += new System.EventHandler(this.referrerFeeDetailsToolStripMenuItem_Click);
             // 
             // tabForms
             // 
@@ -660,12 +669,12 @@ namespace HMS.Views
             this.toolStripButton2.Text = "Report";
             this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
             // 
-            // referrerFeeDetailsToolStripMenuItem
+            // dueListToolStripMenuItem
             // 
-            this.referrerFeeDetailsToolStripMenuItem.Name = "referrerFeeDetailsToolStripMenuItem";
-            this.referrerFeeDetailsToolStripMenuItem.Size = new System.Drawing.Size(211, 22);
-            this.referrerFeeDetailsToolStripMenuItem.Text = "Referrer Fee Details";
-            this.referrerFeeDetailsToolStripMenuItem.Click += new System.EventHandler(this.referrerFeeDetailsToolStripMenuItem_Click);
+            this.dueListToolStripMenuItem.Name = "dueListToolStripMenuItem";
+            this.dueListToolStripMenuItem.Size = new System.Drawing.Size(211, 22);
+            this.dueListToolStripMenuItem.Text = "Due List";
+            this.dueListToolStripMenuItem.Click += new System.EventHandler(this.dueListToolStripMenuItem_Click);
             // 
             // FrmMain
             // 
@@ -767,5 +776,6 @@ namespace HMS.Views
         private System.Windows.Forms.ToolStripMenuItem DailySummeryStatementToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem companyInfoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem referrerFeeDetailsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem dueListToolStripMenuItem;
     }
 }
