@@ -43,5 +43,13 @@ namespace HMS.App_Code.DAL
             altParams.Add(new SqlParameter("@Date", collection.Date));
             return DatabaseManager.GetInstance().ExecuteNonQueryStoredProcedure("Sp_CollectionUpdate", altParams);
         }
+
+        public DataTable GetDueCollection(DateTime DateFrom,DateTime DateTo)
+        {
+            ArrayList altParams = new ArrayList();
+            altParams.Add(new SqlParameter("@DateFrom", DateFrom));
+            altParams.Add(new SqlParameter("@DateTo", DateTo));
+            return DatabaseManager.GetInstance().ExecuteStoredProcedureDataTable("Sp_CollectionGetBySheduleId", altParams);
+        }
     }
 }
