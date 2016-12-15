@@ -15,7 +15,7 @@
             //
             // this.SettingsSaving += this.SettingsSavingEventHandler;
             //
-           // Settings.Default.Save();//
+           // Settings.Default.Save();////
         }
         
         private void SettingChangingEventHandler(object sender, System.Configuration.SettingChangingEventArgs e) {
