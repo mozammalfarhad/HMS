@@ -11,9 +11,9 @@ namespace HMS.App_Code.BLL
     public class bllPatientServicDetails
     {
         dalPatientServicDetails objPatientServicDetails = new dalPatientServicDetails();
-        public DataTable GetPatientServicDetailsByID(int PatientID)
+        public DataTable GetPatientServicDetailsByID(int PatientID, int SheduleId)
         {
-            return objPatientServicDetails.GetPatientServicDetailsByID(PatientID);
+            return objPatientServicDetails.GetPatientServicDetailsByID(PatientID, SheduleId);
         }
 
         public DataTable GetList(int StartRowIndex, int MaxRows, string Criteria, bool PrintMode)
