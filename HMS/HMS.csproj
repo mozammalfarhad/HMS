@@ -488,11 +488,10 @@
       <DependentUpon>Rpt_BloodChemistry.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Report\Rpt_DueCollectionList1.cs">
+    <Compile Include="Report\Rpt_DueCollectionList.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Rpt_DueCollectionList.rpt</DependentUpon>
-      <SubType>Component</SubType>
     </Compile>
     <Compile Include="Report\Rpt_RefererFeeDetails.cs">
       <AutoGen>True</AutoGen>
@@ -664,7 +663,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Report\Rpt_DueCollectionList.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>Rpt_DueCollectionList1.cs</LastGenOutput>
+      <LastGenOutput>Rpt_DueCollectionList.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Report\Rpt_RefererFeeDetails.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
