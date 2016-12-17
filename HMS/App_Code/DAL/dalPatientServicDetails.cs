@@ -23,10 +23,11 @@ namespace HMS.App_Code.DAL
             return dt;
         }
 
-        public DataTable GetPatientServicDetailsByID(int patientID)
+        public DataTable GetPatientServicDetailsByID(int patientID, int SheduleId)
         {
             ArrayList altParams = new ArrayList();
             altParams.Add(new SqlParameter("@patientId", patientID));
+            altParams.Add(new SqlParameter("@SheduleId", SheduleId));
             DataTable dt = DatabaseManager.GetInstance().ExecuteStoredProcedureDataTable("rpt_PatientServicDetails", altParams);
             return dt;
         }
