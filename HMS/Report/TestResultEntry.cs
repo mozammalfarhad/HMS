@@ -291,6 +291,10 @@ namespace HMS.Report
             {
                 ViewPdfForServiceType();
             }
+            else
+            {
+                ViewPdfWithoutServiceType();
+            }
         }
         private void btnTest_Click(object sender, EventArgs e)
         {
@@ -311,30 +315,99 @@ namespace HMS.Report
                 //dt = new bllTournament().GetListWithFiltering();
                 int TotalRec = 0;
                 if (courseDt.Rows.Count > 0)
-                    TotalRec = courseDt.Rows.Count;
+                {
+                    string localPath = string.Empty;
+                    var fbd = new FolderBrowserDialog();
+                    if (fbd.ShowDialog() == DialogResult.OK)
+                    {
+                        localPath = fbd.SelectedPath + "\\BloodChemistry" + DateTime.Today.Date.ToString("dd_MMM_yyyy_") + DateTime.Now.Minute + "_" + DateTime.Now.Second + "_" + DateTime.Now.Millisecond + ".pdf";
+                        this.Cursor = Cursors.WaitCursor;
+                        Rpt_BloodChemistry rpt = new Rpt_BloodChemistry();
+                        rpt.SetDataSource(courseDt);
+                        rpt.SetParameterValue("LogoPath", Application.StartupPath + @"\Images\" + Default.logoPath);
+                        rpt.SetParameterValue("CompanyName", Default.companyName);
+                        rpt.SetParameterValue("Address", Default.companyAddress + ", Telephone : " + Default.Telephone);
+
+                        rpt.ExportToDisk(CrystalDecisions.Shared.ExportFormatType.PortableDocFormat, localPath);
+                        this.Cursor = Cursors.Default;
+                        KryptonMessageBox.Show("Patient Test Report Exported successfully!", "Patient Test Result.", MessageBoxButtons.OK,
+                                               MessageBoxIcon.Information);
+                        Process.Start(localPath);
+                    }
+                }
                 else
                 {
-                    TotalRec = 0;
+                    KryptonMessageBox.Show("All report result are panding, No Report to view");
+                    return;
                 }
 
-                string localPath = string.Empty;
-                var fbd = new FolderBrowserDialog();
-                if (fbd.ShowDialog() == DialogResult.OK)
+
+            }
+            catch (Exception ex)
+            {
+                KryptonMessageBox.Show(ex.Message);
+                this.Cursor = Cursors.Default;
+                return;
+            }
+        }
+
+        private void ViewPdfWithoutServiceType()
+        {
+            //crs = cmbCourse.SelectedIndex > 0 ? cmbCourseShadow.Items[cmbCourse.SelectedIndex].ToString() : "0";  
+            try
+            {
+                DataTable courseDt = new bllReportData().GetTestCatagoryReport(_id, 0);
+
+
+                DataView view = new DataView(courseDt);
+                DataTable distinctValues = view.ToTable(true, "TypeName");
+
+
+
+                int TotalRec = 0;
+                if (courseDt.Rows.Count > 0)
                 {
-                    localPath = fbd.SelectedPath + "\\BloodChemistry" + DateTime.Today.Date.ToString("dd_MMM_yyyy_") + DateTime.Now.Minute + "_" + DateTime.Now.Second + "_" + DateTime.Now.Millisecond + ".pdf";
-                    this.Cursor = Cursors.WaitCursor;
-                    Rpt_BloodChemistry rpt = new Rpt_BloodChemistry();
-                    rpt.SetDataSource(courseDt);
-                    rpt.SetParameterValue("LogoPath", Application.StartupPath + @"\Images\" + Default.logoPath);
-                    rpt.SetParameterValue("CompanyName", Default.companyName);
-                    rpt.SetParameterValue("Address", Default.companyAddress + ", Telephone : " + Default.Telephone);
+                    string localPath = string.Empty;
+                    var fbd = new FolderBrowserDialog();
+                    if (fbd.ShowDialog() == DialogResult.OK)
+                    {
+                        localPath = fbd.SelectedPath + "\\BloodChemistry" + DateTime.Today.Date.ToString("dd_MMM_yyyy_") + DateTime.Now.Minute + "_" + DateTime.Now.Second + "_" + DateTime.Now.Millisecond + ".pdf";
+                        this.Cursor = Cursors.WaitCursor;
 
-                    rpt.ExportToDisk(CrystalDecisions.Shared.ExportFormatType.PortableDocFormat, localPath);
-                    this.Cursor = Cursors.Default;
-                    KryptonMessageBox.Show("Patient Test Report Exported successfully!", "Patient Test Result.", MessageBoxButtons.OK,
-                                           MessageBoxIcon.Information);
-                    Process.Start(localPath);
+                        if (distinctValues.Rows.Count > 1)
+                        {
+                            Rpt_AllTypeResult rpt = new Rpt_AllTypeResult();
+                            rpt.SetDataSource(courseDt);
+                            rpt.SetParameterValue("LogoPath", Application.StartupPath + @"\Images\" + Default.logoPath);
+                            rpt.SetParameterValue("CompanyName", Default.companyName);
+                            rpt.SetParameterValue("Address", Default.companyAddress + ", Telephone : " + Default.Telephone);
+
+                            rpt.ExportToDisk(CrystalDecisions.Shared.ExportFormatType.PortableDocFormat, localPath);
+                        }
+                        else
+                        {
+                            Rpt_BloodChemistry rpt = new Rpt_BloodChemistry();
+                            rpt.SetDataSource(courseDt);
+                            rpt.SetParameterValue("LogoPath", Application.StartupPath + @"\Images\" + Default.logoPath);
+                            rpt.SetParameterValue("CompanyName", Default.companyName);
+                            rpt.SetParameterValue("Address", Default.companyAddress + ", Telephone : " + Default.Telephone);
+
+                            rpt.ExportToDisk(CrystalDecisions.Shared.ExportFormatType.PortableDocFormat, localPath);
+                        }
+
+                        this.Cursor = Cursors.Default;
+                        KryptonMessageBox.Show("Patient Test Report Exported successfully!", "Patient Test Result.", MessageBoxButtons.OK,
+                                               MessageBoxIcon.Information);
+                        Process.Start(localPath);
+                    }
                 }
+                else
+                {
+                    KryptonMessageBox.Show("All report result are panding, No Report to view");
+                    return;
+                }
+
+
             }
             catch (Exception ex)
             {
