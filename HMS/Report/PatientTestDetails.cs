@@ -292,6 +292,7 @@ namespace HMS.Report
         private void ViewPdf()
         {
             int patientID = 0;
+            int ScheduleID = 0;
             //crs = cmbCourse.SelectedIndex > 0 ? cmbCourseShadow.Items[cmbCourse.SelectedIndex].ToString() : "0";  
             try
             {
@@ -303,10 +304,11 @@ namespace HMS.Report
                 else
                 {
                     patientID = int.Parse(dgvMain.CurrentRow.Cells[0].Value.ToString());
+                    ScheduleID = int.Parse(dgvMain.CurrentRow.Cells[7].Value.ToString());
                 }
-               
-                
-                    DataTable courseDt = new bllPatientServicDetails().GetPatientServicDetailsByID(patientID);
+
+
+                DataTable courseDt = new bllPatientServicDetails().GetPatientServicDetailsByID(patientID, ScheduleID);
                  
           
                
