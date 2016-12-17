@@ -12,6 +12,7 @@ using HMS.App_Code.BLL;
 using HMS.Forms.BaseForms;
 using System.Diagnostics;
 using HMS.Forms.SetupForms;
+using HMS.Model;
 
 namespace HMS.Report
 {
@@ -324,11 +325,9 @@ namespace HMS.Report
                     this.Cursor = Cursors.WaitCursor;
                     Rpt_BloodChemistry rpt = new Rpt_BloodChemistry();
                     rpt.SetDataSource(courseDt);
-
-                    //rpt.SetParameterValue("ClubName", _ClubName);
-                    //rpt.SetParameterValue("LogoPath", Application.StartupPath + @"\logo-url.jpg");
-                    //rpt.SetParameterValue("ReportName", "Tournament List");
-                    //rpt.SetParameterValue("Date", "Date: " + DateTime.Today.ToString("dd-MMM-yyyy"));
+                    rpt.SetParameterValue("LogoPath", Application.StartupPath + @"\Images\" + Default.logoPath);
+                    rpt.SetParameterValue("CompanyName", Default.companyName);
+                    rpt.SetParameterValue("Address", Default.companyAddress + ", Telephone : " + Default.Telephone);
 
                     rpt.ExportToDisk(CrystalDecisions.Shared.ExportFormatType.PortableDocFormat, localPath);
                     this.Cursor = Cursors.Default;
