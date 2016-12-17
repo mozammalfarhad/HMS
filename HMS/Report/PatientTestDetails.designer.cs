@@ -166,6 +166,7 @@
             // btnRemove
             // 
             this.btnRemove.Values.Text = "Remove";
+            this.btnRemove.Visible = false;
             this.btnRemove.Click += new System.EventHandler(this.btnRemove_Click);
             // 
             // ddlPatient
