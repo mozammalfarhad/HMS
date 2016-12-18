@@ -393,6 +393,8 @@ namespace HMS.Report.Dataset {
             
             private global::System.Data.DataColumn columnAttributeName;
             
+            private global::System.Data.DataColumn columnResult1;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public Sp_rptTestCatagoryReportDataTable() {
@@ -604,6 +606,14 @@ namespace HMS.Report.Dataset {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Result1Column {
+                get {
+                    return this.columnResult1;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -661,7 +671,8 @@ namespace HMS.Report.Dataset {
                         string FemaleNormalRange, 
                         string TAResult, 
                         string SAUnitName, 
-                        string AttributeName) {
+                        string AttributeName, 
+                        string Result1) {
                 Sp_rptTestCatagoryReportRow rowSp_rptTestCatagoryReportRow = ((Sp_rptTestCatagoryReportRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         PatientCode,
@@ -685,7 +696,8 @@ namespace HMS.Report.Dataset {
                         FemaleNormalRange,
                         TAResult,
                         SAUnitName,
-                        AttributeName};
+                        AttributeName,
+                        Result1};
                 rowSp_rptTestCatagoryReportRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowSp_rptTestCatagoryReportRow);
                 return rowSp_rptTestCatagoryReportRow;
@@ -730,6 +742,7 @@ namespace HMS.Report.Dataset {
                 this.columnTAResult = base.Columns["TAResult"];
                 this.columnSAUnitName = base.Columns["SAUnitName"];
                 this.columnAttributeName = base.Columns["AttributeName"];
+                this.columnResult1 = base.Columns["Result1"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -779,6 +792,8 @@ namespace HMS.Report.Dataset {
                 base.Columns.Add(this.columnSAUnitName);
                 this.columnAttributeName = new global::System.Data.DataColumn("AttributeName", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnAttributeName);
+                this.columnResult1 = new global::System.Data.DataColumn("Result1", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnResult1);
                 this.columnPatientCode.MaxLength = 20;
                 this.columnName.MaxLength = 70;
                 this.columnGender.MaxLength = 10;
@@ -795,6 +810,8 @@ namespace HMS.Report.Dataset {
                 this.columnTAResult.MaxLength = 50;
                 this.columnSAUnitName.MaxLength = 20;
                 this.columnAttributeName.MaxLength = 50;
+                this.columnResult1.Caption = "Result";
+                this.columnResult1.MaxLength = 50;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2347,6 +2364,22 @@ namespace HMS.Report.Dataset {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Result1 {
+                get {
+                    try {
+                        return ((string)(this[this.tableSp_rptTestCatagoryReport.Result1Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Result1\' in table \'Sp_rptTestCatagoryReport\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableSp_rptTestCatagoryReport.Result1Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsPatientCodeNull() {
                 return this.IsNull(this.tableSp_rptTestCatagoryReport.PatientCodeColumn);
             }
@@ -2607,6 +2640,18 @@ namespace HMS.Report.Dataset {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetAttributeNameNull() {
                 this[this.tableSp_rptTestCatagoryReport.AttributeNameColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsResult1Null() {
+                return this.IsNull(this.tableSp_rptTestCatagoryReport.Result1Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetResult1Null() {
+                this[this.tableSp_rptTestCatagoryReport.Result1Column] = global::System.Convert.DBNull;
             }
         }
         
@@ -3849,7 +3894,6 @@ namespace HMS.Report.Dataset.PatientServiceTableAdapters {
             tableMapping.ColumnMappings.Add("TypeName", "TypeName");
             tableMapping.ColumnMappings.Add("ServiceName", "ServiceName");
             tableMapping.ColumnMappings.Add("ServiceShortName", "ServiceShortName");
-            tableMapping.ColumnMappings.Add("Result", "Result");
             tableMapping.ColumnMappings.Add("Status", "Status");
             tableMapping.ColumnMappings.Add("HasAttribute", "HasAttribute");
             tableMapping.ColumnMappings.Add("Discount", "Discount");
@@ -3862,6 +3906,7 @@ namespace HMS.Report.Dataset.PatientServiceTableAdapters {
             tableMapping.ColumnMappings.Add("TAResult", "TAResult");
             tableMapping.ColumnMappings.Add("SAUnitName", "SAUnitName");
             tableMapping.ColumnMappings.Add("AttributeName", "AttributeName");
+            tableMapping.ColumnMappings.Add("Result", "Result1");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -4103,19 +4148,26 @@ namespace HMS.Report.Dataset.PatientServiceTableAdapters {
             this._commandCollection[0].CommandType = global::System.Data.CommandType.StoredProcedure;
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@patientId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SheduleId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(PatientService.rpt_PatientServicDetailsDataTable dataTable, global::System.Nullable<int> patientId) {
+        public virtual int Fill(PatientService.rpt_PatientServicDetailsDataTable dataTable, global::System.Nullable<int> patientId, global::System.Nullable<int> SheduleId) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((patientId.HasValue == true)) {
                 this.Adapter.SelectCommand.Parameters[1].Value = ((int)(patientId.Value));
             }
             else {
                 this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            if ((SheduleId.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[2].Value = ((int)(SheduleId.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -4128,13 +4180,19 @@ namespace HMS.Report.Dataset.PatientServiceTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual PatientService.rpt_PatientServicDetailsDataTable GetData(global::System.Nullable<int> patientId) {
+        public virtual PatientService.rpt_PatientServicDetailsDataTable GetData(global::System.Nullable<int> patientId, global::System.Nullable<int> SheduleId) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((patientId.HasValue == true)) {
                 this.Adapter.SelectCommand.Parameters[1].Value = ((int)(patientId.Value));
             }
             else {
                 this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            if ((SheduleId.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[2].Value = ((int)(SheduleId.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             PatientService.rpt_PatientServicDetailsDataTable dataTable = new PatientService.rpt_PatientServicDetailsDataTable();
             this.Adapter.Fill(dataTable);
