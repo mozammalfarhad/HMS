@@ -19,5 +19,10 @@ namespace HMS.App_Code.BLL
         {
             return objRef.GetAllWithoutPagination(Criteria);
         }
+
+        public DataTable GetRefereerSummeryByDateRange(DateTime FromDate, DateTime ToDate, int ReferByID)
+        {
+            return objRef.GetRefereerSummeryByDateRange(FromDate,ToDate,ReferByID);
+        }
     }
 }
