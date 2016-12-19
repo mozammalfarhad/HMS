@@ -40,7 +40,7 @@ namespace HMS.App_Code.DAL
             altParams.Add(new SqlParameter("@FromDate", FromDate));
             altParams.Add(new SqlParameter("@ToDate", ToDate));
             altParams.Add(new SqlParameter("@ReferById", ReferByID));
-            return DatabaseManager.GetInstance().ExecuteStoredProcedureDataTable("rpt_ReferBySummeryByDateRange", altParams);
+            return DatabaseManager.GetInstance().ExecuteStoredProcedureDataTable("rpt_ReferBySummeryByDateRangeAll", altParams);
         }
     }
 }
