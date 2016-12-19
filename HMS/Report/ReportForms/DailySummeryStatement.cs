@@ -54,7 +54,7 @@ namespace HMS.Report.ReportForms
                             crystalReportViewer.ReportSource = rpt;
                         }
                     }
-                    else
+                    else if (ReportType.SelectedIndex == 1)
                     {
                         dt = new bllStatement().GetLedgerStatement(ddlUsers.Text,
                              Convert.ToDateTime(Convert.ToDateTime(FromDate.Text).ToString("yyyy-MM-dd")),
@@ -62,6 +62,23 @@ namespace HMS.Report.ReportForms
                         if (dt.Rows.Count > 0)
                         {
                             LedgerStatement rpt = new LedgerStatement();
+                            rpt.SetDataSource(dt);
+                            rpt.SetParameterValue("Logo", Application.StartupPath + @"\Images\" + Default.logoPath);
+                            rpt.SetParameterValue("FromDate", FromDate.Text);
+                            rpt.SetParameterValue("ToDate", ToDate.Text);
+                            rpt.SetParameterValue("CompanyName", Default.companyName);
+                            rpt.SetParameterValue("Address", Default.companyAddress + ", Telephone : " + Default.Telephone);
+                            crystalReportViewer.ReportSource = rpt;
+                        }
+                    }
+                    else
+                    {
+                        dt = new bllStatement().GetLedgerStatementDetails(ddlUsers.Text,
+                             Convert.ToDateTime(Convert.ToDateTime(FromDate.Text).ToString("yyyy-MM-dd")),
+                             Convert.ToDateTime(Convert.ToDateTime(ToDate.Text).ToString("yyyy-MM-dd")));
+                        if (dt.Rows.Count > 0)
+                        {
+                            LedgerStatementDetails rpt = new LedgerStatementDetails();
                             rpt.SetDataSource(dt);
                             rpt.SetParameterValue("Logo", Application.StartupPath + @"\Images\" + Default.logoPath);
                             rpt.SetParameterValue("FromDate", FromDate.Text);

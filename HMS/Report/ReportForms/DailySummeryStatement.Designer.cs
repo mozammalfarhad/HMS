@@ -254,7 +254,8 @@
             this.ReportType.DropDownWidth = 117;
             this.ReportType.Items.AddRange(new object[] {
             "Summery Statement",
-            "Ledger Satement"});
+            "Ledger Satement",
+            "Ledger Satement Details"});
             this.ReportType.Location = new System.Drawing.Point(585, 10);
             this.ReportType.Name = "ReportType";
             this.ReportType.Size = new System.Drawing.Size(137, 21);
