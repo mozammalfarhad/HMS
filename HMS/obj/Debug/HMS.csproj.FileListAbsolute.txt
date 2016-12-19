@@ -507,8 +507,6 @@ F:\GitHubRepresotory\HMS\HMS\bin\Debug\Microsoft.SqlServer.Management.Sdk.Sfc.dl
 F:\GitHubRepresotory\HMS\HMS\bin\Debug\Microsoft.SqlServer.Smo.dll
 F:\GitHubRepresotory\HMS\HMS\bin\Debug\Microsoft.SqlServer.SmoExtended.dll
 F:\GitHubRepresotory\HMS\HMS\bin\Debug\Microsoft.SqlServer.SqlEnum.dll
-F:\GitHubRepresotory\HMS\HMS\bin\Debug\DotNetZip.xml
-F:\GitHubRepresotory\HMS\HMS\bin\Debug\System.Configuration.Abstractions.pdb
 F:\GitHubRepresotory\HMS\HMS\obj\Debug\HMS.csprojResolveAssemblyReference.cache
 F:\GitHubRepresotory\HMS\HMS\obj\Debug\HMS.Forms.BaseForms.BaseDataGrid.resources
 F:\GitHubRepresotory\HMS\HMS\obj\Debug\HMS.Forms.BaseForms.BaseGeneralSetup.resources
