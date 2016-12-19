@@ -108,7 +108,7 @@ namespace HMS.Report
             {
                 if (critaria != "")
                     critaria = critaria + " and ";
-                critaria = " ReceiveDate between '" + DateFrom.Value + "' and '" + DateTo.Value+ "' ";
+                critaria =critaria+ " ReceiveDate between '" + DateFrom.Value + "' and '" + DateTo.Value+ "' ";
             }
             return critaria;
         }
@@ -156,33 +156,12 @@ namespace HMS.Report
 
         private void btnViewPdf_Click(object sender, EventArgs e)
         {
-            //try
-            //{
-            //    DataTable courseDt = new bllReferrerFeeDetails().GetAllWithoutPagination(GetCriteria());
-              
-            //        this.Cursor = Cursors.WaitCursor;
-            //        Rpt_RefererFeeDetails rpt = new Rpt_RefererFeeDetails();
-            //        rpt.SetDataSource(courseDt);
-
-            //       // rpt.SetParameterValue("LogoPath", Application.StartupPath + @"\logo-url.jpg");
-            //        //rpt.SetParameterValue("ReportName", "Tournament List");
-            //        //rpt.SetParameterValue("Date", "Date: " + DateTime.Today.ToString("dd-MMM-yyyy"));
-            //        ReportViewer frm=new ReportViewer();
-            //        frm.CRV.ReportSource = rpt;
-            //        frm.ShowDialog();
-            //}
-            //catch (Exception ex)
-            //{
-            //    KryptonMessageBox.Show(ex.Message);
-            //    this.Cursor = Cursors.Default;
-            //    return;
-            //}
             try
             {
-                DataTable courseDt = new bllReferrerFeeDetails().GetRefereerSummeryByDateRange(Convert.ToDateTime(DateFrom.Value),Convert.ToDateTime(DateTo.Value),Convert.ToInt32(comReferrer.SelectedValue));
+                DataTable courseDt = new bllReferrerFeeDetails().GetAllWithoutPagination(GetCriteria());
 
-                this.Cursor = Cursors.WaitCursor;
-                Rpt_RefererSummeryByDateRange rpt = new Rpt_RefererSummeryByDateRange();
+               // this.Cursor = Cursors.WaitCursor;
+                Rpt_RefererFeeDetails rpt = new Rpt_RefererFeeDetails();
                 rpt.SetDataSource(courseDt);
 
                 // rpt.SetParameterValue("LogoPath", Application.StartupPath + @"\logo-url.jpg");
@@ -195,9 +174,30 @@ namespace HMS.Report
             catch (Exception ex)
             {
                 KryptonMessageBox.Show(ex.Message);
-                this.Cursor = Cursors.Default;
+               // this.Cursor = Cursors.Default;
                 return;
             }
+            //try
+            //{
+            //    DataTable courseDt = new bllReferrerFeeDetails().GetRefereerSummeryByDateRange(Convert.ToDateTime(DateFrom.Value), Convert.ToDateTime(DateTo.Value), Convert.ToInt32(comReferrer.SelectedValue));
+
+            //    this.Cursor = Cursors.WaitCursor;
+            //    Rpt_RefererSummeryByDateRange rpt = new Rpt_RefererSummeryByDateRange();
+            //    rpt.SetDataSource(courseDt);
+
+            //    rpt.SetParameterValue("LogoPath", Application.StartupPath + @"\logo-url.jpg");
+            //    rpt.SetParameterValue("ReportName", "Tournament List");
+            //    rpt.SetParameterValue("Date", "Date: " + DateTime.Today.ToString("dd-MMM-yyyy"));
+            //    ReportViewer frm = new ReportViewer();
+            //    frm.CRV.ReportSource = rpt;
+            //    frm.ShowDialog();
+            //}
+            //catch (Exception ex)
+            //{
+            //    KryptonMessageBox.Show(ex.Message);
+            //    this.Cursor = Cursors.Default;
+            //    return;
+            //}
         }
 
        

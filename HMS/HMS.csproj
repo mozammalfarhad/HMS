@@ -425,6 +425,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>PatientService.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Report\LedgerStatement.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LedgerStatement.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Report\PatientTestDetails.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -635,6 +641,10 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Report\LedgerStatement.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>LedgerStatement.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Report\PatientTestDetails.resx">
       <DependentUpon>PatientTestDetails.cs</DependentUpon>
     </EmbeddedResource>

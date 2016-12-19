@@ -565,7 +565,6 @@ C:\Users\USER\Documents\GitHub\HMS\HMS\bin\Debug\Microsoft.SqlServer.Management.
 C:\Users\USER\Documents\GitHub\HMS\HMS\bin\Debug\Microsoft.SqlServer.Smo.dll
 C:\Users\USER\Documents\GitHub\HMS\HMS\bin\Debug\Microsoft.SqlServer.SmoExtended.dll
 C:\Users\USER\Documents\GitHub\HMS\HMS\bin\Debug\Microsoft.SqlServer.SqlEnum.dll
-C:\Users\USER\Documents\GitHub\HMS\HMS\obj\Debug\HMS.csprojResolveAssemblyReference.cache
 C:\Users\USER\Documents\GitHub\HMS\HMS\obj\Debug\HMS.Forms.BaseForms.BaseDataGrid.resources
 C:\Users\USER\Documents\GitHub\HMS\HMS\obj\Debug\HMS.Forms.BaseForms.BaseGeneralSetup.resources
 C:\Users\USER\Documents\GitHub\HMS\HMS\obj\Debug\HMS.Forms.BaseForms.BaseNavigator.resources
