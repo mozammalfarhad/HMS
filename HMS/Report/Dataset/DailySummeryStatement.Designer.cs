@@ -1577,6 +1577,8 @@ namespace HMS.Report.Dataset {
             
             private global::System.Data.DataColumn columnTotalPatient;
             
+            private global::System.Data.DataColumn columnDueAmt;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public rpt_ReferBySummeryByDateRangeAllDataTable() {
@@ -1676,6 +1678,14 @@ namespace HMS.Report.Dataset {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn DueAmtColumn {
+                get {
+                    return this.columnDueAmt;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -1711,7 +1721,7 @@ namespace HMS.Report.Dataset {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public rpt_ReferBySummeryByDateRangeAllRow Addrpt_ReferBySummeryByDateRangeAllRow(string ConsultantName, decimal SubTotal, decimal VatAmt, decimal Discount, decimal Payable, decimal PaidAmount, int RrefrById, int TotalPatient) {
+            public rpt_ReferBySummeryByDateRangeAllRow Addrpt_ReferBySummeryByDateRangeAllRow(string ConsultantName, decimal SubTotal, decimal VatAmt, decimal Discount, decimal Payable, decimal PaidAmount, int RrefrById, int TotalPatient, decimal DueAmt) {
                 rpt_ReferBySummeryByDateRangeAllRow rowrpt_ReferBySummeryByDateRangeAllRow = ((rpt_ReferBySummeryByDateRangeAllRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         ConsultantName,
@@ -1721,7 +1731,8 @@ namespace HMS.Report.Dataset {
                         Payable,
                         PaidAmount,
                         RrefrById,
-                        TotalPatient};
+                        TotalPatient,
+                        DueAmt};
                 rowrpt_ReferBySummeryByDateRangeAllRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowrpt_ReferBySummeryByDateRangeAllRow);
                 return rowrpt_ReferBySummeryByDateRangeAllRow;
@@ -1752,6 +1763,7 @@ namespace HMS.Report.Dataset {
                 this.columnPaidAmount = base.Columns["PaidAmount"];
                 this.columnRrefrById = base.Columns["RrefrById"];
                 this.columnTotalPatient = base.Columns["TotalPatient"];
+                this.columnDueAmt = base.Columns["DueAmt"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1773,6 +1785,8 @@ namespace HMS.Report.Dataset {
                 base.Columns.Add(this.columnRrefrById);
                 this.columnTotalPatient = new global::System.Data.DataColumn("TotalPatient", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnTotalPatient);
+                this.columnDueAmt = new global::System.Data.DataColumn("DueAmt", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDueAmt);
                 this.columnConsultantName.MaxLength = 70;
                 this.columnSubTotal.ReadOnly = true;
                 this.columnVatAmt.ReadOnly = true;
@@ -1780,6 +1794,7 @@ namespace HMS.Report.Dataset {
                 this.columnPayable.ReadOnly = true;
                 this.columnPaidAmount.ReadOnly = true;
                 this.columnTotalPatient.ReadOnly = true;
+                this.columnDueAmt.ReadOnly = true;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2984,6 +2999,23 @@ namespace HMS.Report.Dataset {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public decimal DueAmt {
+                get {
+                    try {
+                        return ((decimal)(this[this.tablerpt_ReferBySummeryByDateRangeAll.DueAmtColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'DueAmt\' in table \'rpt_ReferBySummeryByDateRangeAll\' is DBNu" +
+                                "ll.", e);
+                    }
+                }
+                set {
+                    this[this.tablerpt_ReferBySummeryByDateRangeAll.DueAmtColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsConsultantNameNull() {
                 return this.IsNull(this.tablerpt_ReferBySummeryByDateRangeAll.ConsultantNameColumn);
             }
@@ -3076,6 +3108,18 @@ namespace HMS.Report.Dataset {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetTotalPatientNull() {
                 this[this.tablerpt_ReferBySummeryByDateRangeAll.TotalPatientColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsDueAmtNull() {
+                return this.IsNull(this.tablerpt_ReferBySummeryByDateRangeAll.DueAmtColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetDueAmtNull() {
+                this[this.tablerpt_ReferBySummeryByDateRangeAll.DueAmtColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -3998,6 +4042,7 @@ namespace HMS.Report.Dataset.DailySummeryStatementTableAdapters {
             tableMapping.ColumnMappings.Add("PaidAmount", "PaidAmount");
             tableMapping.ColumnMappings.Add("RrefrById", "RrefrById");
             tableMapping.ColumnMappings.Add("TotalPatient", "TotalPatient");
+            tableMapping.ColumnMappings.Add("DueAmt", "DueAmt");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
