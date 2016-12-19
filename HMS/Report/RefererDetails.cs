@@ -182,7 +182,7 @@ namespace HMS.Report
                 DataTable courseDt = new bllReferrerFeeDetails().GetRefereerSummeryByDateRange(Convert.ToDateTime(DateFrom.Value), Convert.ToDateTime(DateTo.Value), Convert.ToInt32(comReferrer.SelectedValue));
 
                // this.Cursor = Cursors.WaitCursor;
-                Rpt_RefererSummeryByDateRange rpt = new Rpt_RefererSummeryByDateRange();
+                Rpt_RefererSummeryByDateRangeAll rpt = new Rpt_RefererSummeryByDateRangeAll();
                 rpt.SetDataSource(courseDt);
 
               //  rpt.SetParameterValue("LogoPath", Application.StartupPath + @"\logo-url.jpg");
