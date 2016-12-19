@@ -108,6 +108,7 @@
             // 
             // btnViewPdf
             // 
+            this.btnViewPdf.Location = new System.Drawing.Point(686, 6);
             this.btnViewPdf.StateCommon.Back.Image = ((System.Drawing.Image)(resources.GetObject("btnViewPdf.StateCommon.Back.Image")));
             this.btnViewPdf.StateCommon.Back.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.CenterMiddle;
             this.btnViewPdf.Values.Text = "";
@@ -115,6 +116,7 @@
             // 
             // btnSearchTop
             // 
+            this.btnSearchTop.Location = new System.Drawing.Point(648, 6);
             this.btnSearchTop.StateCommon.Back.Image = ((System.Drawing.Image)(resources.GetObject("btnSearchTop.StateCommon.Back.Image")));
             this.btnSearchTop.StateCommon.Back.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.CenterMiddle;
             this.btnSearchTop.Values.Text = "";
@@ -163,7 +165,7 @@
             // 
             // kryptonLabel3
             // 
-            this.kryptonLabel3.Location = new System.Drawing.Point(495, 10);
+            this.kryptonLabel3.Location = new System.Drawing.Point(463, 10);
             this.kryptonLabel3.Name = "kryptonLabel3";
             this.kryptonLabel3.Size = new System.Drawing.Size(54, 20);
             this.kryptonLabel3.TabIndex = 19;
@@ -172,7 +174,7 @@
             // comReferrer
             // 
             this.comReferrer.DropDownWidth = 121;
-            this.comReferrer.Location = new System.Drawing.Point(553, 11);
+            this.comReferrer.Location = new System.Drawing.Point(519, 11);
             this.comReferrer.Name = "comReferrer";
             this.comReferrer.Size = new System.Drawing.Size(121, 21);
             this.comReferrer.TabIndex = 20;
@@ -213,13 +215,13 @@
             this.ReferFee.HeaderText = "Refer Fee";
             this.ReferFee.Name = "ReferFee";
             // 
-
             // RefererDetails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(794, 572);
             this.Location = new System.Drawing.Point(0, 0);
+     
             this.Text = "referrer Details";
             ((System.ComponentModel.ISupportInitialize)(this.pnlBaseButtonContainer)).EndInit();
             this.pnlBaseButtonContainer.ResumeLayout(false);

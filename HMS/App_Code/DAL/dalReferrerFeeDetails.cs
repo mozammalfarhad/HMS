@@ -33,5 +33,14 @@ namespace HMS.App_Code.DAL
             altParams.Add(new SqlParameter("@Criteria", Criteria));
             return DatabaseManager.GetInstance().ExecuteStoredProcedureDataTable("Rpt_RefererFeeDetails", altParams);
         }
+        public DataTable GetRefereerSummeryByDateRange(DateTime FromDate, DateTime ToDate,int ReferByID)
+        {
+
+            ArrayList altParams = new ArrayList();
+            altParams.Add(new SqlParameter("@FromDate", FromDate));
+            altParams.Add(new SqlParameter("@ToDate", ToDate));
+            altParams.Add(new SqlParameter("@ReferById", ReferByID));
+            return DatabaseManager.GetInstance().ExecuteStoredProcedureDataTable("rpt_ReferBySummeryByDateRange", altParams);
+        }
     }
 }

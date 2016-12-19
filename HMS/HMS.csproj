@@ -497,6 +497,12 @@
       <DependentUpon>Rpt_RefererFeeDetails.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Report\Rpt_RefererSummeryByDateRange.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Rpt_RefererSummeryByDateRange.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Report\TestResultDetailEntry.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -669,6 +675,10 @@
     <EmbeddedResource Include="Report\Rpt_RefererFeeDetails.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>Rpt_RefererFeeDetails.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\Rpt_RefererSummeryByDateRange.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Rpt_RefererSummeryByDateRange.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Report\TestResultDetailEntry.resx">
       <DependentUpon>TestResultDetailEntry.cs</DependentUpon>
