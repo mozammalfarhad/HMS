@@ -415,6 +415,10 @@
     <Compile Include="Report\Dataset\Collection.Designer.cs">
       <DependentUpon>Collection.cs</DependentUpon>
     </Compile>
+    <Compile Include="Report\Dataset\DailySummeryStatement.cs">
+      <DependentUpon>DailySummeryStatement.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Report\Dataset\DailySummeryStatement.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -424,6 +428,12 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>PatientService.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Report\LedgerStatementDetails.cs">
+      <DependentUpon>LedgerStatementDetails.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="Report\LedgerStatement.cs">
       <AutoGen>True</AutoGen>
@@ -641,6 +651,10 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Report\LedgerStatementDetails.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>LedgerStatementDetails.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Report\LedgerStatement.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>LedgerStatement.cs</LastGenOutput>
