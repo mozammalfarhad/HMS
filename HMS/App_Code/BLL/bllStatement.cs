@@ -18,5 +18,9 @@ namespace HMS.App_Code.BLL
         {
             return new dalStatement().GetLedgerStatement(UserName, FromDate, ToDate);
         }
+        public DataTable GetLedgerStatementDetails(string UserName, DateTime FromDate, DateTime ToDate)
+        {
+            return new dalStatement().GetLedgerStatementDetails(UserName, FromDate, ToDate);
+        }
     }
 }
