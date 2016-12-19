@@ -21,5 +21,14 @@ namespace HMS.App_Code.DAL
             DataTable dt = DatabaseManager.GetInstance().ExecuteStoredProcedureDataTable("rpt_dailySummaryStatement", altParams);
             return dt;
         }
+        public DataTable GetLedgerStatement(string UserName, DateTime FromDate, DateTime ToDate)
+        {
+            ArrayList altParams = new ArrayList();
+            altParams.Add(new SqlParameter("@UserName", UserName));
+            altParams.Add(new SqlParameter("@FromDate", FromDate));
+            altParams.Add(new SqlParameter("@ToDate", ToDate));
+            DataTable dt = DatabaseManager.GetInstance().ExecuteStoredProcedureDataTable("Rpt_DailyCollectionStatement", altParams);
+            return dt;
+        }
     }
 }
