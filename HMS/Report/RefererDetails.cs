@@ -1,6 +1,7 @@
 ﻿using ComponentFactory.Krypton.Toolkit;
 using HMS.App_Code.BLL;
 using HMS.Forms.BaseForms;
+using HMS.Model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -182,12 +183,14 @@ namespace HMS.Report
                 DataTable courseDt = new bllReferrerFeeDetails().GetRefereerSummeryByDateRange(Convert.ToDateTime(DateFrom.Value), Convert.ToDateTime(DateTo.Value), Convert.ToInt32(comReferrer.SelectedValue));
 
                // this.Cursor = Cursors.WaitCursor;
-                Rpt_RefererSummeryByDateRangeAll rpt = new Rpt_RefererSummeryByDateRangeAll();
+                Rpt_RefererSummeryByDateRange rpt = new Rpt_RefererSummeryByDateRange();
                 rpt.SetDataSource(courseDt);
 
-              //  rpt.SetParameterValue("LogoPath", Application.StartupPath + @"\logo-url.jpg");
-               // rpt.SetParameterValue("ReportName", "Tournament List");
-               // rpt.SetParameterValue("Date", "Date: " + DateTime.Today.ToString("dd-MMM-yyyy"));
+                rpt.SetParameterValue("LogoPath", Application.StartupPath + @"\Images\" + Default.logoPath);
+                rpt.SetParameterValue("FromDate", DateFrom.Text);
+                rpt.SetParameterValue("ToDate", DateTo.Text);
+                rpt.SetParameterValue("CompanyName", Default.companyName);
+                rpt.SetParameterValue("Address", Default.companyAddress + ", Telephone : " + Default.Telephone);
                 ReportViewer frm = new ReportViewer();
                 frm.CRV.ReportSource = rpt;
                 frm.ShowDialog();
