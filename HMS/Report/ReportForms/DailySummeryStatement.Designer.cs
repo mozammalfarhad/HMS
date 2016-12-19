@@ -43,6 +43,8 @@
             this.DueCollectedAmt = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ddlUsers = new ComponentFactory.Krypton.Toolkit.KryptonComboBox();
             this.kryptonLabel3 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
+            this.crystalReportViewer = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
+            this.ReportType = new ComponentFactory.Krypton.Toolkit.KryptonComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.pnlBaseButtonContainer)).BeginInit();
             this.pnlBaseButtonContainer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pnlBaseSearch)).BeginInit();
@@ -50,11 +52,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvMain)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ddlPage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ddlUsers)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ReportType)).BeginInit();
             this.SuspendLayout();
             // 
             // hdrBaseCaption
             // 
-            this.hdrBaseCaption.Values.Heading = "Daily Summery Statement Of Income";
+            this.hdrBaseCaption.Values.Heading = "Daily Statement Of Income";
             this.hdrBaseCaption.Values.Image = null;
             // 
             // bdrButtonTop
@@ -64,6 +67,7 @@
             // btnClose
             // 
             this.btnClose.Values.Text = "Close";
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // btnEdit
             // 
@@ -72,6 +76,7 @@
             // 
             // pnlBaseSearch
             // 
+            this.pnlBaseSearch.Controls.Add(this.ReportType);
             this.pnlBaseSearch.Controls.Add(this.kryptonLabel3);
             this.pnlBaseSearch.Controls.Add(this.ddlUsers);
             this.pnlBaseSearch.Controls.Add(this.kryptonLabel2);
@@ -86,6 +91,7 @@
             this.pnlBaseSearch.Controls.SetChildIndex(this.kryptonLabel2, 0);
             this.pnlBaseSearch.Controls.SetChildIndex(this.ddlUsers, 0);
             this.pnlBaseSearch.Controls.SetChildIndex(this.kryptonLabel3, 0);
+            this.pnlBaseSearch.Controls.SetChildIndex(this.ReportType, 0);
             // 
             // dgvMain
             // 
@@ -100,6 +106,7 @@
             this.DueCollectedAmt});
             this.dgvMain.StateCommon.Background.Color1 = System.Drawing.Color.White;
             this.dgvMain.StateCommon.BackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.GridBackgroundList;
+            this.dgvMain.Visible = false;
             // 
             // lblPagingSummery
             // 
@@ -114,6 +121,7 @@
             this.btnViewPdf.StateCommon.Back.Image = ((System.Drawing.Image)(resources.GetObject("btnViewPdf.StateCommon.Back.Image")));
             this.btnViewPdf.StateCommon.Back.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.CenterMiddle;
             this.btnViewPdf.Values.Text = "";
+            this.btnViewPdf.Visible = false;
             this.btnViewPdf.Click += new System.EventHandler(this.btnViewPdf_Click);
             // 
             // btnSearchTop
@@ -130,23 +138,25 @@
             // 
             // FromDate
             // 
-            this.FromDate.Location = new System.Drawing.Point(294, 8);
+            this.FromDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.FromDate.Location = new System.Drawing.Point(282, 8);
             this.FromDate.Name = "FromDate";
             this.FromDate.ShowCheckBox = true;
-            this.FromDate.Size = new System.Drawing.Size(177, 21);
+            this.FromDate.Size = new System.Drawing.Size(107, 21);
             this.FromDate.TabIndex = 6;
             // 
             // ToDate
             // 
-            this.ToDate.Location = new System.Drawing.Point(531, 9);
+            this.ToDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.ToDate.Location = new System.Drawing.Point(461, 9);
             this.ToDate.Name = "ToDate";
             this.ToDate.ShowCheckBox = true;
-            this.ToDate.Size = new System.Drawing.Size(189, 21);
+            this.ToDate.Size = new System.Drawing.Size(103, 21);
             this.ToDate.TabIndex = 7;
             // 
             // kryptonLabel1
             // 
-            this.kryptonLabel1.Location = new System.Drawing.Point(217, 9);
+            this.kryptonLabel1.Location = new System.Drawing.Point(205, 9);
             this.kryptonLabel1.Name = "kryptonLabel1";
             this.kryptonLabel1.Size = new System.Drawing.Size(74, 20);
             this.kryptonLabel1.TabIndex = 15;
@@ -154,7 +164,7 @@
             // 
             // kryptonLabel2
             // 
-            this.kryptonLabel2.Location = new System.Drawing.Point(474, 9);
+            this.kryptonLabel2.Location = new System.Drawing.Point(404, 9);
             this.kryptonLabel2.Name = "kryptonLabel2";
             this.kryptonLabel2.Size = new System.Drawing.Size(59, 20);
             this.kryptonLabel2.TabIndex = 16;
@@ -213,7 +223,7 @@
             this.ddlUsers.DropDownWidth = 155;
             this.ddlUsers.Location = new System.Drawing.Point(60, 8);
             this.ddlUsers.Name = "ddlUsers";
-            this.ddlUsers.Size = new System.Drawing.Size(155, 21);
+            this.ddlUsers.Size = new System.Drawing.Size(125, 21);
             this.ddlUsers.TabIndex = 17;
             // 
             // kryptonLabel3
@@ -224,14 +234,46 @@
             this.kryptonLabel3.TabIndex = 18;
             this.kryptonLabel3.Values.Text = "Users :";
             // 
+            // crystalReportViewer
+            // 
+            this.crystalReportViewer.ActiveViewIndex = -1;
+            this.crystalReportViewer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.crystalReportViewer.Cursor = System.Windows.Forms.Cursors.Default;
+            this.crystalReportViewer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.crystalReportViewer.Location = new System.Drawing.Point(0, 71);
+            this.crystalReportViewer.Name = "crystalReportViewer";
+            this.crystalReportViewer.Size = new System.Drawing.Size(794, 437);
+            this.crystalReportViewer.TabIndex = 6;
+            this.crystalReportViewer.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None;
+            // 
+            // ReportType
+            // 
+            this.ReportType.AutoCompleteCustomSource.AddRange(new string[] {
+            "Summery Statement",
+            "Ledger Statement"});
+            this.ReportType.DropDownWidth = 117;
+            this.ReportType.Items.AddRange(new object[] {
+            "Summery Statement",
+            "Ledger Satement"});
+            this.ReportType.Location = new System.Drawing.Point(585, 10);
+            this.ReportType.Name = "ReportType";
+            this.ReportType.Size = new System.Drawing.Size(137, 21);
+            this.ReportType.TabIndex = 19;
+            // 
             // DailySummeryStatement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(794, 572);
+            this.Controls.Add(this.crystalReportViewer);
             this.Location = new System.Drawing.Point(0, 0);
             this.Name = "DailySummeryStatement";
             this.Text = "DailySummeryStatement";
+            this.Controls.SetChildIndex(this.hdrBaseCaption, 0);
+            this.Controls.SetChildIndex(this.pnlBaseButtonContainer, 0);
+            this.Controls.SetChildIndex(this.pnlBaseSearch, 0);
+            this.Controls.SetChildIndex(this.dgvMain, 0);
+            this.Controls.SetChildIndex(this.crystalReportViewer, 0);
             ((System.ComponentModel.ISupportInitialize)(this.pnlBaseButtonContainer)).EndInit();
             this.pnlBaseButtonContainer.ResumeLayout(false);
             this.pnlBaseButtonContainer.PerformLayout();
@@ -241,6 +283,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvMain)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ddlPage)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ddlUsers)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ReportType)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -262,5 +305,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn DueCollectedAmt;
         private ComponentFactory.Krypton.Toolkit.KryptonComboBox ddlUsers;
         private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel3;
+        private CrystalDecisions.Windows.Forms.CrystalReportViewer crystalReportViewer;
+        private ComponentFactory.Krypton.Toolkit.KryptonComboBox ReportType;
     }
 }

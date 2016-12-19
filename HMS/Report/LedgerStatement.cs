@@ -16,14 +16,14 @@ namespace HMS.Report {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class Rpt_DueCollectionList : ReportClass {
+    public class LedgerStatement : ReportClass {
         
-        public Rpt_DueCollectionList() {
+        public LedgerStatement() {
         }
         
         public override string ResourceName {
             get {
-                return "Rpt_DueCollectionList.rpt";
+                return "LedgerStatement.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace HMS.Report {
         
         public override string FullResourceName {
             get {
-                return "HMS.Report.Rpt_DueCollectionList.rpt";
+                return "HMS.Report.LedgerStatement.rpt";
             }
             set {
                 // Do nothing
@@ -66,7 +66,7 @@ namespace HMS.Report {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section Section3 {
+        public CrystalDecisions.CrystalReports.Engine.Section GroupHeaderSection1 {
             get {
                 return this.ReportDefinition.Sections[2];
             }
@@ -74,7 +74,7 @@ namespace HMS.Report {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section Section4 {
+        public CrystalDecisions.CrystalReports.Engine.Section Section3 {
             get {
                 return this.ReportDefinition.Sections[3];
             }
@@ -82,7 +82,7 @@ namespace HMS.Report {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section Section5 {
+        public CrystalDecisions.CrystalReports.Engine.Section GroupFooterSection1 {
             get {
                 return this.ReportDefinition.Sections[4];
             }
@@ -90,7 +90,23 @@ namespace HMS.Report {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_LogoPath {
+        public CrystalDecisions.CrystalReports.Engine.Section Section4 {
+            get {
+                return this.ReportDefinition.Sections[5];
+            }
+        }
+        
+        [Browsable(false)]
+        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
+        public CrystalDecisions.CrystalReports.Engine.Section Section5 {
+            get {
+                return this.ReportDefinition.Sections[6];
+            }
+        }
+        
+        [Browsable(false)]
+        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
+        public CrystalDecisions.Shared.IParameterField Parameter_Logo {
             get {
                 return this.DataDefinition.ParameterFields[0];
             }
@@ -98,7 +114,7 @@ namespace HMS.Report {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_CompanyName {
+        public CrystalDecisions.Shared.IParameterField Parameter_FromDate {
             get {
                 return this.DataDefinition.ParameterFields[1];
             }
@@ -106,17 +122,33 @@ namespace HMS.Report {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_Address {
+        public CrystalDecisions.Shared.IParameterField Parameter_ToDate {
             get {
                 return this.DataDefinition.ParameterFields[2];
+            }
+        }
+        
+        [Browsable(false)]
+        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
+        public CrystalDecisions.Shared.IParameterField Parameter_CompanyName {
+            get {
+                return this.DataDefinition.ParameterFields[3];
+            }
+        }
+        
+        [Browsable(false)]
+        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
+        public CrystalDecisions.Shared.IParameterField Parameter_Address {
+            get {
+                return this.DataDefinition.ParameterFields[4];
             }
         }
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedRpt_DueCollectionList : Component, ICachedReport {
+    public class CachedLedgerStatement : Component, ICachedReport {
         
-        public CachedRpt_DueCollectionList() {
+        public CachedLedgerStatement() {
         }
         
         [Browsable(false)]
@@ -153,7 +185,7 @@ namespace HMS.Report {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            Rpt_DueCollectionList rpt = new Rpt_DueCollectionList();
+            LedgerStatement rpt = new LedgerStatement();
             rpt.Site = this.Site;
             return rpt;
         }

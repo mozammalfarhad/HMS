@@ -21,6 +21,7 @@ namespace HMS.Report.ReportForms
         public DailySummeryStatement()
         {
             InitializeComponent();
+            ReportType.SelectedIndex = 0;
             GetUsers();
         }
 
@@ -31,63 +32,81 @@ namespace HMS.Report.ReportForms
 
         private void GenerateReport()
         {
-            DataTable dt = new bllStatement().GetDailySummaryStatement(ddlUsers.SelectedText,
-                Convert.ToDateTime(Convert.ToDateTime(FromDate.Text).ToString("yyyy-MM-dd")),
-                Convert.ToDateTime(Convert.ToDateTime(ToDate.Text).ToString("yyyy-MM-dd")));
-            if (dt.Rows.Count > 0)
-            {
+            
+            
                 try
                 {  
-                    string localPath = string.Empty;
-                    var fbd = new FolderBrowserDialog();
-                    if (fbd.ShowDialog() == DialogResult.OK)
+                    DataTable dt =new DataTable();
+                    if(ReportType.SelectedIndex==0)
                     {
-                        localPath = fbd.SelectedPath + "\\DailySummeryStatement_" + DateTime.Today.Date.ToString("dd_MMM_yyyy_") +
-                                    DateTime.Now.Minute + "_" + DateTime.Now.Second + "_" + DateTime.Now.Millisecond + ".pdf";
-                        this.Cursor = Cursors.WaitCursor;
-                        rptDailySummeryStatement rpt = new rptDailySummeryStatement();
-                        rpt.SetDataSource(dt);
-
-                        rpt.SetParameterValue("Logo", Application.StartupPath + @"\Images\" + Default.logoPath);
-                        rpt.SetParameterValue("FromDate", FromDate.Text);
-                        rpt.SetParameterValue("ToDate", ToDate.Text);
-                        rpt.SetParameterValue("CompanyName",Default.companyName );
-                        //rpt.SetParameterValue("Date", "Date: " + DateTime.Today.ToString("dd-MMM-yyyy"));
-
-                        rpt.ExportToDisk(CrystalDecisions.Shared.ExportFormatType.PortableDocFormat, localPath);
-                        this.Cursor = Cursors.Default;
-                        KryptonMessageBox.Show("Daily summery statement exported successfully!", "Daily summery statement.",
-                            MessageBoxButtons.OK,
-                            MessageBoxIcon.Information);
-                        Process.Start(localPath);
+                        dt = new bllStatement().GetDailySummaryStatement(ddlUsers.Text,
+                             Convert.ToDateTime(Convert.ToDateTime(FromDate.Text).ToString("yyyy-MM-dd")),
+                             Convert.ToDateTime(Convert.ToDateTime(ToDate.Text).ToString("yyyy-MM-dd")));
+                        if (dt.Rows.Count > 0)
+                        {
+                            rptDailySummeryStatement rpt = new rptDailySummeryStatement();
+                            rpt.SetDataSource(dt);
+                            rpt.SetParameterValue("Logo", Application.StartupPath + @"\Images\" + Default.logoPath);
+                            rpt.SetParameterValue("FromDate", FromDate.Text);
+                            rpt.SetParameterValue("ToDate", ToDate.Text);
+                            rpt.SetParameterValue("CompanyName", Default.companyName);
+                            //rpt.SetParameterValue("Address", Default.companyAddress + ", Telephone : " + Default.Telephone);
+                            crystalReportViewer.ReportSource = rpt;
+                        }
                     }
+                    else
+                    {
+                        dt = new bllStatement().GetLedgerStatement(ddlUsers.Text,
+                             Convert.ToDateTime(Convert.ToDateTime(FromDate.Text).ToString("yyyy-MM-dd")),
+                             Convert.ToDateTime(Convert.ToDateTime(ToDate.Text).ToString("yyyy-MM-dd")));
+                        if (dt.Rows.Count > 0)
+                        {
+                            LedgerStatement rpt = new LedgerStatement();
+                            rpt.SetDataSource(dt);
+                            rpt.SetParameterValue("Logo", Application.StartupPath + @"\Images\" + Default.logoPath);
+                            rpt.SetParameterValue("FromDate", FromDate.Text);
+                            rpt.SetParameterValue("ToDate", ToDate.Text);
+                            rpt.SetParameterValue("CompanyName", Default.companyName);
+                            rpt.SetParameterValue("Address", Default.companyAddress + ", Telephone : " + Default.Telephone);
+                            crystalReportViewer.ReportSource = rpt;
+                        }
+                    }
+                     
+                    
                 }
                 catch (Exception ex)
                 {
                     KryptonMessageBox.Show(ex.Message);
-                    this.Cursor = Cursors.Default;
                     return;
                 }
             }
-        }
+        
 
         private void GetUsers()
         {
             string[] rolesArray;
-            string[] users;
+            MembershipUserCollection users;
             string[] usersInRole;
             rolesArray = Roles.GetRolesForUser(HMS.Properties.Settings.Default.UserName); //Roles.GetAllRoles();
             string rolename = rolesArray[0].ToString();
-            users = Roles.GetUsersInRole(rolename); //Membership.GetAllUsers();
+            users = Membership.GetAllUsers();  //Membership.GetAllUsers();
+            ddlUsers.Items.Add("Select");
             foreach (var item in users)
             {
                 ddlUsers.Items.Add(item);//
             }
+            ddlUsers.SelectedIndex = 0;
+            
         }
 
         private void btnViewPdf_Click(object sender, EventArgs e)
         {
             GenerateReport();
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }
