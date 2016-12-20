@@ -1,5 +1,5 @@
 ﻿using ComponentFactory.Krypton.Toolkit;
-using HMS.App_Code.BLL;
+using HMS.BLL;
 using HMS.Forms.BaseForms;
 using System;
 using System.Collections.Generic;
