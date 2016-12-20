@@ -45,6 +45,7 @@ namespace HMS.Views
             this.referFeeEntryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.companyInfoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cultureSensitivityMedicineToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cultureSensitivityBacteriaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.memberToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.PSSEntryToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -92,7 +93,7 @@ namespace HMS.Views
             this.BtnTournamentList = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator13 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
-            this.cultureSensitivityBacteriaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.groupWisePatientTestToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.stbStatusBar.SuspendLayout();
             this.tbrMain.SuspendLayout();
@@ -279,6 +280,13 @@ namespace HMS.Views
             this.cultureSensitivityMedicineToolStripMenuItem.Size = new System.Drawing.Size(221, 22);
             this.cultureSensitivityMedicineToolStripMenuItem.Text = "Culture Sensitivity Medicine";
             this.cultureSensitivityMedicineToolStripMenuItem.Click += new System.EventHandler(this.cultureSensitivityMedicineToolStripMenuItem_Click);
+            // 
+            // cultureSensitivityBacteriaToolStripMenuItem
+            // 
+            this.cultureSensitivityBacteriaToolStripMenuItem.Name = "cultureSensitivityBacteriaToolStripMenuItem";
+            this.cultureSensitivityBacteriaToolStripMenuItem.Size = new System.Drawing.Size(221, 22);
+            this.cultureSensitivityBacteriaToolStripMenuItem.Text = "Culture Sensitivity Bacteria";
+            this.cultureSensitivityBacteriaToolStripMenuItem.Click += new System.EventHandler(this.cultureSensitivityBacteriaToolStripMenuItem_Click);
             // 
             // toolStripMenuItem2
             // 
@@ -476,7 +484,8 @@ namespace HMS.Views
             this.patientTestDetailReportToolStripMenuItem,
             this.DailySummeryStatementToolStripMenuItem,
             this.referrerFeeDetailsToolStripMenuItem,
-            this.dueListToolStripMenuItem});
+            this.dueListToolStripMenuItem,
+            this.groupWisePatientTestToolStripMenuItem});
             this.reportToolStripMenuItem1.Name = "reportToolStripMenuItem1";
             this.reportToolStripMenuItem1.Size = new System.Drawing.Size(54, 20);
             this.reportToolStripMenuItem1.Text = "Report";
@@ -687,12 +696,12 @@ namespace HMS.Views
             this.toolStripButton2.Text = "Report";
             this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
             // 
-            // cultureSensitivityBacteriaToolStripMenuItem
+            // groupWisePatientTestToolStripMenuItem
             // 
-            this.cultureSensitivityBacteriaToolStripMenuItem.Name = "cultureSensitivityBacteriaToolStripMenuItem";
-            this.cultureSensitivityBacteriaToolStripMenuItem.Size = new System.Drawing.Size(221, 22);
-            this.cultureSensitivityBacteriaToolStripMenuItem.Text = "Culture Sensitivity Bacteria";
-            this.cultureSensitivityBacteriaToolStripMenuItem.Click += new System.EventHandler(this.cultureSensitivityBacteriaToolStripMenuItem_Click);
+            this.groupWisePatientTestToolStripMenuItem.Name = "groupWisePatientTestToolStripMenuItem";
+            this.groupWisePatientTestToolStripMenuItem.Size = new System.Drawing.Size(211, 22);
+            this.groupWisePatientTestToolStripMenuItem.Text = "Group wise patient test";
+            this.groupWisePatientTestToolStripMenuItem.Click += new System.EventHandler(this.groupWisePatientTestToolStripMenuItem_Click);
             // 
             // FrmMain
             // 
@@ -797,5 +806,6 @@ namespace HMS.Views
         private System.Windows.Forms.ToolStripMenuItem dueListToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cultureSensitivityMedicineToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cultureSensitivityBacteriaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem groupWisePatientTestToolStripMenuItem;
     }
 }

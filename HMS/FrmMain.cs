@@ -638,5 +638,11 @@ namespace HMS.Views
             Forms.SetupForms.CultureSensitivityBacteria cfrm = new Forms.SetupForms.CultureSensitivityBacteria();
             cfrm.ShowDialog();
         }
+
+        private void groupWisePatientTestToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            PatientGroupWiseTestDetails frm = new PatientGroupWiseTestDetails();
+            frm.ShowDialog();
+        }
     }
 }
