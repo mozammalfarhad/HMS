@@ -44,6 +44,7 @@ namespace HMS.Views
             this.unitEntryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.referFeeEntryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.companyInfoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cultureSensitivityMedicineToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.memberToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.PSSEntryToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -71,6 +72,7 @@ namespace HMS.Views
             this.patientTestDetailReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.DailySummeryStatementToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.referrerFeeDetailsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.dueListToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabForms = new System.Windows.Forms.TabControl();
             this.stbStatusBar = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
@@ -90,7 +92,7 @@ namespace HMS.Views
             this.BtnTournamentList = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator13 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
-            this.dueListToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cultureSensitivityBacteriaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.stbStatusBar.SuspendLayout();
             this.tbrMain.SuspendLayout();
@@ -208,7 +210,9 @@ namespace HMS.Views
             this.vacuumEntryToolStripMenuItem,
             this.unitEntryToolStripMenuItem,
             this.referFeeEntryToolStripMenuItem,
-            this.companyInfoToolStripMenuItem});
+            this.companyInfoToolStripMenuItem,
+            this.cultureSensitivityMedicineToolStripMenuItem,
+            this.cultureSensitivityBacteriaToolStripMenuItem});
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
             this.toolStripMenuItem1.Size = new System.Drawing.Size(61, 20);
             this.toolStripMenuItem1.Text = "Settings";
@@ -216,58 +220,65 @@ namespace HMS.Views
             // companySetupMent
             // 
             this.companySetupMent.Name = "companySetupMent";
-            this.companySetupMent.Size = new System.Drawing.Size(191, 22);
+            this.companySetupMent.Size = new System.Drawing.Size(221, 22);
             this.companySetupMent.Text = "Department Entry";
             this.companySetupMent.Click += new System.EventHandler(this.CompanySetupMenu_Click);
             // 
             // UnitSetupMenu
             // 
             this.UnitSetupMenu.Name = "UnitSetupMenu";
-            this.UnitSetupMenu.Size = new System.Drawing.Size(191, 22);
+            this.UnitSetupMenu.Size = new System.Drawing.Size(221, 22);
             this.UnitSetupMenu.Text = "Service Type Entry";
             this.UnitSetupMenu.Click += new System.EventHandler(this.UnitSetupMenu_Click);
             // 
             // serviceEntryToolStripMenuItem
             // 
             this.serviceEntryToolStripMenuItem.Name = "serviceEntryToolStripMenuItem";
-            this.serviceEntryToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
+            this.serviceEntryToolStripMenuItem.Size = new System.Drawing.Size(221, 22);
             this.serviceEntryToolStripMenuItem.Text = "Service Entry";
             this.serviceEntryToolStripMenuItem.Click += new System.EventHandler(this.serviceEntryToolStripMenuItem_Click);
             // 
             // serviceAttributeEntrySetupToolStripMenuItem
             // 
             this.serviceAttributeEntrySetupToolStripMenuItem.Name = "serviceAttributeEntrySetupToolStripMenuItem";
-            this.serviceAttributeEntrySetupToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
+            this.serviceAttributeEntrySetupToolStripMenuItem.Size = new System.Drawing.Size(221, 22);
             this.serviceAttributeEntrySetupToolStripMenuItem.Text = "Service Attribute Entry";
             this.serviceAttributeEntrySetupToolStripMenuItem.Click += new System.EventHandler(this.serviceAttributeEntrySetupToolStripMenuItem_Click);
             // 
             // vacuumEntryToolStripMenuItem
             // 
             this.vacuumEntryToolStripMenuItem.Name = "vacuumEntryToolStripMenuItem";
-            this.vacuumEntryToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
+            this.vacuumEntryToolStripMenuItem.Size = new System.Drawing.Size(221, 22);
             this.vacuumEntryToolStripMenuItem.Text = "Vacuum Entry";
             this.vacuumEntryToolStripMenuItem.Click += new System.EventHandler(this.vacuumEntryToolStripMenuItem_Click);
             // 
             // unitEntryToolStripMenuItem
             // 
             this.unitEntryToolStripMenuItem.Name = "unitEntryToolStripMenuItem";
-            this.unitEntryToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
+            this.unitEntryToolStripMenuItem.Size = new System.Drawing.Size(221, 22);
             this.unitEntryToolStripMenuItem.Text = "Unit Entry";
             this.unitEntryToolStripMenuItem.Click += new System.EventHandler(this.unitEntryToolStripMenuItem_Click);
             // 
             // referFeeEntryToolStripMenuItem
             // 
             this.referFeeEntryToolStripMenuItem.Name = "referFeeEntryToolStripMenuItem";
-            this.referFeeEntryToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
+            this.referFeeEntryToolStripMenuItem.Size = new System.Drawing.Size(221, 22);
             this.referFeeEntryToolStripMenuItem.Text = "Refer Fee Entry";
             this.referFeeEntryToolStripMenuItem.Click += new System.EventHandler(this.referFeeEntryToolStripMenuItem_Click);
             // 
             // companyInfoToolStripMenuItem
             // 
             this.companyInfoToolStripMenuItem.Name = "companyInfoToolStripMenuItem";
-            this.companyInfoToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
+            this.companyInfoToolStripMenuItem.Size = new System.Drawing.Size(221, 22);
             this.companyInfoToolStripMenuItem.Text = "Company Info";
             this.companyInfoToolStripMenuItem.Click += new System.EventHandler(this.companyInfoToolStripMenuItem_Click);
+            // 
+            // cultureSensitivityMedicineToolStripMenuItem
+            // 
+            this.cultureSensitivityMedicineToolStripMenuItem.Name = "cultureSensitivityMedicineToolStripMenuItem";
+            this.cultureSensitivityMedicineToolStripMenuItem.Size = new System.Drawing.Size(221, 22);
+            this.cultureSensitivityMedicineToolStripMenuItem.Text = "Culture Sensitivity Medicine";
+            this.cultureSensitivityMedicineToolStripMenuItem.Click += new System.EventHandler(this.cultureSensitivityMedicineToolStripMenuItem_Click);
             // 
             // toolStripMenuItem2
             // 
@@ -491,6 +502,13 @@ namespace HMS.Views
             this.referrerFeeDetailsToolStripMenuItem.Text = "Referrer Fee Details";
             this.referrerFeeDetailsToolStripMenuItem.Click += new System.EventHandler(this.referrerFeeDetailsToolStripMenuItem_Click);
             // 
+            // dueListToolStripMenuItem
+            // 
+            this.dueListToolStripMenuItem.Name = "dueListToolStripMenuItem";
+            this.dueListToolStripMenuItem.Size = new System.Drawing.Size(211, 22);
+            this.dueListToolStripMenuItem.Text = "Due List";
+            this.dueListToolStripMenuItem.Click += new System.EventHandler(this.dueListToolStripMenuItem_Click);
+            // 
             // tabForms
             // 
             this.tabForms.AllowDrop = true;
@@ -669,12 +687,12 @@ namespace HMS.Views
             this.toolStripButton2.Text = "Report";
             this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
             // 
-            // dueListToolStripMenuItem
+            // cultureSensitivityBacteriaToolStripMenuItem
             // 
-            this.dueListToolStripMenuItem.Name = "dueListToolStripMenuItem";
-            this.dueListToolStripMenuItem.Size = new System.Drawing.Size(211, 22);
-            this.dueListToolStripMenuItem.Text = "Due List";
-            this.dueListToolStripMenuItem.Click += new System.EventHandler(this.dueListToolStripMenuItem_Click);
+            this.cultureSensitivityBacteriaToolStripMenuItem.Name = "cultureSensitivityBacteriaToolStripMenuItem";
+            this.cultureSensitivityBacteriaToolStripMenuItem.Size = new System.Drawing.Size(221, 22);
+            this.cultureSensitivityBacteriaToolStripMenuItem.Text = "Culture Sensitivity Bacteria";
+            this.cultureSensitivityBacteriaToolStripMenuItem.Click += new System.EventHandler(this.cultureSensitivityBacteriaToolStripMenuItem_Click);
             // 
             // FrmMain
             // 
@@ -777,5 +795,7 @@ namespace HMS.Views
         private System.Windows.Forms.ToolStripMenuItem companyInfoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem referrerFeeDetailsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem dueListToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem cultureSensitivityMedicineToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem cultureSensitivityBacteriaToolStripMenuItem;
     }
 }

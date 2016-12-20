@@ -626,5 +626,17 @@ namespace HMS.Views
             DueForm dfr = new DueForm();
             dfr.ShowDialog();
         }
+
+        private void cultureSensitivityMedicineToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Forms.SetupForms.CultureSensitivityMedicine cfrm = new Forms.SetupForms.CultureSensitivityMedicine();
+            cfrm.ShowDialog();
+        }
+
+        private void cultureSensitivityBacteriaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Forms.SetupForms.CultureSensitivityBacteria cfrm = new Forms.SetupForms.CultureSensitivityBacteria();
+            cfrm.ShowDialog();
+        }
     }
 }
