@@ -168,9 +168,11 @@ namespace HMS.Report
                     Rpt_RefererFeeDetails rpt = new Rpt_RefererFeeDetails();
                     rpt.SetDataSource(courseDt);
 
-                    // rpt.SetParameterValue("LogoPath", Application.StartupPath + @"\logo-url.jpg");
-                    //rpt.SetParameterValue("ReportName", "Tournament List");
-                    //rpt.SetParameterValue("Date", "Date: " + DateTime.Today.ToString("dd-MMM-yyyy"));
+                    rpt.SetParameterValue("LogoPath", Application.StartupPath + @"\Images\" + Default.logoPath);
+                    rpt.SetParameterValue("FromDate", DateFrom.Text);
+                    rpt.SetParameterValue("ToDate", DateTo.Text);
+                    rpt.SetParameterValue("CompanyName", Default.companyName);
+                    rpt.SetParameterValue("Address", Default.companyAddress + ", Telephone : " + Default.Telephone);
                     ReportViewer frm = new ReportViewer();
                     frm.CRV.ReportSource = rpt;
                     frm.ShowDialog();
