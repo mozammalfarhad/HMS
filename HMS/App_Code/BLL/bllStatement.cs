@@ -14,6 +14,11 @@ namespace HMS.App_Code.BLL
         {
             return new dalStatement().GetDailySummaryStatement(UserName,FromDate,ToDate);
         }
+
+        public DataTable GetDailySummaryStatementSubReportData(string UserName, DateTime FromDate, DateTime ToDate)
+        {
+            return new dalStatement().GetDailySummaryStatementSubReportData(UserName, FromDate, ToDate);
+        }
         public DataTable GetLedgerStatement(string UserName, DateTime FromDate, DateTime ToDate)
         {
             return new dalStatement().GetLedgerStatement(UserName, FromDate, ToDate);
