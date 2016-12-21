@@ -82,15 +82,15 @@ namespace HMS.Report
             foreach (DataRow dr in dt.Rows)
             {
                 int RowNum = dgvMain.Rows.Add(
-                    new object[] {
-                        dr["PatientCode"],
-                        dr["Name"],     
-                        dr["Email"],  
-                        dr["Address"],     
-                         dr["Gender"],
-                        dr["Age"],                       
+                    new object[] {                       
                         dr["ConsultantName"],
-                         dr["ReferFee"]
+                        dr["PatientCode"],
+                        dr["Name"],    
+                         dr["Gender"], 
+                        dr["Age"],
+                         dr["ReferFee"],     
+                        dr["Email"],  
+                        dr["Address"],
                  
                     });
             }
