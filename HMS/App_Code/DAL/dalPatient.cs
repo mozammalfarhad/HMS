@@ -41,7 +41,7 @@ namespace HMS.App_Code.BLL
             altParams.Add(new SqlParameter("@PatientCode", PatientCode));
             return DatabaseManager.GetInstance().ExecuteStoredProcedureDataTable("Sp_PatientGetByCode", altParams);
         }
-        public int Insert(string PatientCode,string Name, string Email, string Address, string MobileNo, int Age, string BloodGroup, string Image, string Gender, int RrefrById)
+        public DataTable Insert(string PatientCode,string Name, string Email, string Address, string MobileNo, int Age, string BloodGroup, string Image, string Gender, int RrefrById)
         {
 
             ArrayList altParams = new ArrayList();
@@ -55,7 +55,7 @@ namespace HMS.App_Code.BLL
             altParams.Add(new SqlParameter("@Image", Image));
             altParams.Add(new SqlParameter("@Gender", Gender));
             altParams.Add(new SqlParameter("@RrefrById", RrefrById));
-            return DatabaseManager.GetInstance().ExecuteNonQueryStoredProcedure("Sp_PatientInsert", altParams);
+            return DatabaseManager.GetInstance().ExecuteStoredProcedureDataTable("Sp_PatientInsert", altParams);
         }
         public int Update(int PatientID, string PatientCode, string Name, string Email, string Address, string MobileNo, int Age, string BloodGroup, string Image, string Gender, int RrefrById)
         {
