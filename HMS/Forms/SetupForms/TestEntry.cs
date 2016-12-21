@@ -33,7 +33,7 @@ namespace HMS.Forms.SetupForms
         private decimal discountSum;
         decimal avgDiscount = 0M;
         int countDiscount = 0;
-        private string _option;
+        private string _option ="";
         public TestEntry()
         {
             InitializeComponent();
@@ -61,7 +61,7 @@ namespace HMS.Forms.SetupForms
         }
 
         private string _addedNewPatient;
-        public TestEntry(string addedNewPatient)
+        public TestEntry(int PId)
         {
             InitializeComponent();
             dtVacuum.Columns.AddRange(new DataColumn[]
@@ -76,14 +76,10 @@ namespace HMS.Forms.SetupForms
             });
             tbxDiscounH.Text = "0.00";
             LoadTestType();
-            LoadPatient();
-            _addedNewPatient = addedNewPatient;
-            if (addedNewPatient != "")
-            {
-                ddlPatient.SelectedIndex = ddlPatient.Items.Count - 1;
-            }
             LoadLaboratorist();
             LoadConsultants();
+            LoadPatient();
+            ddlPatient.SelectedValue = PId.ToString();
             this.RcvTime.CustomFormat = "hh:mm";
             this.RcvTime.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.RcvTime.ShowUpDown = true;
@@ -862,16 +858,17 @@ namespace HMS.Forms.SetupForms
 
         private void btnAddPatient_Click(object sender, EventArgs e)
         {
-            if (_addedNewPatient != "")
-            {
-                if (ddlPatient.Items.Count > 0)
-                    ddlPatient.SelectedIndex = ddlPatient.Items.Count - 1;
-                else
-                {
-                    LoadPatient();
-                    ddlPatient.SelectedIndex = ddlPatient.Items.Count - 1;
-                }
-            }
+            //if (_addedNewPatient != "")
+            //{
+            //    if (ddlPatient.Items.Count > 0)
+            //        ddlPatient.SelectedIndex = ddlPatient.Items.Count - 1;
+            //    else
+            //    {
+            //        LoadPatient();
+            //        ddlPatient.SelectedIndex = ddlPatient.Items.Count - 1;
+            //    }
+            //}
+            Hide();
             PatientEntry frm = new PatientEntry("NewPatient");
             frm.ShowDialog();
         }
