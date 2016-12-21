@@ -31,12 +31,13 @@ namespace HMS.Forms.SetupForms
             tbxPatientCode.Text = new bllCommon().RandomDigits(10).ToString();
         }
         private readonly int _ID;
-   private  string _entryOption;
+        private  string _entryOption = "";
         public PatientEntry(string entryOption)
         {
             InitializeComponent();
             _entryOption = entryOption;
             LoadConsultants();
+            btnClose.Text = "Cancel";
             tbxPatientCode.Text = new bllCommon().RandomDigits(10).ToString();
             
         }
@@ -313,6 +314,12 @@ namespace HMS.Forms.SetupForms
                     {
                         KryptonMessageBox.Show("Patient saved successfully!", "Add Patient", MessageBoxButtons.OK,
                             MessageBoxIcon.Information);
+                        if (btnClose.Text == "Cancel")
+                        {
+                            Hide();
+                            TestEntry frm = new TestEntry(success);
+                            frm.ShowDialog();
+                        }
                         Common.ClearForm(pnlBaseControlContainer);
                     }
                     else
@@ -348,18 +355,20 @@ namespace HMS.Forms.SetupForms
 
         private void btnClose_Click(object sender, EventArgs e)
         {
-           if (_entryOption == "NewPatient")
+            if (_entryOption == "NewPatient")
             {
-                _entryOption = "";
-                TestEntry frm = new TestEntry("addedNewPatient");
+                //_entryOption = "";
+                Hide();
+                TestEntry frm = new TestEntry();
                 frm.ShowDialog();
             }
             else
             {
-                PatientEntry frm = new PatientEntry();
-                frm.Close();
-              // Close();
+                //PatientEntry frm = new PatientEntry();
+                //frm.Close();
+                Close();
             }
+          
         }
 
         private void tbxAge_KeyPress(object sender, KeyPressEventArgs e)
