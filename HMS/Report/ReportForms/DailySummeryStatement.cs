@@ -42,15 +42,19 @@ namespace HMS.Report.ReportForms
                         dt = new bllStatement().GetDailySummaryStatement(ddlUsers.Text,
                              Convert.ToDateTime(Convert.ToDateTime(FromDate.Text).ToString("yyyy-MM-dd")),
                              Convert.ToDateTime(Convert.ToDateTime(ToDate.Text).ToString("yyyy-MM-dd")));
+                        DataTable SubDt = new bllStatement().GetDailySummaryStatementSubReportData(ddlUsers.Text,
+                             Convert.ToDateTime(Convert.ToDateTime(FromDate.Text).ToString("yyyy-MM-dd")),
+                             Convert.ToDateTime(Convert.ToDateTime(ToDate.Text).ToString("yyyy-MM-dd")));
                         if (dt.Rows.Count > 0)
                         {
                             rptDailySummeryStatement rpt = new rptDailySummeryStatement();
                             rpt.SetDataSource(dt);
+                            rpt.Subreports[0].SetDataSource(SubDt);
                             rpt.SetParameterValue("Logo", Application.StartupPath + @"\Images\" + Default.logoPath);
                             rpt.SetParameterValue("FromDate", FromDate.Text);
                             rpt.SetParameterValue("ToDate", ToDate.Text);
                             rpt.SetParameterValue("CompanyName", Default.companyName);
-                            //rpt.SetParameterValue("Address", Default.companyAddress + ", Telephone : " + Default.Telephone);
+                            rpt.SetParameterValue("Address", Default.companyAddress + ", Telephone : " + Default.Telephone);
                             crystalReportViewer.ReportSource = rpt;
                         }
                     }
