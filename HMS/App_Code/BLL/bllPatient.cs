@@ -31,7 +31,8 @@ namespace HMS.App_Code.BLL
 
         public int Insert(string PatientCode,string Name, string Email, string Address, string MobileNo, int Age, string BloodGroup, string Image, string Gender, int RrefrById)
         {
-            return objPatient.Insert(PatientCode,Name, Email, Address, MobileNo, Age, BloodGroup, Image, Gender, RrefrById);
+            DataTable dt = objPatient.Insert(PatientCode, Name, Email, Address, MobileNo, Age, BloodGroup, Image, Gender, RrefrById);
+            return Convert.ToInt32( dt.Rows[0]["PatientID"].ToString());
         }
 
         public int Update(int PatientID, string PatientCode, string Name, string Email, string Address, string MobileNo, int Age, string BloodGroup, string Image, string Gender, int RrefrById)
