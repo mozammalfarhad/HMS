@@ -34,6 +34,8 @@ namespace HMS.Report
         private Bitmap imgDelete;
         private Bitmap imgEdit;
         private Bitmap imgCreate;
+        private Bitmap imgsample;
+        private string order = String.Empty;
         public TestResultEntry(int ScheduleID)
         {
             InitializeComponent();
@@ -42,7 +44,12 @@ namespace HMS.Report
             imgDelete = new Bitmap(Application.StartupPath + @"\Images\" + "Delete.gif");
             imgEdit = new Bitmap(Application.StartupPath + @"\Images\" + "update.jpg");
             imgCreate = new Bitmap(Application.StartupPath + @"\Images\" + "Create.gif");
-            LoadGridData(dt);
+            imgsample = new Bitmap(Application.StartupPath + @"\Images\" + "sampleadd.jpg");
+            if (dt.Rows.Count > 0)
+            {
+                LoadGridData(dt);
+
+            }
             LoadPatient();
             _id = ScheduleID;
             _ScheduleID = ScheduleID;
@@ -89,19 +96,20 @@ namespace HMS.Report
                             dr["Status"]
 
                         });
-
-                    dgvMain.Rows[RowNum].Cells[8].ToolTipText = "Delete";
-                    dgvMain.Rows[RowNum].Cells[8].Value = imgDelete;
+                    dgvMain.Rows[RowNum].Cells[7].ToolTipText = "Sample Entry";
+                    dgvMain.Rows[RowNum].Cells[7].Value = imgDelete;
+                    dgvMain.Rows[RowNum].Cells[9].ToolTipText = "Delete";
+                    dgvMain.Rows[RowNum].Cells[9].Value = imgDelete;
                     string status = dr["Status"].ToString();
                     if (status != "Pending")
                     {
-                        dgvMain.Rows[RowNum].Cells[7].ToolTipText = "Edit";
-                        dgvMain.Rows[RowNum].Cells[7].Value = imgEdit;
+                        dgvMain.Rows[RowNum].Cells[8].ToolTipText = "Edit";
+                        dgvMain.Rows[RowNum].Cells[8].Value = imgEdit;
                     }
                     else
                     {
-                        dgvMain.Rows[RowNum].Cells[7].ToolTipText = "Entry";
-                        dgvMain.Rows[RowNum].Cells[7].Value = imgCreate;
+                        dgvMain.Rows[RowNum].Cells[8].ToolTipText = "Entry";
+                        dgvMain.Rows[RowNum].Cells[8].Value = imgCreate;
                     }
                     dgvMain.Rows[RowNum].Tag = dr["TestId"].ToString();
                 }
@@ -173,26 +181,31 @@ namespace HMS.Report
                             dr["Status"]
 
                         });
-                    dgvMain.Rows[RowNum].Cells[8].ToolTipText = "Delete";
-                    dgvMain.Rows[RowNum].Cells[8].Value = imgDelete;
+
+
+                    dgvMain.Rows[RowNum].Cells[7].ToolTipText = "Sample Entry";
+                    dgvMain.Rows[RowNum].Cells[7].Value = imgsample;
+
+                    dgvMain.Rows[RowNum].Cells[9].ToolTipText = "Delete";
+                    dgvMain.Rows[RowNum].Cells[9].Value = imgDelete;
                     string status = dr["Status"].ToString();
                     if (status != "Pending")
                     {
-                        dgvMain.Rows[RowNum].Cells[7].ToolTipText = "Edit";
-                        dgvMain.Rows[RowNum].Cells[7].Value = imgEdit;
+                        dgvMain.Rows[RowNum].Cells[8].ToolTipText = "Edit";
+                        dgvMain.Rows[RowNum].Cells[8].Value = imgEdit;
                     }
                     else
                     {
-                        dgvMain.Rows[RowNum].Cells[7].ToolTipText = "Entry";
-                        dgvMain.Rows[RowNum].Cells[7].Value = imgCreate;
+                        dgvMain.Rows[RowNum].Cells[8].ToolTipText = "Entry";
+                        dgvMain.Rows[RowNum].Cells[8].Value = imgCreate;
                     }
 
-                    dgvMain.Rows[RowNum].Cells[8].ToolTipText = "Delete";
+                    dgvMain.Rows[RowNum].Cells[9].ToolTipText = "Delete";
 
-                    dgvMain.Rows[RowNum].Cells[8].Value = imgDelete;
+                    dgvMain.Rows[RowNum].Cells[9].Value = imgDelete;
                     dgvMain.Rows[RowNum].Tag = dr["TestId"].ToString();
                 }
-
+                ChangeDataGridHeader();
                 managePaging();
             }
             else
@@ -200,55 +213,24 @@ namespace HMS.Report
                 dgvMain.Rows.Clear();
             }
         }
+        private void ChangeDataGridHeader()
+        {
+            dgvMain.Columns["SheduleId"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgvMain.Columns["TestId"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgvMain.Columns["PatientId"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgvMain.Columns["ServiceId"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgvMain.Columns["ServiceName"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgvMain.Columns["Rate"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgvMain.Columns["Status"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgvMain.Columns["SampleEntry"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgvMain.Columns["Entry"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgvMain.Columns["Delete"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
+        }
 
         private void btnClose_Click(object sender, EventArgs e)
         {
             Close();
-        }
-
-        private void dgvMain_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            int _ScheduleID = Convert.ToInt32(dgvMain.SelectedRows[0].Cells[0].Value);
-            int _TestID = Convert.ToInt32(dgvMain.SelectedRows[0].Cells[1].Value);
-            int _PatientID = Convert.ToInt32(dgvMain.SelectedRows[0].Cells[2].Value);
-            int _ServiceID = Convert.ToInt32(dgvMain.SelectedRows[0].Cells[3].Value);
-            DataGridViewCell dvcell = new DataGridViewButtonCell();
-            dvcell.ToolTipText = dgvMain.Rows[e.RowIndex].Cells[e.ColumnIndex].ToolTipText.ToString();
-            if (dvcell.ToolTipText.ToString() == "Delete")
-            {
-
-                if (KryptonMessageBox.Show("Sure to remove?", "Test delete.", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
-                {
-                    return;
-                }
-                int Success = new bllTestWithSchedule().Delete(_ScheduleID, _TestID);
-                if (Success > 0)
-                {
-                    KryptonMessageBox.Show("Test removed successfully!", "Patient Test.", MessageBoxButtons.OK,
-                        MessageBoxIcon.Information);
-                    //BindData();
-                    LoadGridData(dt);
-                }
-                else
-                {
-                    KryptonMessageBox.Show("Test removed failed!", "Patient Test.", MessageBoxButtons.OK,
-                        MessageBoxIcon.Error);
-                }
-            }
-            else if (dvcell.ToolTipText.ToString() == "Entry")
-            {
-
-                TestResultDetailEntry frm = new TestResultDetailEntry(_TestID, _ScheduleID, _ServiceID, _PatientID, "Entry");
-                frm.ShowDialog();
-            }
-            else if (dvcell.ToolTipText.ToString() == "Edit")
-            {
-                TestResultDetailEntry frm = new TestResultDetailEntry(_TestID, _ScheduleID, _ServiceID, _PatientID, "Edit");
-                frm.ShowDialog();
-                //TestResultEntry frm = new TestResultEntry(ScheduleID);
-                // frm.ShowDialog();
-            }
-
         }
 
         private void TbxServiceName_Enter(object sender, EventArgs e)
@@ -298,6 +280,7 @@ namespace HMS.Report
         }
         private void btnTest_Click(object sender, EventArgs e)
         {
+            this.Hide();
             TestEntry frm = new TestEntry(_ScheduleID, _PatientID, "AddTest");
             frm.ShowDialog();
 
@@ -415,6 +398,170 @@ namespace HMS.Report
                 this.Cursor = Cursors.Default;
                 return;
             }
+        }
+
+        private void dgvMain_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            DataView dv = dt.DefaultView;
+            if (order == "d")
+            {
+                order = "a";
+                dv.Sort = "ServiceName asc";
+                dgvMain.Rows.Clear();
+                foreach (DataRow dr in dv.ToTable().Rows)
+                {
+                    int RowNum = dgvMain.Rows.Add(
+                        new object[]
+                        {
+                            dr["SheduleId"],
+                            dr["TestId"],
+                            dr["PatientId"],
+                            dr["ServiceId"],
+                            dr["ServiceName"],
+                            dr["Rate"],
+                            dr["Status"]
+
+                        });
+
+
+                    dgvMain.Rows[RowNum].Cells[7].ToolTipText = "Sample Entry";
+                    dgvMain.Rows[RowNum].Cells[7].Value = imgsample;
+
+                    dgvMain.Rows[RowNum].Cells[9].ToolTipText = "Delete";
+                    dgvMain.Rows[RowNum].Cells[9].Value = imgDelete;
+                    string status = dr["Status"].ToString();
+                    if (status != "Pending")
+                    {
+                        dgvMain.Rows[RowNum].Cells[8].ToolTipText = "Edit";
+                        dgvMain.Rows[RowNum].Cells[8].Value = imgEdit;
+                    }
+                    else
+                    {
+                        dgvMain.Rows[RowNum].Cells[8].ToolTipText = "Entry";
+                        dgvMain.Rows[RowNum].Cells[8].Value = imgCreate;
+                    }
+
+                    dgvMain.Rows[RowNum].Cells[9].ToolTipText = "Delete";
+
+                    dgvMain.Rows[RowNum].Cells[9].Value = imgDelete;
+                    dgvMain.Rows[RowNum].Tag = dr["TestId"].ToString();
+                }
+                ChangeDataGridHeader();
+                managePaging();
+            }
+            else
+            {
+                order = "d";
+                dv.Sort = "ServiceName desc";
+                dgvMain.Rows.Clear();
+                foreach (DataRow dr in dv.ToTable().Rows)
+                {
+                    int RowNum = dgvMain.Rows.Add(
+                        new object[]
+                        {
+                            dr["SheduleId"],
+                            dr["TestId"],
+                            dr["PatientId"],
+                            dr["ServiceId"],
+                            dr["ServiceName"],
+                            dr["Rate"],
+                            dr["Status"]
+
+                        });
+
+
+                    dgvMain.Rows[RowNum].Cells[7].ToolTipText = "Sample Entry";
+                    dgvMain.Rows[RowNum].Cells[7].Value = imgsample;
+
+                    dgvMain.Rows[RowNum].Cells[9].ToolTipText = "Delete";
+                    dgvMain.Rows[RowNum].Cells[9].Value = imgDelete;
+                    string status = dr["Status"].ToString();
+                    if (status != "Pending")
+                    {
+                        dgvMain.Rows[RowNum].Cells[8].ToolTipText = "Edit";
+                        dgvMain.Rows[RowNum].Cells[8].Value = imgEdit;
+                    }
+                    else
+                    {
+                        dgvMain.Rows[RowNum].Cells[8].ToolTipText = "Entry";
+                        dgvMain.Rows[RowNum].Cells[8].Value = imgCreate;
+                    }
+
+                    dgvMain.Rows[RowNum].Cells[9].ToolTipText = "Delete";
+
+                    dgvMain.Rows[RowNum].Cells[9].Value = imgDelete;
+                    dgvMain.Rows[RowNum].Tag = dr["TestId"].ToString();
+                }
+                ChangeDataGridHeader();
+                managePaging();
+            }
+        }
+
+        private void dgvMain_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int index = dgvMain.SelectedRows[0].Index;
+            if (dgvMain.SelectionMode != DataGridViewSelectionMode.RowHeaderSelect)
+            {
+
+                int _ScheduleID = Convert.ToInt32(dgvMain.SelectedRows[0].Cells[0].Value);
+                int _TestID = Convert.ToInt32(dgvMain.SelectedRows[0].Cells[1].Value);
+                int _PatientID = Convert.ToInt32(dgvMain.SelectedRows[0].Cells[2].Value);
+                int _ServiceID = Convert.ToInt32(dgvMain.SelectedRows[0].Cells[3].Value);
+                DataGridViewCell dvcell = new DataGridViewButtonCell();
+                dvcell.ToolTipText = dgvMain.SelectedRows[0].Cells[e.ColumnIndex].ToolTipText.ToString();
+                if (dvcell.ToolTipText.ToString() == "Delete")
+                {
+
+                    if (
+                        KryptonMessageBox.Show("Sure to remove?", "Test delete.", MessageBoxButtons.YesNo,
+                            MessageBoxIcon.Question) == DialogResult.No)
+                    {
+                        return;
+                    }
+                    int Success = new bllTestWithSchedule().Delete(_ScheduleID, _TestID);
+                    if (Success > 0)
+                    {
+                        KryptonMessageBox.Show("Test removed successfully!", "Patient Test.", MessageBoxButtons.OK,
+                            MessageBoxIcon.Information);
+                        //BindData();
+                        LoadGridData(dt);
+                    }
+                    else
+                    {
+                        KryptonMessageBox.Show("Test removed failed!", "Patient Test.", MessageBoxButtons.OK,
+                            MessageBoxIcon.Error);
+                    }
+                }
+                else if (dvcell.ToolTipText.ToString() == "Entry")
+                {
+                    this.Hide();
+                    TestResultDetailEntry frm = new TestResultDetailEntry(_TestID, _ScheduleID, _ServiceID,
+                        _PatientID,
+                        "Entry");
+                    frm.ShowDialog();
+                }
+                else if (dvcell.ToolTipText.ToString() == "Edit")
+                {
+                    this.Hide();
+                    TestResultDetailEntry frm = new TestResultDetailEntry(_TestID, _ScheduleID, _ServiceID,
+                        _PatientID,
+                        "Edit");
+                    frm.ShowDialog();
+                    //TestResultEntry frm = new TestResultEntry(ScheduleID);
+                    // frm.ShowDialog();
+                }
+                else if (dvcell.ToolTipText.ToString() == "Sample Entry")
+                {
+                    TestResultDetailEntry frm = new TestResultDetailEntry(_TestID, _ScheduleID, _ServiceID,
+                        _PatientID,
+                        "SampleEntry");
+                    frm.ShowDialog();
+                    //TestResultEntry frm = new TestResultEntry(ScheduleID);
+                    // frm.ShowDialog();
+                }
+            }
+
+
         }
     }
 }

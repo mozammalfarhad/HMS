@@ -11,7 +11,7 @@ using VIT.DataLogicLayer;
 
 namespace HMS.DAL
 {
-   public class dalCultureSentivityBacteria
+    public class dalCultureSentivityBacteria
     {
         public DataTable GetList(int StartRowIndex, int MaxRows, string Criteria, bool PrintMode)
         {

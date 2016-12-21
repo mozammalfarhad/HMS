@@ -52,6 +52,8 @@
             this.TestId1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SheduleId1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvAttribute = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
+            this.kryptonLabel1 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
+            this.tbxsample = new ComponentFactory.Krypton.Toolkit.KryptonRichTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel1)).BeginInit();
             this.kryptonPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel2)).BeginInit();
@@ -73,13 +75,15 @@
             // 
             // tbxTestResult
             // 
-            this.tbxTestResult.Location = new System.Drawing.Point(265, 60);
+            this.tbxTestResult.Location = new System.Drawing.Point(265, 127);
             this.tbxTestResult.Name = "tbxTestResult";
             this.tbxTestResult.Size = new System.Drawing.Size(227, 20);
             this.tbxTestResult.TabIndex = 85;
             // 
             // kryptonPanel1
             // 
+            this.kryptonPanel1.Controls.Add(this.tbxsample);
+            this.kryptonPanel1.Controls.Add(this.kryptonLabel1);
             this.kryptonPanel1.Controls.Add(this.lblResultUnit);
             this.kryptonPanel1.Controls.Add(this.lblNRCaption);
             this.kryptonPanel1.Controls.Add(this.lblResultCaption);
@@ -94,7 +98,7 @@
             // 
             // lblResultUnit
             // 
-            this.lblResultUnit.Location = new System.Drawing.Point(498, 31);
+            this.lblResultUnit.Location = new System.Drawing.Point(498, 99);
             this.lblResultUnit.Name = "lblResultUnit";
             this.lblResultUnit.Size = new System.Drawing.Size(32, 20);
             this.lblResultUnit.TabIndex = 90;
@@ -102,7 +106,7 @@
             // 
             // lblNRCaption
             // 
-            this.lblNRCaption.Location = new System.Drawing.Point(508, 5);
+            this.lblNRCaption.Location = new System.Drawing.Point(508, 15);
             this.lblNRCaption.Name = "lblNRCaption";
             this.lblNRCaption.Size = new System.Drawing.Size(89, 20);
             this.lblNRCaption.TabIndex = 89;
@@ -110,7 +114,7 @@
             // 
             // lblResultCaption
             // 
-            this.lblResultCaption.Location = new System.Drawing.Point(201, 35);
+            this.lblResultCaption.Location = new System.Drawing.Point(201, 103);
             this.lblResultCaption.Name = "lblResultCaption";
             this.lblResultCaption.Size = new System.Drawing.Size(44, 20);
             this.lblResultCaption.TabIndex = 88;
@@ -118,7 +122,7 @@
             // 
             // lblTestNameCaption
             // 
-            this.lblTestNameCaption.Location = new System.Drawing.Point(177, 6);
+            this.lblTestNameCaption.Location = new System.Drawing.Point(177, 16);
             this.lblTestNameCaption.Name = "lblTestNameCaption";
             this.lblTestNameCaption.Size = new System.Drawing.Size(69, 20);
             this.lblTestNameCaption.TabIndex = 87;
@@ -126,7 +130,7 @@
             // 
             // lblUnitM
             // 
-            this.lblUnitM.Location = new System.Drawing.Point(707, 7);
+            this.lblUnitM.Location = new System.Drawing.Point(707, 17);
             this.lblUnitM.Name = "lblUnitM";
             this.lblUnitM.Size = new System.Drawing.Size(30, 20);
             this.lblUnitM.TabIndex = 85;
@@ -134,7 +138,7 @@
             // 
             // lblNormalRangeM
             // 
-            this.lblNormalRangeM.Location = new System.Drawing.Point(621, 7);
+            this.lblNormalRangeM.Location = new System.Drawing.Point(621, 17);
             this.lblNormalRangeM.Name = "lblNormalRangeM";
             this.lblNormalRangeM.Size = new System.Drawing.Size(38, 20);
             this.lblNormalRangeM.TabIndex = 86;
@@ -143,7 +147,7 @@
             // lblTestName
             // 
             this.lblTestName.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.BoldControl;
-            this.lblTestName.Location = new System.Drawing.Point(268, 7);
+            this.lblTestName.Location = new System.Drawing.Point(268, 17);
             this.lblTestName.Name = "lblTestName";
             this.lblTestName.Size = new System.Drawing.Size(73, 20);
             this.lblTestName.TabIndex = 85;
@@ -252,10 +256,26 @@
             this.AttributeName1,
             this.Result1,
             this.NormalRange1});
-            this.dgvAttribute.Location = new System.Drawing.Point(0, 93);
+            this.dgvAttribute.Location = new System.Drawing.Point(0, 162);
             this.dgvAttribute.Name = "dgvAttribute";
-            this.dgvAttribute.Size = new System.Drawing.Size(794, 364);
+            this.dgvAttribute.Size = new System.Drawing.Size(794, 287);
             this.dgvAttribute.TabIndex = 85;
+            // 
+            // kryptonLabel1
+            // 
+            this.kryptonLabel1.Location = new System.Drawing.Point(197, 48);
+            this.kryptonLabel1.Name = "kryptonLabel1";
+            this.kryptonLabel1.Size = new System.Drawing.Size(51, 20);
+            this.kryptonLabel1.TabIndex = 91;
+            this.kryptonLabel1.Values.Text = "Sample";
+            // 
+            // tbxsample
+            // 
+            this.tbxsample.Location = new System.Drawing.Point(265, 38);
+            this.tbxsample.Name = "tbxsample";
+            this.tbxsample.Size = new System.Drawing.Size(472, 56);
+            this.tbxsample.TabIndex = 87;
+            this.tbxsample.Text = "";
             // 
             // TestResultDetailEntry
             // 
@@ -270,7 +290,6 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "TestResultDetailEntry";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "TestResultDetailEntry";
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel1)).EndInit();
             this.kryptonPanel1.ResumeLayout(false);
             this.kryptonPanel1.PerformLayout();
@@ -305,5 +324,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn TestId1;
         private System.Windows.Forms.DataGridViewTextBoxColumn SheduleId1;
         private ComponentFactory.Krypton.Toolkit.KryptonDataGridView dgvAttribute;
+        private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel1;
+        private ComponentFactory.Krypton.Toolkit.KryptonRichTextBox tbxsample;
     }
 }

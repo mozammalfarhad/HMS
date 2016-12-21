@@ -93,6 +93,7 @@ namespace HMS.Views
             this.BtnTournamentList = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator13 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
+            this.cultureSensitivityBacteriaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupWisePatientTestToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.stbStatusBar.SuspendLayout();
@@ -287,8 +288,6 @@ namespace HMS.Views
             this.cultureSensitivityBacteriaToolStripMenuItem.Size = new System.Drawing.Size(221, 22);
             this.cultureSensitivityBacteriaToolStripMenuItem.Text = "Culture Sensitivity Bacteria";
             this.cultureSensitivityBacteriaToolStripMenuItem.Click += new System.EventHandler(this.cultureSensitivityBacteriaToolStripMenuItem_Click);
-            // 
-            // toolStripMenuItem2
             // 
             this.toolStripMenuItem2.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.memberToolStripMenuItem2,
@@ -696,7 +695,14 @@ namespace HMS.Views
             this.toolStripButton2.Text = "Report";
             this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
             // 
-            // groupWisePatientTestToolStripMenuItem
+            // cultureSensitivityBacteriaToolStripMenuItem
+            // 
+            this.cultureSensitivityBacteriaToolStripMenuItem.Name = "cultureSensitivityBacteriaToolStripMenuItem";
+            this.cultureSensitivityBacteriaToolStripMenuItem.Size = new System.Drawing.Size(221, 22);
+            this.cultureSensitivityBacteriaToolStripMenuItem.Text = "Culture Sensitivity Bacteria";
+            this.cultureSensitivityBacteriaToolStripMenuItem.Click += new System.EventHandler(this.cultureSensitivityBacteriaToolStripMenuItem_Click);
+            // 
+             // groupWisePatientTestToolStripMenuItem
             // 
             this.groupWisePatientTestToolStripMenuItem.Name = "groupWisePatientTestToolStripMenuItem";
             this.groupWisePatientTestToolStripMenuItem.Size = new System.Drawing.Size(211, 22);

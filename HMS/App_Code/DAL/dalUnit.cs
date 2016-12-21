@@ -12,14 +12,17 @@ namespace HMS.App_Code.BLL
 {
     public class dalUnit
     {
+      
         public DataTable GetAll(int StartRowIndex, int MaxRows, string Criteria, bool PrintMode)
         {
+           
             ArrayList altParams = new ArrayList();
             altParams.Add(new SqlParameter("@StartRowIndex", StartRowIndex));
             altParams.Add(new SqlParameter("@MaxRows", MaxRows));
             altParams.Add(new SqlParameter("@Criteria", Criteria));
             altParams.Add(new SqlParameter("@PrintMode", PrintMode));
             DataTable dt = DatabaseManager.GetInstance().ExecuteStoredProcedureDataTable("Sp_UnitGetAll", altParams);
+           
             return dt;
         }
         public DataTable GetList()

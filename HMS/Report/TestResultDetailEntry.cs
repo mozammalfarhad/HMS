@@ -25,6 +25,7 @@ namespace HMS.Report
         private int _ServiceId;
         private int _TestId;
         private int _PatientID;
+        private string _option;
         public TestResultDetailEntry(int TestId, int ShedId, int ServiceId, int PatientID, string option)
         {
             InitializeComponent();
@@ -33,15 +34,34 @@ namespace HMS.Report
             _SheduleId = ShedId;
             _ServiceId = ServiceId;
             _TestId = TestId;
-
+            _option = option;
             if (option == "Entry")
             {
 
                 LoadData(TestId, ShedId, ServiceId, PatientID);
             }
-            else
+            else if(option=="Edit")
             {
                 GetData(TestId, ShedId, ServiceId);
+            }
+            else
+            {
+               
+                hdrBaseCaption.Text = "Test Sample Entry";
+                DataTable dtResult = new bllTestResult().GetTestById(_TestId);
+                if (dtResult.Rows.Count > 0)
+                {
+                    lblTestName.Text = dtResult.Rows[0]["ServiceName"].ToString();
+                    tbxsample.Text = dtResult.Rows[0]["Samples"].ToString();
+                    dgvAttribute.Visible = false;
+                    lblNormalRangeM.Visible = false;
+                    lblUnitM.Visible = false;
+                    tbxTestResult.Visible = false;
+                    lblNRCaption.Visible = false;
+                    lblResultCaption.Visible = false;
+                    lblResultUnit.Visible = false;
+                }
+               
             }
           
         }
@@ -118,6 +138,12 @@ namespace HMS.Report
                         lblUnitM.Text = dtResult.Rows[0]["UnitName"].ToString();
                     }
                 }
+            }
+            DataTable dtResults = new bllTestResult().GetTestById(_TestId);
+            if (dtResults.Rows.Count > 0)
+            {
+                lblTestName.Text = dtResults.Rows[0]["ServiceName"].ToString();
+                tbxsample.Text = dtResults.Rows[0]["Samples"].ToString();
             }
         }
 
@@ -196,11 +222,28 @@ namespace HMS.Report
             {
                 dgvAttribute.Visible = false;
             }
+            DataTable dtResult = new bllTestResult().GetTestById(_TestId);
+            if (dtResult.Rows.Count > 0)
+            {
+                lblTestName.Text = dtResult.Rows[0]["ServiceName"].ToString();
+                tbxsample.Text = dtResult.Rows[0]["Samples"].ToString();
+            }
         }
 
         private void btnClose_Click(object sender, EventArgs e)
         {
-            Close();
+            if (_option == "Entry" || _option == "Edit")
+            {
+
+                this.Hide();
+                TestResultEntry frm = new TestResultEntry(_SheduleId);
+                frm.ShowDialog();
+            }
+            else
+            {
+
+                Close();
+            }
         }
         private DataSet makeTestAttributeResultsTable()
         {
@@ -229,9 +272,29 @@ namespace HMS.Report
             try
             {
 
-
-                if (dgvAttribute.Rows.Count > 0 && tbxTestResult.Text == "")
+                if (dgvAttribute.Rows.Count <= 1 && tbxTestResult.Text == "" && tbxsample.Text != "")
                 {
+                    int success = new bllTestResult().InsertTestSample(tbxsample.Text.Trim(), _SheduleId, _ServiceId);
+                    if (success > 0)
+                    {
+                        KryptonMessageBox.Show("Sample inserted successfully!", "Result Entry.", MessageBoxButtons.OK,
+                         MessageBoxIcon.Information);
+                        Common.ClearForm(kryptonPanel1);
+                    }
+                    else
+                    {
+                        KryptonMessageBox.Show("Sample inserted failed!", "Result Entry.", MessageBoxButtons.OK,
+                         MessageBoxIcon.Error);
+                    }
+                }
+                else if (dgvAttribute.Rows.Count > 0 && tbxTestResult.Text == "")
+                {
+                    if (tbxsample.Text != "")
+                    {
+                        int Successresult = new bllTestResult().InsertTestSample(tbxsample.Text.Trim(), _SheduleId, _ServiceId);
+                       
+                    }
+                      
                     DataSet ds = makeTestAttributeResultsTable();
                     int success = new bllTestResultAttribute().InsertUpdateTestResultAttribute(ds);
                     if (success > 0)
@@ -260,6 +323,11 @@ namespace HMS.Report
                         tbxTestResult.Focus();
                         return;
                     }
+                    if (tbxsample.Text != "")
+                    {
+                        int Successresult = new bllTestResult().InsertTestSample(tbxsample.Text.Trim(), _SheduleId, _ServiceId);
+
+                    }
                     int success = new bllTestResult().InsertTestResult(result, "Entered", _SheduleId, _ServiceId);
                     if (success > 0)
                     {
@@ -273,6 +341,9 @@ namespace HMS.Report
                          MessageBoxIcon.Error);
                     }
                 }
+                this.Hide();
+                TestResultEntry frm=new TestResultEntry(_SheduleId);
+                frm.ShowDialog();
             }
             catch (Exception ex)
             {

@@ -1,5 +1,4 @@
-﻿using ComponentFactory.Krypton.Toolkit;
-using HMS.BLL;
+using ComponentFactory.Krypton.Toolkit;
 using HMS.Forms.BaseForms;
 using System;
 using System.Collections.Generic;
@@ -10,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using HMS.BLL;
 
 namespace HMS.Forms.SetupForms
 {
@@ -225,3 +225,4 @@ namespace HMS.Forms.SetupForms
         }
     }
 }
+

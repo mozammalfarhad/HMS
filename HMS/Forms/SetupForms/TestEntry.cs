@@ -13,14 +13,15 @@ using HMS.Forms.BaseForms;
 using HMS.App_Code.BLL;
 using System.Web.UI.WebControls;
 using HMS.Model;
+using HMS.Report;
 
 namespace HMS.Forms.SetupForms
 {
     public partial class TestEntry : BaseGeneralSetup
     {
         private DataTable dt;
-        private DataTable dtVacuum=new DataTable();
-       
+        private DataTable dtVacuum = new DataTable();
+
         private DataView dv;
         private DataView dvVacum;
         private string patientCode = "";
@@ -32,6 +33,7 @@ namespace HMS.Forms.SetupForms
         private decimal discountSum;
         decimal avgDiscount = 0M;
         int countDiscount = 0;
+        private string _option;
         public TestEntry()
         {
             InitializeComponent();
@@ -89,17 +91,28 @@ namespace HMS.Forms.SetupForms
             this.DeliveryTime.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.DeliveryTime.ShowUpDown = true;
         }
-         #region ///Add new Test with existing for a patient
+        #region ///Add new Test with existing for a patient
         private int _ScheduleID;
-        public TestEntry(int ScheduleID,int PatientId, string option)
+        public TestEntry(int ScheduleID, int PatientId, string option)
         {
             InitializeComponent();
+            dtVacuum.Columns.AddRange(new DataColumn[]
+            {
+                new DataColumn("VacuumId"),
+                new DataColumn("VacuumName"),
+                new DataColumn("VacuumPrice"),
+                new DataColumn("ServiceName"),
+                new DataColumn("ServiceShortName"),
+                new DataColumn("VacuumDescription"), 
+                new DataColumn("ServiceId")
+            });
             _ScheduleID = ScheduleID;
-
+            _option = option;
             tbxDiscounH.Text = "0.00";
             LoadTestType();
             LoadPatient();
             LoadLaboratorist();
+            LoadConsultants();
             this.RcvTime.CustomFormat = "hh:mm";
             this.RcvTime.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.RcvTime.ShowUpDown = true;
@@ -113,23 +126,24 @@ namespace HMS.Forms.SetupForms
             }
 
         }
-        private void GetData( int ShedId)
+        private void GetData(int ShedId)
         {
             DataTable dtServiceDetails = new bllTestResult().PatientServiceDetailsGetBySchedId(ShedId);
             DataTable dtService = new bllTestResult().PatientServiceGetBySchedId(ShedId);
-            
+
             if (dtServiceDetails.Rows.Count > 0)
             {
                 ddlPatient.SelectedValue = dtServiceDetails.Rows[0]["PatientId"].ToString();
-              ddlLaboratorists.SelectedValue = dtServiceDetails.Rows[0]["LabtoristId"].ToString();
-              RcvDate.Text = dtServiceDetails.Rows[0]["ReceiveDate"].ToString();
-              RcvTime.Text = dtServiceDetails.Rows[0]["ReceiveTime"].ToString();
-              DeliveryDate.Text = dtServiceDetails.Rows[0]["DeliveryDate"].ToString();
-              DeliveryTime.Text = dtServiceDetails.Rows[0]["DeliveryTime"].ToString();
-              tbxAmt.Text = dtServiceDetails.Rows[0]["TotalAmount"].ToString();
-              tbxDiscounH.Text = dtServiceDetails.Rows[0]["DiscountH"].ToString();
-              tbxDiscounR.Text = dtServiceDetails.Rows[0]["DiscountR"].ToString();
-              tbxPaidAmt.Text = dtServiceDetails.Rows[0]["PaidAmount"].ToString();
+                ddlLaboratorists.SelectedValue = dtServiceDetails.Rows[0]["LabtoristId"].ToString();
+                comReferBy.SelectedValue = dtServiceDetails.Rows[0]["RrefrById"].ToString();
+                RcvDate.Value = Convert.ToDateTime(dtServiceDetails.Rows[0]["ReceiveDate"].ToString());
+                RcvTime.Value = Convert.ToDateTime(dtServiceDetails.Rows[0]["ReceiveTime"].ToString());
+                DeliveryDate.Value = Convert.ToDateTime(dtServiceDetails.Rows[0]["DeliveryDate"].ToString());
+                DeliveryTime.Value = Convert.ToDateTime(dtServiceDetails.Rows[0]["DeliveryTime"].ToString());
+                tbxAmt.Text = dtServiceDetails.Rows[0]["TotalAmount"].ToString();
+                tbxDiscounH.Text = dtServiceDetails.Rows[0]["DiscountH"].ToString();
+                tbxDiscounR.Text = dtServiceDetails.Rows[0]["DiscountR"].ToString();
+                tbxPaidAmt.Text = dtServiceDetails.Rows[0]["PaidAmount"].ToString();
 
                 if (dtService.Rows.Count > 0)
                 {
@@ -147,7 +161,7 @@ namespace HMS.Forms.SetupForms
                         lstBox1.Items.Remove(item);
                     }
                 }
-              //  LoadVacuumEdit();
+                //  LoadVacuumEdit();
             }
         }
         private void LoadVacuumEdit()
@@ -183,7 +197,7 @@ namespace HMS.Forms.SetupForms
         #endregion
         private void btnforward_Click(object sender, EventArgs e)
         {
-            if(lstBox1.SelectedItems.Count>0)
+            if (lstBox1.SelectedItems.Count > 0)
             {
                 foreach (System.Web.UI.WebControls.ListItem litem in lstBox1.SelectedItems)
                 {
@@ -214,12 +228,12 @@ namespace HMS.Forms.SetupForms
                 tbxDiscounH.Text = Math.Round((decimal)discountSum, 2).ToString();
                 GetFinalAmt();
             }
-           
+
         }
 
         private void btnBackward_Click(object sender, EventArgs e)
         {
-            if (lstbox2.SelectedItems.Count>0)
+            if (lstbox2.SelectedItems.Count > 0)
             {
                 foreach (System.Web.UI.WebControls.ListItem litem in lstbox2.SelectedItems)
                 {
@@ -248,7 +262,7 @@ namespace HMS.Forms.SetupForms
                 tbxDiscounH.Text = Math.Round((decimal)discountSum, 2).ToString();
                 GetFinalAmt();
             }
-            
+
         }
 
         private void LoadTest()
@@ -261,7 +275,7 @@ namespace HMS.Forms.SetupForms
             {
 
                 dt = new bllService().GetAll();
-             
+
             }
             lstBox1.Items.Clear();
             foreach (DataRow dr in dt.Rows)
@@ -281,20 +295,26 @@ namespace HMS.Forms.SetupForms
             foreach (System.Web.UI.WebControls.ListItem litem in lstBox1.SelectedItems)
             {
                 tmpDt = new bllVacuum().GetByServiceID(Convert.ToInt32(litem.Value));
-                //dtVacuum = tmpDt.Copy();
-                foreach (DataRow dr in tmpDt.Rows)
+                if (tmpDt.Rows.Count > 0)
                 {
-                    lstVacuum2.Items.Add(new System.Web.UI.WebControls.ListItem(dr[1].ToString(), dr[0].ToString()));
-                    dtVacuum.Rows.Add(dr.ItemArray);
+                    //dtVacuum = tmpDt.Copy();
+                    foreach (DataRow dr in tmpDt.Rows)
+                    {
+                        lstVacuum2.Items.Add(new System.Web.UI.WebControls.ListItem(dr[1].ToString(), dr[0].ToString()));
+                        dtVacuum.Rows.Add(dr.ItemArray);
 
+                    }
                 }
             }
-             //lstVacuum1.Items.Clear();
-             
+            //lstVacuum1.Items.Clear();
+
             tbxSearch.Text = "";
-            foreach (object item in lstVacuum1.Items)
+            if (lstVacuum1.Items.Count > 0)
             {
-                lstVacuum2.Items.Remove(item);
+                foreach (object item in lstVacuum1.Items)
+                {
+                    lstVacuum2.Items.Remove(item);
+                }
             }
 
         }
@@ -315,7 +335,7 @@ namespace HMS.Forms.SetupForms
                 }
             }
             lstVacuum1.Items.Clear();
-           
+
             tbxSearch.Text = "";
             foreach (object item in lstVacuum1.Items)
             {
@@ -329,11 +349,11 @@ namespace HMS.Forms.SetupForms
             IEnumerable<ListItem> li = (from item in lstVacuum2.SelectedItems.Cast<ListItem>()
                                         select item).ToList();
             IEnumerable<ListItem> li2 = (from item in lstVacuum1.SelectedItems.Cast<ListItem>()
-                                        select item).ToList();
+                                         select item).ToList();
             foreach (object item in li)
             {
-                    listVacuum.Remove(item.ToString());                
-                    lstVacuum2.Items.Remove(item);
+                listVacuum.Remove(item.ToString());
+                lstVacuum2.Items.Remove(item);
 
             }
             foreach (object item2 in li2)
@@ -383,7 +403,7 @@ namespace HMS.Forms.SetupForms
 
         }
         private void LoadPatient()
-         {
+        {
             ddlPatient.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
             ddlPatient.AutoCompleteSource = AutoCompleteSource.ListItems;
             DataTable dtPatient = new bllPatient().GetAll();
@@ -493,7 +513,7 @@ namespace HMS.Forms.SetupForms
         {
             for (int i = 0; i < lstBox1.Items.Count; i++)
             {
-                if (lstBox1.Items[i].ToString().IndexOf(searchString, StringComparison.OrdinalIgnoreCase) >= 0 && searchString !="")
+                if (lstBox1.Items[i].ToString().IndexOf(searchString, StringComparison.OrdinalIgnoreCase) >= 0 && searchString != "")
                 {
                     lstBox1.SetSelected(i, true);
                 }
@@ -504,10 +524,21 @@ namespace HMS.Forms.SetupForms
             }
         }
 
-      
+
         private void btnClose_Click(object sender, EventArgs e)
         {
-            Close();
+            if (_option != "")
+            {
+                _option = "";
+                this.Hide();
+                TestResultEntry frm = new TestResultEntry(_ScheduleID);
+                frm.ShowDialog();
+            }
+            else
+            {
+
+                Close();
+            }
         }
 
         private void tbxDiscounR_TextChanged(object sender, EventArgs e)
@@ -522,8 +553,8 @@ namespace HMS.Forms.SetupForms
             decimal totalAmt = Convert.ToDecimal(tbxAmt.Text.Trim() == "" ? "0.00" : tbxAmt.Text.Trim());
             decimal discountAll = 0M;
             decimal calculateDiscount = 0M;
-            discountAll =  Convert.ToDecimal(tbxDiscounR.Text == "" ? "0.00" : tbxDiscounR.Text.Trim());
-            calculateDiscount = (totalAmt * (discountAll / 100))+Convert.ToDecimal(tbxDiscounH.Text == "" ? "0.00" : tbxDiscounH.Text.Trim()) ;
+            discountAll = Convert.ToDecimal(tbxDiscounR.Text == "" ? "0.00" : tbxDiscounR.Text.Trim());
+            calculateDiscount = (totalAmt * (discountAll / 100)) + Convert.ToDecimal(tbxDiscounH.Text == "" ? "0.00" : tbxDiscounH.Text.Trim());
             calculateDiscount = Math.Round((decimal)calculateDiscount, 2);
             tbxDiscountNet.Text = calculateDiscount.ToString();
             decimal netAmt = Convert.ToDecimal(tbxAmt.Text == "" ? "0.00" : tbxAmt.Text.Trim()) - Convert.ToDecimal(tbxDiscountNet.Text == "" ? "0.00" : tbxDiscountNet.Text.Trim());
@@ -552,8 +583,8 @@ namespace HMS.Forms.SetupForms
         private void tbxPaidAmt_TextChanged(object sender, EventArgs e)
         {
             decimal dueAmt = Convert.ToDecimal(tbxNetAmt.Text.Trim() == "" ? "0.00" : tbxNetAmt.Text.Trim()) - Convert.ToDecimal(tbxPaidAmt.Text.Trim() == "" ? "0.00" : tbxPaidAmt.Text.Trim());
-                dueAmt = Math.Round((decimal)dueAmt, 2);
-                tbxDueAmt.Text = dueAmt.ToString();
+            dueAmt = Math.Round((decimal)dueAmt, 2);
+            tbxDueAmt.Text = dueAmt.ToString();
         }
 
         private void btnVacuumFrd_Click(object sender, EventArgs e)
@@ -595,7 +626,7 @@ namespace HMS.Forms.SetupForms
 
             lstVacuum1.Items.Clear();
             GetFinalAmt();
-           
+
         }
 
         private void btnVacuumBckAll_Click(object sender, EventArgs e)
@@ -615,9 +646,9 @@ namespace HMS.Forms.SetupForms
             lstVacuum1.SelectedIndex = -1;
             IEnumerable<int> selectedval = (from item in lstbox2.SelectedItems.Cast<ListItem>()
                                             select int.Parse(item.Value));
-            foreach(var item in selectedval)
+            foreach (var item in selectedval)
             {
-                 DataTable tbl = new bllVacuum().GetByServiceID(item);
+                DataTable tbl = new bllVacuum().GetByServiceID(item);
                 foreach (DataRow dr in tbl.Rows)
                 {
                     for (int j = 0; j < lstVacuum2.Items.Count; j++)
@@ -630,7 +661,7 @@ namespace HMS.Forms.SetupForms
                         }
 
                     }
-                    for(int i = 0; i < lstVacuum1.Items.Count; i++)
+                    for (int i = 0; i < lstVacuum1.Items.Count; i++)
                     {
                         ListItem keyValuePair1 = (ListItem)lstVacuum1.Items[i];
                         string t = keyValuePair1.Value;
@@ -639,9 +670,9 @@ namespace HMS.Forms.SetupForms
                             lstVacuum1.SetSelected(i, true);
                         }
                     }
-                }   
+                }
             }
-          
+
         }
 
 
@@ -651,18 +682,18 @@ namespace HMS.Forms.SetupForms
             DataSet ds = new DataSet();
             ds.DataSetName = "dsVacuums";
             DataTable dt = new DataTable();
-            dt.TableName = "tblVacuums";           
+            dt.TableName = "tblVacuums";
             dt.Columns.Add(new DataColumn("VacuumId", typeof(int)));
             IEnumerable<int> selectedval = (from item in lstVacuum2.Items.Cast<ListItem>()
                                             select int.Parse(item.Value));
-         
+
             foreach (var item in selectedval)
             {
                 DataRow dr = dt.NewRow();
                 dr["VacuumId"] = item;
                 dt.Rows.Add(dr);
             }
-            ds.Tables.Add(dt);  
+            ds.Tables.Add(dt);
             return ds;
         }
         private DataSet makeTestsTable()
@@ -670,18 +701,18 @@ namespace HMS.Forms.SetupForms
             int laboratoristId = 0;
             if (ddlLaboratorists.SelectedIndex > 0)
             {
-                laboratoristId =Convert.ToInt32(ddlLaboratorists.SelectedValue);
+                laboratoristId = Convert.ToInt32(ddlLaboratorists.SelectedValue);
             }
             DataSet ds = new DataSet();
             ds.DataSetName = "dsTest";
             DataTable dt = new DataTable();
-            dt.TableName = "tblTest";    
+            dt.TableName = "tblTest";
             dt.Columns.Add(new DataColumn("ServiceId", typeof(int)));
             dt.Columns.Add(new DataColumn("Status", typeof(string)));
             dt.Columns.Add(new DataColumn("LabtoristId", typeof(int)));
             IEnumerable<int> selectedval = (from item in lstbox2.Items.Cast<ListItem>()
                                             select int.Parse(item.Value));
-           
+
             foreach (var item in selectedval)
             {
                 DataRow dr = dt.NewRow();
@@ -698,7 +729,7 @@ namespace HMS.Forms.SetupForms
         private void btnSave_Click(object sender, EventArgs e)
         {
             int patientId = 0;
-          
+
             decimal discountR = 0;
             try
             {
@@ -713,21 +744,21 @@ namespace HMS.Forms.SetupForms
                     ddlPatient.Focus();
                     return;
                 }
-                if(comReferBy.SelectedIndex == 0)
+                if (comReferBy.SelectedIndex == 0)
                 {
                     KryptonMessageBox.Show("Refer by must be selected!", "Test Entry.", MessageBoxButtons.OK,
                       MessageBoxIcon.Error);
                     comReferBy.Focus();
                     return;
                 }
-                if(lstbox2.Items.Count<=0)
+                if (lstbox2.Items.Count <= 0)
                 {
                     KryptonMessageBox.Show("Test must be taken!", "Test Entry.", MessageBoxButtons.OK,
                       MessageBoxIcon.Error);
                     lstBox1.Focus();
                     return;
                 }
-                if(tbxPaidAmt.Text.Trim()=="")
+                if (tbxPaidAmt.Text.Trim() == "")
                 {
                     KryptonMessageBox.Show("Enter paid amount!", "Paid amount.", MessageBoxButtons.OK,
                       MessageBoxIcon.Error);
@@ -742,33 +773,41 @@ namespace HMS.Forms.SetupForms
                 if (tbxDiscounR.Text.Trim() != "")
                     discountR = Math.Round((decimal)(Convert.ToDecimal(tbxAmt.Text) * (Convert.ToDecimal(tbxDiscounR.Text.Trim()) / 100)), 2);
 
-             
 
 
 
-                  string username=  HMS.Properties.Settings.Default.UserName;
-                  decimal vacuumAmt = Convert.ToDecimal(lblVacuumNet.Text);
-                  decimal vatAmt =  Convert.ToDecimal(tbxVatAmt.Text);
+
+                string username = HMS.Properties.Settings.Default.UserName;
+                decimal vacuumAmt = Convert.ToDecimal(lblVacuumNet.Text);
+                decimal vatAmt = Convert.ToDecimal(tbxVatAmt.Text);
                 int success = new bllTestWithSchedule().InsertTest_Schedule_vacuum(vacumData, patientId,
                     Convert.ToDateTime(RcvDate.Text),
                    Rcvtime,
                     Convert.ToDateTime(DeliveryDate.Text),
-                    Deliverytime, Convert.ToDecimal(tbxAmt.Text.Trim()), discountR, Convert.ToDecimal(tbxDiscounH.Text.Trim()), Convert.ToDecimal(tbxPaidAmt.Text.Trim()), testsData, username, vatAmt, vacuumAmt,Convert.ToInt32(comReferBy.SelectedValue));
+                    Deliverytime, Convert.ToDecimal(tbxAmt.Text.Trim()), discountR, Convert.ToDecimal(tbxDiscounH.Text.Trim()), Convert.ToDecimal(tbxPaidAmt.Text.Trim()), testsData, username, vatAmt, vacuumAmt, Convert.ToInt32(comReferBy.SelectedValue));
 
                 //if (success > 0)
                 //{
-                    KryptonMessageBox.Show("Test inserted successfully!", "Test Entry.", MessageBoxButtons.OK,
-                        MessageBoxIcon.Information);
-                    //Common.ClearForm(pnlBaseControlContainer);
-                    ClearForm();
-               
-                   
+                KryptonMessageBox.Show("Test inserted successfully!", "Test Entry.", MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
+                //Common.ClearForm(pnlBaseControlContainer);
+                //  ClearForm();
+
+
                 //}
                 //else
                 //{
                 //    KryptonMessageBox.Show("Test inserted failed!", "Test Entry.", MessageBoxButtons.OK,
                 //       MessageBoxIcon.Error);
                 //}
+                if (_option != "")
+                {
+                    _option = "";
+                    this.Hide();
+                    TestResultEntry frm = new TestResultEntry(_ScheduleID);
+                    frm.ShowDialog();
+                }
+
             }
             catch (Exception ex)
             {
@@ -810,8 +849,8 @@ namespace HMS.Forms.SetupForms
             decimal vacuumAmt = Convert.ToDecimal(lblVacuumNet.Text);
             decimal DicountAmt = Convert.ToDecimal(tbxDiscountNet.Text);
             decimal AmtRaw = (amt + vacuumAmt) - DicountAmt;
-           decimal vatAmt = (AmtRaw*(vatPercent/100));
-           vatAmt = Math.Round((decimal)vatAmt, 2);
+            decimal vatAmt = (AmtRaw * (vatPercent / 100));
+            vatAmt = Math.Round((decimal)vatAmt, 2);
             tbxVatAmt.Text = vatAmt.ToString();
             return vatAmt;
         }
@@ -839,7 +878,7 @@ namespace HMS.Forms.SetupForms
 
         private void ddlPatient_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if(ddlPatient.SelectedIndex>0)
+            if (ddlPatient.SelectedIndex > 0)
             {
                 DataTable dtpa = new bllPatient().GetByID(Convert.ToInt32(ddlPatient.SelectedValue));
                 comReferBy.SelectedValue = dtpa.Rows[0]["RrefrById"].ToString();

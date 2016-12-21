@@ -10,11 +10,11 @@ using System.Threading.Tasks;
 
 namespace HMS.BLL
 {
-  public  class bllCultureSensitivityBacteria
+    public class bllCultureSensitivityBacteria
     {
         dalCultureSentivityBacteria objBacteria = new dalCultureSentivityBacteria();
         public int Insert(CultureSensitivityBacteria bacteria)
-        { 
+        {
             return objBacteria.Insert(bacteria);
         }
 

@@ -14,14 +14,9 @@ namespace HMS.App_Code.DAL
     {
         public int InsertUpdateTestResultAttribute(string TestResultAttributeData)
         {
-            
-                
                 ArrayList altParams = new ArrayList();
-
                 altParams.Add(new SqlParameter("@TestResultAttributeXml", TestResultAttributeData));
                 return DatabaseManager.GetInstance().ExecuteNonQueryStoredProcedure("sp_TestResultAttributeInsertUpdate", altParams);
-           
-
            
         }
        

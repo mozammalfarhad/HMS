@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace HMS.BLL
 {
-   public class bllCultureSensitivityMedicine
+    public class bllCultureSensitivityMedicine
     {
         dalCultureSensitivityMedicine objMedicine = new dalCultureSensitivityMedicine();
         public int Insert(CultureSensitivityMedicine medicine)

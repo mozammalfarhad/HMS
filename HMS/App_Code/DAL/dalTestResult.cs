@@ -23,6 +23,22 @@ namespace HMS.App_Code.DAL
             altParams.Add(new SqlParameter("@ServiceId", ServiceId));
             return DatabaseManager.GetInstance().ExecuteNonQueryStoredProcedure("sp_TestResultUpdate", altParams);
         }
+        public int InsertUpdateTestSample(string Samples, int ShedId, int ServiceId)
+        {
+
+            ArrayList altParams = new ArrayList();
+            altParams.Add(new SqlParameter("@Samples", Samples));
+            altParams.Add(new SqlParameter("@ShedId", ShedId));
+            altParams.Add(new SqlParameter("@ServiceId", ServiceId));
+            return DatabaseManager.GetInstance().ExecuteNonQueryStoredProcedure("sp_TestSampleUpdate", altParams);
+        }
+        public DataTable GetTestById(int TestId)
+        {
+            ArrayList altParams = new ArrayList();
+            altParams.Add(new SqlParameter("@TestId", TestId));
+            DataTable dt = DatabaseManager.GetInstance().ExecuteStoredProcedureDataTable("sp_TestGetByID", altParams);
+            return dt;
+        }
         public DataTable GetTestResultGetWithAttribute(int TestId, int ShedId, int ServiceId)
         {
             ArrayList altParams = new ArrayList();

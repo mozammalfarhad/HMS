@@ -23,10 +23,19 @@ namespace HMS.App_Code.BLL
         {
             return objTestResult.UpdateTestResultUpdate(Result, Status, SheduleId, ServiceId);
         }
-
+        public int InsertTestSample(string samples, int SheduleId, int ServiceId)
+        {
+            return objTestResult.InsertUpdateTestSample(samples, SheduleId, ServiceId);
+        }
+        
         public DataTable GetTestResultGetWithAttribute(int TestId, int ShedId, int ServiceId)
         {
             return objTestResult.GetTestResultGetWithAttribute(TestId, ShedId, ServiceId);
+        }
+
+        public DataTable GetTestById(int TestId)
+        {
+            return objTestResult.GetTestById(TestId);
         }
 
         public DataTable PatientServiceGetBySchedId(int ShedId)
