@@ -18,7 +18,7 @@
 </Schema>
 <Folder><name>x</name>
   <Placemark>
-	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<Style><LineStyle><color>FFF</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
 	<ExtendedData><SchemaData schemaUrl="#x">
 		<SimpleData name="ID_0">186</SimpleData>
 		<SimpleData name="ISO">ROU</SimpleData>
